@@ -88,6 +88,8 @@ namespace Gym_management_appication.UI
             // 
             // txt_Ten
             // 
+            this.txt_Ten.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Ten.Location = new System.Drawing.Point(132, 50);
             this.txt_Ten.Name = "txt_Ten";
             this.txt_Ten.Size = new System.Drawing.Size(179, 22);
@@ -95,13 +97,18 @@ namespace Gym_management_appication.UI
             // 
             // txt_Ma
             // 
+            this.txt_Ma.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Ma.Location = new System.Drawing.Point(132, 84);
             this.txt_Ma.Name = "txt_Ma";
+            this.txt_Ma.ReadOnly = true;
             this.txt_Ma.Size = new System.Drawing.Size(179, 22);
             this.txt_Ma.TabIndex = 5;
             // 
             // txt_soLuong
             // 
+            this.txt_soLuong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_soLuong.Location = new System.Drawing.Point(132, 119);
             this.txt_soLuong.Name = "txt_soLuong";
             this.txt_soLuong.Size = new System.Drawing.Size(179, 22);
@@ -109,6 +116,8 @@ namespace Gym_management_appication.UI
             // 
             // txt_tinhTrang
             // 
+            this.txt_tinhTrang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tinhTrang.Location = new System.Drawing.Point(132, 152);
             this.txt_tinhTrang.Name = "txt_tinhTrang";
             this.txt_tinhTrang.Size = new System.Drawing.Size(179, 22);
@@ -116,6 +125,9 @@ namespace Gym_management_appication.UI
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
             this.groupBox1.Controls.Add(this.txt_tinhTrang);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt_soLuong);
@@ -133,22 +145,32 @@ namespace Gym_management_appication.UI
             // 
             // btn_Sua
             // 
+            this.btn_Sua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
+            this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sua.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_Sua.Location = new System.Drawing.Point(130, 231);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(95, 33);
             this.btn_Sua.TabIndex = 9;
             this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.UseVisualStyleBackColor = false;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // ChiTietThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(358, 287);
             this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.groupBox1);
             this.Name = "ChiTietThietBi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ChiTietThietBi";
+            this.Load += new System.EventHandler(this.ChiTietThietBi_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

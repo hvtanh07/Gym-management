@@ -1,0 +1,11 @@
+C:\Github\Gym-management\Gym management application\bin\Debug\Gym management appication.exe.config
+C:\Github\Gym-management\Gym management application\bin\Debug\Gym management appication.exe
+C:\Github\Gym-management\Gym management application\bin\Debug\Gym management appication.pdb
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.Properties.Resources.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.ChiTietThietBi.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyThietBi.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym management application.csproj.GenerateResource.cache
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym management application.csproj.CoreCompileInputs.cache
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym management appication.exe
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym management appication.pdb
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym management application.csprojAssemblyReference.cache

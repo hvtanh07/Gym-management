@@ -31,73 +31,112 @@ namespace Gym_management_appication.UI
         {
             this.components = new System.ComponentModel.Container();
             this.dtgv_ThietBiList = new System.Windows.Forms.DataGridView();
-            this.txt_search = new System.Windows.Forms.TextBox();
-            this.btn_search = new System.Windows.Forms.Button();
             this.menuControl = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.detailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaThiếtBịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txt_search = new System.Windows.Forms.TextBox();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_ThietBiList)).BeginInit();
             this.menuControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgv_ThietBiList
             // 
+            this.dtgv_ThietBiList.AllowUserToAddRows = false;
+            this.dtgv_ThietBiList.AllowUserToDeleteRows = false;
+            this.dtgv_ThietBiList.AllowUserToResizeRows = false;
+            this.dtgv_ThietBiList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgv_ThietBiList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgv_ThietBiList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
             this.dtgv_ThietBiList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_ThietBiList.ContextMenuStrip = this.menuControl;
             this.dtgv_ThietBiList.Location = new System.Drawing.Point(12, 65);
             this.dtgv_ThietBiList.Name = "dtgv_ThietBiList";
+            this.dtgv_ThietBiList.ReadOnly = true;
+            this.dtgv_ThietBiList.RowHeadersVisible = false;
             this.dtgv_ThietBiList.RowHeadersWidth = 51;
             this.dtgv_ThietBiList.RowTemplate.Height = 24;
-            this.dtgv_ThietBiList.Size = new System.Drawing.Size(776, 373);
-            this.dtgv_ThietBiList.TabIndex = 0;
-            // 
-            // txt_search
-            // 
-            this.txt_search.Location = new System.Drawing.Point(146, 21);
-            this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(399, 22);
-            this.txt_search.TabIndex = 1;
-            // 
-            // btn_search
-            // 
-            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_search.Location = new System.Drawing.Point(566, 16);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(85, 32);
-            this.btn_search.TabIndex = 2;
-            this.btn_search.Text = "Search";
-            this.btn_search.UseVisualStyleBackColor = true;
+            this.dtgv_ThietBiList.Size = new System.Drawing.Size(487, 373);
+            this.dtgv_ThietBiList.TabIndex = 1;
             // 
             // menuControl
             // 
             this.menuControl.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.detailToolStripMenuItem,
-            this.xóaToolStripMenuItem});
+            this.xóaThiếtBịToolStripMenuItem});
             this.menuControl.Name = "menuControl";
-            this.menuControl.Size = new System.Drawing.Size(126, 52);
+            this.menuControl.Size = new System.Drawing.Size(156, 52);
             // 
             // detailToolStripMenuItem
             // 
             this.detailToolStripMenuItem.Name = "detailToolStripMenuItem";
-            this.detailToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
+            this.detailToolStripMenuItem.Size = new System.Drawing.Size(155, 24);
             this.detailToolStripMenuItem.Text = "Chi tiết";
+            this.detailToolStripMenuItem.Click += new System.EventHandler(this.detailToolStripMenuItem_Click);
             // 
-            // xóaToolStripMenuItem
+            // xóaThiếtBịToolStripMenuItem
             // 
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
-            this.xóaToolStripMenuItem.Text = "Xóa ";
+            this.xóaThiếtBịToolStripMenuItem.Name = "xóaThiếtBịToolStripMenuItem";
+            this.xóaThiếtBịToolStripMenuItem.Size = new System.Drawing.Size(155, 24);
+            this.xóaThiếtBịToolStripMenuItem.Text = "Xóa thiết bị";
+            this.xóaThiếtBịToolStripMenuItem.Click += new System.EventHandler(this.xóaThiếtBịToolStripMenuItem_Click);
+            // 
+            // txt_search
+            // 
+            this.txt_search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_search.Location = new System.Drawing.Point(90, 21);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(302, 22);
+            this.txt_search.TabIndex = 0;
+            this.txt_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyDown);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_search.Location = new System.Drawing.Point(398, 16);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(101, 32);
+            this.btn_search.TabIndex = 2;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(12, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(72, 32);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // QuanLyThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(219)))));
+            this.ClientSize = new System.Drawing.Size(511, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.dtgv_ThietBiList);
             this.Name = "QuanLyThietBi";
-            this.Text = "QuanLyThietBi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý thiết bị";
             this.Load += new System.EventHandler(this.QuanLyThietBi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_ThietBiList)).EndInit();
             this.menuControl.ResumeLayout(false);
@@ -113,6 +152,7 @@ namespace Gym_management_appication.UI
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.ContextMenuStrip menuControl;
         private System.Windows.Forms.ToolStripMenuItem detailToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xóaThiếtBịToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }

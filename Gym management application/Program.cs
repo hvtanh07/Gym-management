@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gym_management_appication.UI;
 
 namespace Gym_management_appication
 {
@@ -16,7 +17,7 @@ namespace Gym_management_appication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new QuanLyThietBi());
         }
     }
 }
