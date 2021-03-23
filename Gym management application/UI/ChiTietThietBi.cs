@@ -20,8 +20,8 @@ namespace Gym_management_appication.UI
             InitializeComponent();
             txt_Ten.Text = trangThietBi.ten;
             txt_Ma.Text = trangThietBi.ma;
-            txt_soLuong.Text = trangThietBi.soLuong.ToString();
-            txt_tinhTrang.Text = trangThietBi.tinhTrang;
+            UD_soLuong.Text = trangThietBi.soLuong.ToString();
+            cb_tinhTrang.Text = trangThietBi.tinhTrang;
             txt_Ma.ReadOnly = true;
             btn_Sua.Text = "Sửa";
         }
@@ -40,11 +40,15 @@ namespace Gym_management_appication.UI
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
+            if (!checknull())
+            {
+                return;
+            }
             trangThietBi trangThietBi = new trangThietBi();
             trangThietBi.ten = txt_Ten.Text;
             trangThietBi.ma = txt_Ma.Text;
-            trangThietBi.soLuong = int.Parse(txt_soLuong.Text);
-            trangThietBi.tinhTrang = txt_tinhTrang.Text;
+            trangThietBi.soLuong = int.Parse(UD_soLuong.Text);
+            trangThietBi.tinhTrang = cb_tinhTrang.Text;
             Database.trangThietBi data = new Database.trangThietBi();
             if ("Sửa" == btn_Sua.Text)
             {
@@ -54,6 +58,28 @@ namespace Gym_management_appication.UI
             {
                 data.updateData(trangThietBi);
             }    
+        }
+        private bool checknull()
+        {
+            if(txt_Ten.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn chưa nhập tên thiết bị!", "Warning!");
+                txt_Ten.Select();
+                return false;
+            }
+            if (txt_Ma.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn chưa nhập mã thiết bị!", "Warning!");
+                txt_Ma.Select();
+                return false;
+            }
+            if( cb_tinhTrang.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn chưa chọn tình trạng của thiết bị!", "Warning!");
+                cb_tinhTrang.Select();
+                return false;
+            }
+            return true;
         }
     }
 }

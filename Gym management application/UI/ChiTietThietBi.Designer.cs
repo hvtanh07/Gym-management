@@ -35,11 +35,12 @@ namespace Gym_management_appication.UI
             this.label4 = new System.Windows.Forms.Label();
             this.txt_Ten = new System.Windows.Forms.TextBox();
             this.txt_Ma = new System.Windows.Forms.TextBox();
-            this.txt_soLuong = new System.Windows.Forms.TextBox();
-            this.txt_tinhTrang = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Sua = new System.Windows.Forms.Button();
+            this.cb_tinhTrang = new System.Windows.Forms.ComboBox();
+            this.UD_soLuong = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UD_soLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,6 +95,7 @@ namespace Gym_management_appication.UI
             this.txt_Ten.Name = "txt_Ten";
             this.txt_Ten.Size = new System.Drawing.Size(179, 22);
             this.txt_Ten.TabIndex = 4;
+            this.txt_Ten.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Ma
             // 
@@ -104,33 +106,16 @@ namespace Gym_management_appication.UI
             this.txt_Ma.ReadOnly = true;
             this.txt_Ma.Size = new System.Drawing.Size(179, 22);
             this.txt_Ma.TabIndex = 5;
-            // 
-            // txt_soLuong
-            // 
-            this.txt_soLuong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_soLuong.Location = new System.Drawing.Point(132, 119);
-            this.txt_soLuong.Name = "txt_soLuong";
-            this.txt_soLuong.Size = new System.Drawing.Size(179, 22);
-            this.txt_soLuong.TabIndex = 6;
-            // 
-            // txt_tinhTrang
-            // 
-            this.txt_tinhTrang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_tinhTrang.Location = new System.Drawing.Point(132, 152);
-            this.txt_tinhTrang.Name = "txt_tinhTrang";
-            this.txt_tinhTrang.Size = new System.Drawing.Size(179, 22);
-            this.txt_tinhTrang.TabIndex = 7;
+            this.txt_Ma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
-            this.groupBox1.Controls.Add(this.txt_tinhTrang);
+            this.groupBox1.Controls.Add(this.UD_soLuong);
+            this.groupBox1.Controls.Add(this.cb_tinhTrang);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txt_soLuong);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txt_Ma);
             this.groupBox1.Controls.Add(this.label3);
@@ -159,6 +144,28 @@ namespace Gym_management_appication.UI
             this.btn_Sua.UseVisualStyleBackColor = false;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
+            // cb_tinhTrang
+            // 
+            this.cb_tinhTrang.FormattingEnabled = true;
+            this.cb_tinhTrang.Items.AddRange(new object[] {
+            "Còn tốt",
+            "Đang bảo trì",
+            "Hỏng",
+            "Lỗi",
+            "Trong kho"});
+            this.cb_tinhTrang.Location = new System.Drawing.Point(132, 152);
+            this.cb_tinhTrang.Name = "cb_tinhTrang";
+            this.cb_tinhTrang.Size = new System.Drawing.Size(179, 24);
+            this.cb_tinhTrang.TabIndex = 7;
+            // 
+            // UD_soLuong
+            // 
+            this.UD_soLuong.Location = new System.Drawing.Point(132, 120);
+            this.UD_soLuong.Name = "UD_soLuong";
+            this.UD_soLuong.Size = new System.Drawing.Size(179, 22);
+            this.UD_soLuong.TabIndex = 9;
+            this.UD_soLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // ChiTietThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,6 +180,7 @@ namespace Gym_management_appication.UI
             this.Load += new System.EventHandler(this.ChiTietThietBi_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UD_soLuong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,9 +193,9 @@ namespace Gym_management_appication.UI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_Ten;
         private System.Windows.Forms.TextBox txt_Ma;
-        private System.Windows.Forms.TextBox txt_soLuong;
-        private System.Windows.Forms.TextBox txt_tinhTrang;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_Sua;
+        private System.Windows.Forms.ComboBox cb_tinhTrang;
+        private System.Windows.Forms.NumericUpDown UD_soLuong;
     }
 }
