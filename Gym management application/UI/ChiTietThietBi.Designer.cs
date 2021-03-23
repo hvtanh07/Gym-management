@@ -51,7 +51,7 @@ namespace Gym_management_appication.UI
             this.label1.Size = new System.Drawing.Size(40, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
@@ -62,7 +62,7 @@ namespace Gym_management_appication.UI
             this.label2.Size = new System.Drawing.Size(34, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
@@ -73,7 +73,7 @@ namespace Gym_management_appication.UI
             this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Số lượng";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
@@ -84,7 +84,7 @@ namespace Gym_management_appication.UI
             this.label4.Size = new System.Drawing.Size(94, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Tình trạng";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txt_Ten
             // 

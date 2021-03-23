@@ -49,7 +49,7 @@ namespace Gym_management_appication.UI
             this.dtgv_ThietBiList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgv_ThietBiList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgv_ThietBiList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_ThietBiList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
             this.dtgv_ThietBiList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_ThietBiList.ContextMenuStrip = this.menuControl;
@@ -59,7 +59,7 @@ namespace Gym_management_appication.UI
             this.dtgv_ThietBiList.RowHeadersVisible = false;
             this.dtgv_ThietBiList.RowHeadersWidth = 51;
             this.dtgv_ThietBiList.RowTemplate.Height = 24;
-            this.dtgv_ThietBiList.Size = new System.Drawing.Size(487, 373);
+            this.dtgv_ThietBiList.Size = new System.Drawing.Size(649, 384);
             this.dtgv_ThietBiList.TabIndex = 1;
             // 
             // menuControl
@@ -91,7 +91,7 @@ namespace Gym_management_appication.UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_search.Location = new System.Drawing.Point(90, 21);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(302, 22);
+            this.txt_search.Size = new System.Drawing.Size(464, 22);
             this.txt_search.TabIndex = 0;
             this.txt_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyDown);
             // 
@@ -102,7 +102,7 @@ namespace Gym_management_appication.UI
             this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_search.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_search.Location = new System.Drawing.Point(398, 16);
+            this.btn_search.Location = new System.Drawing.Point(560, 16);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(101, 32);
             this.btn_search.TabIndex = 2;
@@ -129,7 +129,7 @@ namespace Gym_management_appication.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(511, 450);
+            this.ClientSize = new System.Drawing.Size(673, 461);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txt_search);

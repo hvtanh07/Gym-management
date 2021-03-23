@@ -64,19 +64,27 @@ namespace Gym_management_appication.UI
 
         private void xóaThiếtBịToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Class.trangThietBi thietBi = new Class.trangThietBi();
-            int currentRowIndex = dtgv_ThietBiList.CurrentCellAddress.Y;// 'current row selected
-            //'Verify that indexing OK
-            if (-1 < currentRowIndex && currentRowIndex < dtgv_ThietBiList.RowCount)
+            DialogResult dialogResult = MessageBox.Show("Xác nhận xóa thiết bị này khỏi danh sách?", "Caution!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                thietBi.ten = dtgv_ThietBiList.Rows[currentRowIndex].Cells["ten"].Value.ToString();
-                thietBi.ma = dtgv_ThietBiList.Rows[currentRowIndex].Cells["ma"].Value.ToString();
-                thietBi.soLuong = int.Parse(dtgv_ThietBiList.Rows[currentRowIndex].Cells["soLuong"].Value.ToString());
-                thietBi.tinhTrang = dtgv_ThietBiList.Rows[currentRowIndex].Cells["tinhTrang"].Value.ToString();
+                Class.trangThietBi thietBi = new Class.trangThietBi();
+                int currentRowIndex = dtgv_ThietBiList.CurrentCellAddress.Y;// 'current row selected
+                if (-1 < currentRowIndex && currentRowIndex < dtgv_ThietBiList.RowCount)
+                {
+                    thietBi.ten = dtgv_ThietBiList.Rows[currentRowIndex].Cells["ten"].Value.ToString();
+                    thietBi.ma = dtgv_ThietBiList.Rows[currentRowIndex].Cells["ma"].Value.ToString();
+                    thietBi.soLuong = int.Parse(dtgv_ThietBiList.Rows[currentRowIndex].Cells["soLuong"].Value.ToString());
+                    thietBi.tinhTrang = dtgv_ThietBiList.Rows[currentRowIndex].Cells["tinhTrang"].Value.ToString();
+                }
+                trangThietBi trangThietBi = new trangThietBi();
+                trangThietBi.deleteData(thietBi);
+                LoadData();
             }
-            trangThietBi trangThietBi = new trangThietBi();
-            trangThietBi.deleteData(thietBi);
-            LoadData();
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
