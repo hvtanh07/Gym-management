@@ -14,7 +14,7 @@ namespace Gym_management_appication.Database
         private DataTable result = new DataTable();
         public DataTable getData()
         {
-            sqlQuery = "select * from [TrangThietBi]";
+            sqlQuery = "select [ten],[ma],[soLuong],[tinhTrang] from [TrangThietBi]";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
             try
             {
