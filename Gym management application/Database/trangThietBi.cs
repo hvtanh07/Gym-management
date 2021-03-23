@@ -14,7 +14,7 @@ namespace Gym_management_appication.Database
         private DataTable result = new DataTable();
         public DataTable getData()
         {
-            sqlQuery = "select [ten],[ma],[soLuong],[tinhTrang] from [TrangThietBi]";
+            sqlQuery = "select * from [TrangThietBi]";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
             try
             {
@@ -39,8 +39,9 @@ namespace Gym_management_appication.Database
         }
         public void insertData(Class.trangThietBi data)
         {
-            sqlQuery = "insert into TrangThietBi (ten, ma, soLuong, tinhTrang) values (N'" + data.ten+"','"+
-                data.ma+"',"+data.soLuong+",N'"+data.tinhTrang+"') ";
+            sqlQuery = "insert into TrangThietBi (ten, ma, soLuong, tinhTrang, ngayMua, giaThanh, baoHanh, ngayHetHanBaoHanh, hangSanXuat) values (N'" +
+                data.ten+"','" + data.ma + "',"+data.soLuong+",N'"+data.tinhTrang+ "','"+
+                data.ngayMua+"',"+ data.giaThanh + ","+ data.baoHanh + ",'"+ data.ngayHetHanBaoHanh + "',N'"+ data.hangSanXuat + "') ";
             conString.ConString constring = new conString.ConString();    
             try
             {
