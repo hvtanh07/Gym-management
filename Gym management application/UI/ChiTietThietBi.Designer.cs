@@ -36,18 +36,30 @@ namespace Gym_management_appication.UI
             this.txt_Ten = new System.Windows.Forms.TextBox();
             this.txt_Ma = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.cb_tinhTrang = new System.Windows.Forms.ComboBox();
             this.UD_soLuong = new System.Windows.Forms.NumericUpDown();
+            this.cb_tinhTrang = new System.Windows.Forms.ComboBox();
+            this.btn_Sua = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dT_ngayMua = new System.Windows.Forms.DateTimePicker();
+            this.dT_ngayHetHan = new System.Windows.Forms.DateTimePicker();
+            this.UD_giaThanh = new System.Windows.Forms.NumericUpDown();
+            this.txt_hangSX = new System.Windows.Forms.TextBox();
+            this.UD_baoHanh = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UD_soLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UD_giaThanh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UD_baoHanh)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(70, 50);
+            this.label1.Location = new System.Drawing.Point(166, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 20);
             this.label1.TabIndex = 0;
@@ -58,7 +70,7 @@ namespace Gym_management_appication.UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(76, 84);
+            this.label2.Location = new System.Drawing.Point(172, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 20);
             this.label2.TabIndex = 1;
@@ -69,7 +81,7 @@ namespace Gym_management_appication.UI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 119);
+            this.label3.Location = new System.Drawing.Point(124, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 2;
@@ -80,7 +92,7 @@ namespace Gym_management_appication.UI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 152);
+            this.label4.Location = new System.Drawing.Point(112, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 20);
             this.label4.TabIndex = 3;
@@ -91,9 +103,9 @@ namespace Gym_management_appication.UI
             // 
             this.txt_Ten.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Ten.Location = new System.Drawing.Point(132, 50);
+            this.txt_Ten.Location = new System.Drawing.Point(237, 50);
             this.txt_Ten.Name = "txt_Ten";
-            this.txt_Ten.Size = new System.Drawing.Size(179, 22);
+            this.txt_Ten.Size = new System.Drawing.Size(220, 22);
             this.txt_Ten.TabIndex = 4;
             this.txt_Ten.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -101,10 +113,10 @@ namespace Gym_management_appication.UI
             // 
             this.txt_Ma.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Ma.Location = new System.Drawing.Point(132, 84);
+            this.txt_Ma.Location = new System.Drawing.Point(237, 78);
             this.txt_Ma.Name = "txt_Ma";
             this.txt_Ma.ReadOnly = true;
-            this.txt_Ma.Size = new System.Drawing.Size(179, 22);
+            this.txt_Ma.Size = new System.Drawing.Size(187, 22);
             this.txt_Ma.TabIndex = 5;
             this.txt_Ma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -113,6 +125,16 @@ namespace Gym_management_appication.UI
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
+            this.groupBox1.Controls.Add(this.UD_baoHanh);
+            this.groupBox1.Controls.Add(this.txt_hangSX);
+            this.groupBox1.Controls.Add(this.UD_giaThanh);
+            this.groupBox1.Controls.Add(this.dT_ngayHetHan);
+            this.groupBox1.Controls.Add(this.dT_ngayMua);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.UD_soLuong);
             this.groupBox1.Controls.Add(this.cb_tinhTrang);
             this.groupBox1.Controls.Add(this.label1);
@@ -123,10 +145,36 @@ namespace Gym_management_appication.UI
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(334, 199);
+            this.groupBox1.Size = new System.Drawing.Size(480, 369);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết thiết bị";
+            // 
+            // UD_soLuong
+            // 
+            this.UD_soLuong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UD_soLuong.Location = new System.Drawing.Point(237, 106);
+            this.UD_soLuong.Name = "UD_soLuong";
+            this.UD_soLuong.Size = new System.Drawing.Size(130, 22);
+            this.UD_soLuong.TabIndex = 9;
+            this.UD_soLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cb_tinhTrang
+            // 
+            this.cb_tinhTrang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_tinhTrang.FormattingEnabled = true;
+            this.cb_tinhTrang.Items.AddRange(new object[] {
+            "Còn tốt",
+            "Đang bảo trì",
+            "Hỏng",
+            "Lỗi",
+            "Trong kho"});
+            this.cb_tinhTrang.Location = new System.Drawing.Point(237, 134);
+            this.cb_tinhTrang.Name = "cb_tinhTrang";
+            this.cb_tinhTrang.Size = new System.Drawing.Size(130, 24);
+            this.cb_tinhTrang.TabIndex = 7;
             // 
             // btn_Sua
             // 
@@ -136,42 +184,134 @@ namespace Gym_management_appication.UI
             this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sua.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Sua.Location = new System.Drawing.Point(130, 231);
+            this.btn_Sua.Location = new System.Drawing.Point(130, 402);
             this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(95, 33);
+            this.btn_Sua.Size = new System.Drawing.Size(241, 33);
             this.btn_Sua.TabIndex = 9;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = false;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
-            // cb_tinhTrang
+            // label5
             // 
-            this.cb_tinhTrang.FormattingEnabled = true;
-            this.cb_tinhTrang.Items.AddRange(new object[] {
-            "Còn tốt",
-            "Đang bảo trì",
-            "Hỏng",
-            "Lỗi",
-            "Trong kho"});
-            this.cb_tinhTrang.Location = new System.Drawing.Point(132, 152);
-            this.cb_tinhTrang.Name = "cb_tinhTrang";
-            this.cb_tinhTrang.Size = new System.Drawing.Size(179, 24);
-            this.cb_tinhTrang.TabIndex = 7;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(114, 166);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Ngày mua";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // UD_soLuong
+            // label6
             // 
-            this.UD_soLuong.Location = new System.Drawing.Point(132, 120);
-            this.UD_soLuong.Name = "UD_soLuong";
-            this.UD_soLuong.Size = new System.Drawing.Size(179, 22);
-            this.UD_soLuong.TabIndex = 9;
-            this.UD_soLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(116, 191);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Giá thành";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(118, 219);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 20);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Bảo hành";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(5, 250);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(201, 20);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Ngày hết hạn bảo hành";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(76, 276);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(130, 20);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Hãng sản xuất";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dT_ngayMua
+            // 
+            this.dT_ngayMua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dT_ngayMua.CustomFormat = "dd/MM/yyyy";
+            this.dT_ngayMua.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dT_ngayMua.Location = new System.Drawing.Point(237, 164);
+            this.dT_ngayMua.Name = "dT_ngayMua";
+            this.dT_ngayMua.Size = new System.Drawing.Size(187, 22);
+            this.dT_ngayMua.TabIndex = 15;
+            this.dT_ngayMua.ValueChanged += new System.EventHandler(this.dT_ngayMua_ValueChanged);
+            // 
+            // dT_ngayHetHan
+            // 
+            this.dT_ngayHetHan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dT_ngayHetHan.CustomFormat = "dd/MM/yyyy";
+            this.dT_ngayHetHan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dT_ngayHetHan.Location = new System.Drawing.Point(237, 246);
+            this.dT_ngayHetHan.Name = "dT_ngayHetHan";
+            this.dT_ngayHetHan.Size = new System.Drawing.Size(187, 22);
+            this.dT_ngayHetHan.TabIndex = 16;
+            // 
+            // UD_giaThanh
+            // 
+            this.UD_giaThanh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UD_giaThanh.Location = new System.Drawing.Point(237, 190);
+            this.UD_giaThanh.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.UD_giaThanh.Name = "UD_giaThanh";
+            this.UD_giaThanh.Size = new System.Drawing.Size(163, 22);
+            this.UD_giaThanh.TabIndex = 17;
+            this.UD_giaThanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_hangSX
+            // 
+            this.txt_hangSX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_hangSX.Location = new System.Drawing.Point(237, 274);
+            this.txt_hangSX.Name = "txt_hangSX";
+            this.txt_hangSX.Size = new System.Drawing.Size(220, 22);
+            this.txt_hangSX.TabIndex = 18;
+            this.txt_hangSX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // UD_baoHanh
+            // 
+            this.UD_baoHanh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UD_baoHanh.Location = new System.Drawing.Point(237, 218);
+            this.UD_baoHanh.Name = "UD_baoHanh";
+            this.UD_baoHanh.Size = new System.Drawing.Size(130, 22);
+            this.UD_baoHanh.TabIndex = 19;
+            this.UD_baoHanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UD_baoHanh.ValueChanged += new System.EventHandler(this.UD_baoHanh_ValueChanged);
             // 
             // ChiTietThietBi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(358, 287);
+            this.ClientSize = new System.Drawing.Size(504, 458);
             this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.groupBox1);
             this.Name = "ChiTietThietBi";
@@ -181,6 +321,8 @@ namespace Gym_management_appication.UI
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UD_soLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UD_giaThanh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UD_baoHanh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,5 +339,15 @@ namespace Gym_management_appication.UI
         private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.ComboBox cb_tinhTrang;
         private System.Windows.Forms.NumericUpDown UD_soLuong;
+        private System.Windows.Forms.NumericUpDown UD_baoHanh;
+        private System.Windows.Forms.TextBox txt_hangSX;
+        private System.Windows.Forms.NumericUpDown UD_giaThanh;
+        private System.Windows.Forms.DateTimePicker dT_ngayHetHan;
+        private System.Windows.Forms.DateTimePicker dT_ngayMua;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

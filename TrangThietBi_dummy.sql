@@ -14,6 +14,8 @@ create table TrangThietBi (
 	hangSanXuat nvarchar(50)
 )
 
+
+
 --dummy Data--
 SET DATEFORMAT dmy;  
 insert into TrangThietBi (ten, ma, soLuong, tinhTrang, ngayMua, giaThanh, baoHanh, ngayHetHanBaoHanh, hangSanXuat) 
@@ -35,3 +37,5 @@ insert into TrangThietBi (ten, ma, soLuong, tinhTrang, ngayMua, giaThanh, baoHan
 values (N'Máy tập đùi ngoài','Ma-004',1,N'Trong kho','27/05/2020',10000,12,'27/05/2021',N'workoutNo') 
 
 drop table TrangThietBi
+
+update TrangThietBi set ten = N'Tạ tay', soLuong=12, tinhTrang = N'Đang bảo trì', ngayMua=5/4/2020 12:00:00 AM, giaThanh=500, baoHanh=0, ngayHetHanBaoHanh=5/4/2020 12:00:00 AM, hangSanXuat=workoutNow where ma ='Ta-001'

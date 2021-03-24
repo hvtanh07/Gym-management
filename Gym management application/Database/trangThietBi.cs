@@ -63,7 +63,8 @@ namespace Gym_management_appication.Database
         public void updateData(Class.trangThietBi data)
         {
             sqlQuery = "update TrangThietBi set ten = N'"+data.ten+ "', soLuong=" + data.soLuong + ", tinhTrang = N'" +
-                data.tinhTrang + "' where ma ='" + data.ma + "'";
+                data.tinhTrang + "', ngayMua= '" + data.ngayMua + "', giaThanh=" + data.giaThanh + ", baoHanh=" + data.baoHanh +
+                ", ngayHetHanBaoHanh= '" + data.ngayHetHanBaoHanh + "', hangSanXuat= '" + data.hangSanXuat + "' where ma ='" + data.ma + "'";
             conString.ConString constring = new conString.ConString();                
             try
             {
@@ -111,6 +112,11 @@ namespace Gym_management_appication.Database
             sqlQuery += " OR ([ma] LIKE CONCAT('%',@sKeyword,'%'))";
             sqlQuery += " OR ([soLuong] LIKE CONCAT('%',@sKeyword,'%'))";
             sqlQuery += " OR ([tinhTrang] LIKE CONCAT('%',@sKeyword,'%'))";
+            sqlQuery += " OR ([ngayMua] LIKE CONCAT('%',@sKeyword,'%'))";
+            sqlQuery += " OR ([giaThanh] LIKE CONCAT('%',@sKeyword,'%'))";
+            sqlQuery += " OR ([baoHanh] LIKE CONCAT('%',@sKeyword,'%'))";
+            sqlQuery += " OR ([ngayHetHanBaoHanh] LIKE CONCAT('%',@sKeyword,'%'))";
+            sqlQuery += " OR ([hangSanXuat] LIKE CONCAT('%',@sKeyword,'%'))";
 
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
             try
