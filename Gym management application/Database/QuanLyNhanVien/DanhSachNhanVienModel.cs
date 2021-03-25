@@ -15,18 +15,19 @@ namespace Gym_management_appication
         {
             Cnt = new SqlConnection(connectionString);
         }
-        public void Insert(string Hoten, string GioiTinh, string Email, string SoDt, string ID, string Password, bool IsAdmin)
+        public void Insert(string ID, string Ten, string GioiTinh, string Email, string SDT, string DiaChi, string ChucVu, long Luong)
         {
             Cnt.Open();
-            string sqlInsert = "INSERT INTO dbo.[ID_PASSWORD](ID, PASSWORD, Hoten, GioiTinh, Email, SoDT, IsAdmin) VALUES (@ID, @PASSWORD, @HoTen, @GioiTinh, @Email, @SoDT, @IsAdmin)";
+            string sqlInsert = "INSERT INTO dbo.[NHANVIEN](ID,HoTen, GioiTinh, Email, SoDT, DiaChi,ChucVu,Luong) VALUES (@ID, @HoTen, @GioiTinh, @Email, @SoDT, @DiaChi, @ChucVu,@Luong)";
             SqlCommand cmd = new SqlCommand(sqlInsert, Cnt);
             cmd.Parameters.AddWithValue("@ID", ID);
-            cmd.Parameters.AddWithValue("@PASSWORD", Password);
-            cmd.Parameters.AddWithValue("@HoTen", Hoten);
+            cmd.Parameters.AddWithValue("@HoTen", Ten);
             cmd.Parameters.AddWithValue("@GioiTinh", GioiTinh);
             cmd.Parameters.AddWithValue("@Email", Email);
-            cmd.Parameters.AddWithValue("@SoDT", SoDt);
-            cmd.Parameters.AddWithValue("@IsAdmin", IsAdmin);
+            cmd.Parameters.AddWithValue("@SoDT", SDT);
+            cmd.Parameters.AddWithValue("@DiaChi", DiaChi);
+            cmd.Parameters.AddWithValue("@ChucVu",ChucVu);
+            cmd.Parameters.AddWithValue("@Luong", Luong);
             cmd.ExecuteNonQuery();
             Cnt.Close();
         }

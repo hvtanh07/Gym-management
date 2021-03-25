@@ -18,5 +18,12 @@ namespace Gym_management_appication.Class
         public string ChucVu { get; set; }
         public long Luong { get; set; }
 
+        public bool CheckInfo()
+        {
+            if (ID.ToString()!="" && HoTen!=""&&GioiTinh!=""&&Email!=""&&SoDT.ToString()!=""&&DiaChi!=""&&ChucVu!=""&&Luong.ToString()!="")
+                return true;
+            else
+                return false;
+        }
     }
 }

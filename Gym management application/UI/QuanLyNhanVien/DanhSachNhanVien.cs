@@ -33,13 +33,11 @@ namespace Gym_management_appication.UI
             nhanVienControl = new NhanVienControl();
             this.panelNhanVien.Controls.Add(nhanVienControl);
         }
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            LoadDanhSachNhanVien();
-        }
 
         private void DataGridViewNhanVien_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (dataGridViewNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString().Trim() == "")
+                return;
             nhanVien.ID = Convert.ToInt32(dataGridViewNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString());
             nhanVien.HoTen = dataGridViewNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
             nhanVien.GioiTinh = dataGridViewNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -49,6 +47,39 @@ namespace Gym_management_appication.UI
             nhanVien.ChucVu = dataGridViewNhanVien.Rows[e.RowIndex].Cells[6].Value.ToString();
             nhanVien.Luong = Convert.ToInt64( dataGridViewNhanVien.Rows[e.RowIndex].Cells[7].Value);
             this.nhanVienControl.SetControlsData(nhanVien.ID.ToString(), nhanVien.HoTen, nhanVien.GioiTinh, nhanVien.Email, nhanVien.SoDT.ToString(), nhanVien.DiaChi, nhanVien.ChucVu, nhanVien.Luong);
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            LoadDanhSachNhanVien();
+        }
+
+        private void BtnInsert_Click(object sender, EventArgs e)
+        {
+            if (!nhanVienControl.CheckData())
+            {
+                MessageBox.Show("Chưa đủ thông tin!");
+                return;
+            }
+            DataTable dataTable = (new DanhSachNhanVienModel().GetDatabase("Select ID from dbo.[NHANVIEN] where ID='" + nhanVienControl.GetID().ToString() + "'"));
+            if (dataTable.Rows.Count == 1)
+            {
+                MessageBox.Show("ID đã tồn tại!");
+            }
+            else
+            {
+                DanhSachNhanVienModel danhSachNhanVienModel = new DanhSachNhanVienModel();
+                try
+                {
+                    danhSachNhanVienModel.Insert(nhanVienControl.GetID().ToString(), nhanVienControl.GetTen(), nhanVienControl.GetGioiTinh(), nhanVienControl.GetEmail(), nhanVienControl.GetSDT(), nhanVienControl.GetDiaChi(), nhanVienControl.GetChucVu(), nhanVienControl.GetLuong());
+                    MessageBox.Show("Đăng kí thành công.");
+                    LoadDanhSachNhanVien();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Tài khoản đã tồn tại.");
+                }              
+            }
         }
     }
 }

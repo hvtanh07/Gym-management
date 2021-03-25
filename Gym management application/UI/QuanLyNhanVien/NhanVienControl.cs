@@ -59,5 +59,47 @@ namespace Gym_management_appication.UI
             this.textBoxChucVu.Text = ChucVu.Trim();
             this.textBoxLuong.Text = Luong.ToString().Trim();
         }
+
+        public bool CheckData() {
+            if (textBoxID.Text.ToString() != "" && textBoxTen.Text.ToString() != ""&& (radioButtonNam.Checked|| radioButtonNu.Checked) && textBoxEmail.Text.ToString() != "" && textBoxSDT.Text.ToString() != "" && textBoxDiaChi.Text.ToString() != "" && textBoxChucVu.Text.ToString() != "" && textBoxLuong.Text.ToString() != "")
+                return true;
+            else
+                return false;
+        }
+
+        public int GetID() {
+            return Convert.ToInt32( textBoxID.Text.ToString().Trim());
+        }
+        public string GetTen()
+        {
+            return textBoxTen.Text.ToString().Trim();
+        }
+        public string GetGioiTinh()
+        {
+            if (radioButtonNam.Checked)
+                return "Nam";
+            else
+                return "Nu";
+        }
+
+        public string GetEmail()
+        {
+            return textBoxEmail.Text.ToString().Trim();
+        }
+        public string GetDiaChi() {
+            return textBoxDiaChi.Text.ToString();
+        }
+        public string GetSDT()
+        {
+            return textBoxSDT.Text.ToString().Trim();
+        }
+        public string GetChucVu()
+        {
+            return textBoxChucVu.Text.ToString().Trim();
+        }
+        public long GetLuong()
+        {
+            return Convert.ToInt64(textBoxLuong.Text.ToString().Trim());
+        }
     }
 }

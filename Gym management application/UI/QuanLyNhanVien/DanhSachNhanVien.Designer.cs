@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.dataGridViewNhanVien = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.panelNhanVien = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNhanVien)).BeginInit();
             this.panelNhanVien.SuspendLayout();
             this.SuspendLayout();
@@ -49,61 +49,66 @@
             this.dataGridViewNhanVien.TabIndex = 0;
             this.dataGridViewNhanVien.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewNhanVien_RowHeaderMouseDoubleClick);
             // 
-            // button1
+            // btnInsert
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1007, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 31);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "RESET";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.Location = new System.Drawing.Point(1007, 25);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(117, 31);
+            this.btnInsert.TabIndex = 1;
+            this.btnInsert.Text = "INSERT";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
             // panelNhanVien
             // 
-            this.panelNhanVien.Controls.Add(this.button4);
-            this.panelNhanVien.Controls.Add(this.button3);
-            this.panelNhanVien.Controls.Add(this.button2);
-            this.panelNhanVien.Controls.Add(this.button1);
+            this.panelNhanVien.Controls.Add(this.btnReset);
+            this.panelNhanVien.Controls.Add(this.btnDelete);
+            this.panelNhanVien.Controls.Add(this.btnUpdate);
+            this.panelNhanVien.Controls.Add(this.btnInsert);
             this.panelNhanVien.Location = new System.Drawing.Point(2, 2);
             this.panelNhanVien.Name = "panelNhanVien";
             this.panelNhanVien.Size = new System.Drawing.Size(1150, 244);
             this.panelNhanVien.TabIndex = 2;
             // 
-            // button4
+            // btnReset
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(1007, 168);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(117, 31);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "RESET";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(1007, 168);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(117, 31);
+            this.btnReset.TabIndex = 4;
+            this.btnReset.Text = "RESET";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(1007, 121);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 31);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "RESET";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(1007, 121);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(117, 31);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnUpdate
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1007, 73);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 31);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "RESET";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(1007, 73);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(117, 31);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // DanhSachNhanVien
             // 
@@ -123,10 +128,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewNhanVien;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Panel panelNhanVien;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
