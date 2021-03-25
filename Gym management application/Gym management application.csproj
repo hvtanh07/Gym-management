@@ -61,9 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\NhanVien.cs" />
+    <Compile Include="Class\QuanLyNhanVien\NhanVien.cs" />
     <Compile Include="Class\trangThietBi.cs" />
-    <Compile Include="DanhSachNhanVienModel.cs" />
+    <Compile Include="Database\QuanLyNhanVien\DanhSachNhanVienModel.cs" />
     <Compile Include="Database\conString\ConString.cs" />
     <Compile Include="Database\trangThietBi.cs" />
     <Compile Include="Form1.cs">
@@ -80,17 +80,17 @@
     <Compile Include="UI\ChiTietThietBi.Designer.cs">
       <DependentUpon>ChiTietThietBi.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\DanhSachNhanVien.cs">
+    <Compile Include="UI\QuanLyNhanVien\DanhSachNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\DanhSachNhanVien.Designer.cs">
+    <Compile Include="UI\QuanLyNhanVien\DanhSachNhanVien.Designer.cs">
       <DependentUpon>DanhSachNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\NhanVien.cs">
+    <Compile Include="UI\QuanLyNhanVien\NhanVienControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\NhanVien.Designer.cs">
-      <DependentUpon>NhanVien.cs</DependentUpon>
+    <Compile Include="UI\QuanLyNhanVien\NhanVienControl.Designer.cs">
+      <DependentUpon>NhanVienControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\QuanLyThietBi.cs">
       <SubType>Form</SubType>
@@ -110,11 +110,11 @@
     <EmbeddedResource Include="UI\ChiTietThietBi.resx">
       <DependentUpon>ChiTietThietBi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\DanhSachNhanVien.resx">
+    <EmbeddedResource Include="UI\QuanLyNhanVien\DanhSachNhanVien.resx">
       <DependentUpon>DanhSachNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\NhanVien.resx">
-      <DependentUpon>NhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="UI\QuanLyNhanVien\NhanVienControl.resx">
+      <DependentUpon>NhanVienControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QuanLyThietBi.resx">
       <DependentUpon>QuanLyThietBi.cs</DependentUpon>

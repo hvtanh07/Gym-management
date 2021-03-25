@@ -23,4 +23,4 @@ C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Deb
 C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\bin\Debug\Database.mdf
 C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\bin\Debug\Database_log.ldf
 C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.DanhSachNhanVien.resources
-C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.NhanVien.resources
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.NhanVienControl.resources
