@@ -72,13 +72,64 @@ namespace Gym_management_appication.UI
                 try
                 {
                     danhSachNhanVienModel.Insert(nhanVienControl.GetID().ToString(), nhanVienControl.GetTen(), nhanVienControl.GetGioiTinh(), nhanVienControl.GetEmail(), nhanVienControl.GetSDT(), nhanVienControl.GetDiaChi(), nhanVienControl.GetChucVu(), nhanVienControl.GetLuong());
-                    MessageBox.Show("Đăng kí thành công.");
+                    MessageBox.Show("Thêm mới thành công.");
                     LoadDanhSachNhanVien();
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Tài khoản đã tồn tại.");
                 }              
+            }
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            if (!nhanVienControl.CheckData())
+            {
+                MessageBox.Show("Chưa đủ thông tin!");
+                return;
+            }
+            DataTable dataTable = (new DanhSachNhanVienModel().GetDatabase("Select ID from dbo.[NHANVIEN] where ID='" + nhanVienControl.GetID().ToString() + "'"));
+            if (dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("ID chưa tồn tại!");
+            }
+            else if (dataTable.Rows.Count == 1) {
+                if (dataTable.Rows[0][0].ToString().Trim() != nhanVien.ID.ToString().Trim())
+                {
+                    MessageBox.Show("Không hợp lệ!");
+                    nhanVienControl.SetID(nhanVien.ID.ToString());
+                }
+                else {
+                    DanhSachNhanVienModel danhSachNhanVienModel = new DanhSachNhanVienModel();
+                    try
+                    {
+                        danhSachNhanVienModel.Update(nhanVienControl.GetID().ToString(), nhanVienControl.GetTen(), nhanVienControl.GetGioiTinh(), nhanVienControl.GetEmail(), nhanVienControl.GetSDT(), nhanVienControl.GetDiaChi(), nhanVienControl.GetChucVu(), nhanVienControl.GetLuong());
+                        MessageBox.Show("Cập nhật thành công.");
+                        LoadDanhSachNhanVien();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Lỗi! Cập nhật thất bại!");
+                    }
+                }
+            }
+            else
+            {
+               
+            }
+
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dlg = MessageBox.Show("Bạn muốn xóa nhân viên này ?", "Xóa nhân viên", MessageBoxButtons.YesNo);
+            if (dlg == DialogResult.Yes)
+            {
+                DanhSachNhanVienModel ds = new DanhSachNhanVienModel();
+                ds.Delete(nhanVien.ID.ToString());
+                MessageBox.Show("Xóa thành công.");
+                LoadDanhSachNhanVien();
             }
         }
     }

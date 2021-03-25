@@ -32,18 +32,19 @@ namespace Gym_management_appication
             Cnt.Close();
         }
 
-        public void Update(string Hoten, string GioiTinh, string Email, string SoDt, string ID, string Password, bool IsAdmin)
+        public void Update(string ID, string Ten, string GioiTinh, string Email, string SDT, string DiaChi, string ChucVu, long Luong)
         {
             Cnt.Open();
-            string sqlUpdate = "UPDATE dbo.[ID_PASSWORD] SET HoTen = @HoTen, Email = @Email, GioiTinh = @GioiTinh, SoDT = @SoDT, PASSWORD = @Password, IsAdmin = @IsAdmin WHERE ID =@ID";
+            string sqlUpdate = "UPDATE dbo.[NHANVIEN] SET ID=@ID, HoTen = @HoTen, GioiTinh = @GioiTinh, Email = @Email, SoDT = @SoDT, DiaChi = @DiaChi, ChucVu = @ChucVu, Luong = @Luong  WHERE ID =@ID";
             SqlCommand cmd = new SqlCommand(sqlUpdate, Cnt);
             cmd.Parameters.AddWithValue("@ID", ID);
-            cmd.Parameters.AddWithValue("@PASSWORD", Password);
-            cmd.Parameters.AddWithValue("@HoTen", Hoten);
+            cmd.Parameters.AddWithValue("@HoTen", Ten);
             cmd.Parameters.AddWithValue("@GioiTinh", GioiTinh);
             cmd.Parameters.AddWithValue("@Email", Email);
-            cmd.Parameters.AddWithValue("@SoDT", SoDt);
-            cmd.Parameters.AddWithValue("@IsAdmin", IsAdmin);
+            cmd.Parameters.AddWithValue("@SoDT", SDT);
+            cmd.Parameters.AddWithValue("@DiaChi", DiaChi);
+            cmd.Parameters.AddWithValue("@ChucVu", ChucVu);
+            cmd.Parameters.AddWithValue("@Luong", Luong);
             cmd.ExecuteNonQuery();
             Cnt.Close();
         }
@@ -51,7 +52,7 @@ namespace Gym_management_appication
         public void Delete(string ID)
         {
             Cnt.Open();
-            string sqlDelete = "DELETE FROM dbo.[ID_PASSWORD] WHERE ID = @ID;";
+            string sqlDelete = "DELETE FROM dbo.[NHANVIEN] WHERE ID = @ID;";
             SqlCommand cmd = new SqlCommand(sqlDelete, Cnt);
             cmd.Parameters.AddWithValue("@ID", ID);
             cmd.ExecuteNonQuery();
@@ -72,18 +73,6 @@ namespace Gym_management_appication
                 }
             Cnt.Close();
             return false;
-        }
-
-        public void InsertXoaNV(string maAdmin, string maNhanVien, string Ngay)
-        {
-            Cnt.Open();
-            string sqlInsert = "INSERT INTO dbo.[Xoa_NV](MaAdmin, MaNhanVienDaXoa, Ngay) VALUES (@MaAdmin, @MaNhanVienDaXoa,@Ngay)";
-            SqlCommand cmd = new SqlCommand(sqlInsert, Cnt);
-            cmd.Parameters.AddWithValue("@MaAdmin", maAdmin);
-            cmd.Parameters.AddWithValue("@MaNhanVienDaXoa", maNhanVien);
-            cmd.Parameters.AddWithValue("@Ngay", Ngay);
-            cmd.ExecuteNonQuery();
-            Cnt.Close();
         }
 
         public System.Data.DataTable GetDatabase(string Sql)

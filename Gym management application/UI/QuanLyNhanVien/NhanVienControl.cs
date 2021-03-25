@@ -101,5 +101,9 @@ namespace Gym_management_appication.UI
         {
             return Convert.ToInt64(textBoxLuong.Text.ToString().Trim());
         }
+
+        public void SetID(string ID) {
+            this.textBoxID.Text = ID;
+        }
     }
 }
