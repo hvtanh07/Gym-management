@@ -24,7 +24,7 @@ namespace Gym_management_appication.UI
 
         void LoadDanhSachNhanVien() {
             DataTable dataTable = new DataTable();
-            dataTable = (new DanhSachNhanVienModel().GetDatabase("Select * from dbo.[NHANVIEN]"));
+            dataTable = new Database.QuanLyNhanVien.DSNVModel().GetData("Select * from NHANVIEN");
             this.dataGridViewNhanVien.DataSource = dataTable;
 
         }
@@ -61,14 +61,14 @@ namespace Gym_management_appication.UI
                 MessageBox.Show("Chưa đủ thông tin!");
                 return;
             }
-            DataTable dataTable = (new DanhSachNhanVienModel().GetDatabase("Select ID from dbo.[NHANVIEN] where ID='" + nhanVienControl.GetID().ToString() + "'"));
+            DataTable dataTable = (new Database.QuanLyNhanVien.DSNVModel().GetData("Select ID from NHANVIEN where ID='" + nhanVienControl.GetID().ToString() + "'"));
             if (dataTable.Rows.Count == 1)
             {
                 MessageBox.Show("ID đã tồn tại!");
             }
             else
             {
-                DanhSachNhanVienModel danhSachNhanVienModel = new DanhSachNhanVienModel();
+                Database.QuanLyNhanVien.DSNVModel danhSachNhanVienModel = new Database.QuanLyNhanVien.DSNVModel();
                 try
                 {
                     danhSachNhanVienModel.Insert(nhanVienControl.GetID().ToString(), nhanVienControl.GetTen(), nhanVienControl.GetGioiTinh(), nhanVienControl.GetEmail(), nhanVienControl.GetSDT(), nhanVienControl.GetDiaChi(), nhanVienControl.GetChucVu(), nhanVienControl.GetLuong());
@@ -89,7 +89,7 @@ namespace Gym_management_appication.UI
                 MessageBox.Show("Chưa đủ thông tin!");
                 return;
             }
-            DataTable dataTable = (new DanhSachNhanVienModel().GetDatabase("Select ID from dbo.[NHANVIEN] where ID='" + nhanVienControl.GetID().ToString() + "'"));
+            DataTable dataTable = (new Database.QuanLyNhanVien.DSNVModel().GetData("Select ID from NHANVIEN where ID='" + nhanVienControl.GetID().ToString() + "'"));
             if (dataTable.Rows.Count == 0)
             {
                 MessageBox.Show("ID chưa tồn tại!");
@@ -101,7 +101,7 @@ namespace Gym_management_appication.UI
                     nhanVienControl.SetID(nhanVien.ID.ToString());
                 }
                 else {
-                    DanhSachNhanVienModel danhSachNhanVienModel = new DanhSachNhanVienModel();
+                    Database.QuanLyNhanVien.DSNVModel danhSachNhanVienModel = new Database.QuanLyNhanVien.DSNVModel();
                     try
                     {
                         danhSachNhanVienModel.Update(nhanVienControl.GetID().ToString(), nhanVienControl.GetTen(), nhanVienControl.GetGioiTinh(), nhanVienControl.GetEmail(), nhanVienControl.GetSDT(), nhanVienControl.GetDiaChi(), nhanVienControl.GetChucVu(), nhanVienControl.GetLuong());
@@ -126,7 +126,7 @@ namespace Gym_management_appication.UI
             DialogResult dlg = MessageBox.Show("Bạn muốn xóa nhân viên này ?", "Xóa nhân viên", MessageBoxButtons.YesNo);
             if (dlg == DialogResult.Yes)
             {
-                DanhSachNhanVienModel ds = new DanhSachNhanVienModel();
+                Database.QuanLyNhanVien.DSNVModel ds = new Database.QuanLyNhanVien.DSNVModel();
                 ds.Delete(nhanVien.ID.ToString());
                 MessageBox.Show("Xóa thành công.");
                 LoadDanhSachNhanVien();
