@@ -39,8 +39,8 @@ namespace Gym_management_appication.Database
         }
         public void insertData(Class.trangThietBi data)
         {
-            sqlQuery = "insert into TrangThietBi (ten, ma, tinhTrang, ngayMua, giaThanh, baoHanh, ngayHetHanBaoHanh, hangSanXuat) values (N'" +
-                data.ten+"','" + data.ma + "',N'"+data.tinhTrang+ "','"+
+            sqlQuery = "insert into TrangThietBi (ten, ma, soLuong, tinhTrang, ngayMua, giaThanh, baoHanh, ngayHetHanBaoHanh, hangSanXuat) values (N'" +
+                data.ten+"','" + data.ma + "',"+data.soLuong+",N'"+data.tinhTrang+ "','"+
                 data.ngayMua+"',"+ data.giaThanh + ","+ data.baoHanh + ",'"+ data.ngayHetHanBaoHanh + "',N'"+ data.hangSanXuat + "') ";
             conString.ConString constring = new conString.ConString();    
             try
@@ -62,7 +62,7 @@ namespace Gym_management_appication.Database
         }
         public void updateData(Class.trangThietBi data)
         {
-            sqlQuery = "update TrangThietBi set ten = N'" + data.ten+ "', tinhTrang = N'" +
+            sqlQuery = "update TrangThietBi set ten = N'"+data.ten+ "', soLuong=" + data.soLuong + ", tinhTrang = N'" +
                 data.tinhTrang + "', ngayMua= '" + data.ngayMua + "', giaThanh=" + data.giaThanh + ", baoHanh=" + data.baoHanh +
                 ", ngayHetHanBaoHanh= '" + data.ngayHetHanBaoHanh + "', hangSanXuat= '" + data.hangSanXuat + "' where ma ='" + data.ma + "'";
             conString.ConString constring = new conString.ConString();                
@@ -110,6 +110,7 @@ namespace Gym_management_appication.Database
             sqlQuery = " select * from [TrangThietBi]";
             sqlQuery += " WHERE ([ten] LIKE CONCAT('%',@sKeyword,'%'))";
             sqlQuery += " OR ([ma] LIKE CONCAT('%',@sKeyword,'%'))";
+            sqlQuery += " OR ([soLuong] LIKE CONCAT('%',@sKeyword,'%'))";
             sqlQuery += " OR ([tinhTrang] LIKE CONCAT('%',@sKeyword,'%'))";
             sqlQuery += " OR ([ngayMua] LIKE CONCAT('%',@sKeyword,'%'))";
             sqlQuery += " OR ([giaThanh] LIKE CONCAT('%',@sKeyword,'%'))";

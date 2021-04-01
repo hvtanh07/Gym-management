@@ -20,6 +20,7 @@ namespace Gym_management_appication.UI
             InitializeComponent();
             txt_Ten.Text = trangThietBi.ten;
             txt_Ma.Text = trangThietBi.ma;
+            UD_soLuong.Value = trangThietBi.soLuong;
             cb_tinhTrang.Text = trangThietBi.tinhTrang;
             dT_ngayMua.Value = trangThietBi.ngayMua;
             UD_giaThanh.Value = trangThietBi.giaThanh;
@@ -52,6 +53,7 @@ namespace Gym_management_appication.UI
             trangThietBi trangThietBi = new trangThietBi();
             trangThietBi.ten = txt_Ten.Text;
             trangThietBi.ma = txt_Ma.Text;
+            trangThietBi.soLuong = (int)UD_soLuong.Value;
             trangThietBi.tinhTrang = cb_tinhTrang.Text;
             trangThietBi.ngayMua = dT_ngayMua.Value;
             trangThietBi.giaThanh = (int)UD_giaThanh.Value;

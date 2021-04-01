@@ -10,6 +10,7 @@ namespace Gym_management_appication.Class
     {
         public string ten { get; set; }
         public string ma { get; set; }
+        public int soLuong { get; set; }
         public string tinhTrang { get; set; }
         public DateTime ngayMua { get; set; }
         public int giaThanh { get; set; }
