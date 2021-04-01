@@ -20,10 +20,15 @@ namespace Gym_management_appication.UI
             InitializeComponent();
             txt_Ten.Text = trangThietBi.ten;
             txt_Ma.Text = trangThietBi.ma;
-            UD_soLuong.Text = trangThietBi.soLuong.ToString();
             cb_tinhTrang.Text = trangThietBi.tinhTrang;
-            txt_Ma.ReadOnly = true;
+            dT_ngayMua.Value = trangThietBi.ngayMua;
+            UD_giaThanh.Value = trangThietBi.giaThanh;
+            UD_baoHanh.Value = trangThietBi.baoHanh;
+            dT_ngayHetHan.Value = trangThietBi.ngayHetHanBaoHanh;
+            txt_hangSX.Text = trangThietBi.hangSanXuat;
+            txt_Ma.ReadOnly = true;             
             btn_Sua.Text = "Sửa";
+
         }
         public ChiTietThietBi()
         {
@@ -47,17 +52,24 @@ namespace Gym_management_appication.UI
             trangThietBi trangThietBi = new trangThietBi();
             trangThietBi.ten = txt_Ten.Text;
             trangThietBi.ma = txt_Ma.Text;
-            trangThietBi.soLuong = int.Parse(UD_soLuong.Text);
             trangThietBi.tinhTrang = cb_tinhTrang.Text;
+            trangThietBi.ngayMua = dT_ngayMua.Value;
+            trangThietBi.giaThanh = (int)UD_giaThanh.Value;
+            trangThietBi.baoHanh = (int)UD_baoHanh.Value;
+            trangThietBi.ngayHetHanBaoHanh = dT_ngayHetHan.Value;
+            trangThietBi.hangSanXuat = txt_hangSX.Text;
             Database.trangThietBi data = new Database.trangThietBi();
-            if ("Sửa" == btn_Sua.Text)
+            if ("Thêm" == btn_Sua.Text)
             {
                 data.insertData(trangThietBi);
+                MessageBox.Show("Thiết bị đã đươc thêm!", "Success");
             }
-            else if ("Thêm" == btn_Sua.Text)
+            else if ("Sửa" == btn_Sua.Text)
             {
                 data.updateData(trangThietBi);
-            }    
+                MessageBox.Show("Thiết bị đã đươc chỉnh sửa!", "Success");
+            }
+            this.Close();
         }
         private bool checknull()
         {
@@ -78,8 +90,18 @@ namespace Gym_management_appication.UI
                 MessageBox.Show("Bạn chưa chọn tình trạng của thiết bị!", "Warning!");
                 cb_tinhTrang.Select();
                 return false;
-            }
+            }            
             return true;
+        }
+
+        private void dT_ngayMua_ValueChanged(object sender, EventArgs e)
+        {
+            dT_ngayHetHan.Value = dT_ngayMua.Value.AddMonths((int)UD_baoHanh.Value);
+        }
+
+        private void UD_baoHanh_ValueChanged(object sender, EventArgs e)
+        {
+            dT_ngayHetHan.Value = dT_ngayMua.Value.AddMonths((int)UD_baoHanh.Value);
         }
     }
 }
