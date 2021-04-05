@@ -17,7 +17,7 @@ namespace Gym_management_appication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLyThietBi());
+            Application.Run(new DanhSachNhanVien());
         }
     }
 }

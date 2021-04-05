@@ -9,3 +9,18 @@ C:\Github\Gym-management\Gym management application\obj\Debug\Gym management app
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym management appication.exe
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym management appication.pdb
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym management application.csprojAssemblyReference.cache
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\bin\Debug\Gym management appication.exe.config
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\bin\Debug\Gym management appication.exe
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\bin\Debug\Gym management appication.pdb
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym management application.csprojAssemblyReference.cache
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.Properties.Resources.resources
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.ChiTietThietBi.resources
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyThietBi.resources
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym management application.csproj.GenerateResource.cache
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym management application.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym management appication.exe
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym management appication.pdb
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.DanhSachNhanVien.resources
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.NhanVienControl.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.DanhSachNhanVien.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.NhanVienControl.resources
