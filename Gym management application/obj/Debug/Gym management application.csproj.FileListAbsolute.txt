@@ -24,3 +24,4 @@ C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Deb
 C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.NhanVienControl.resources
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.DanhSachNhanVien.resources
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.NhanVienControl.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.ThongKeHoiVien.thongKeHoiVien.resources
