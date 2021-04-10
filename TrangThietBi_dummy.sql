@@ -13,7 +13,24 @@ create table TrangThietBi (
 	hangSanXuat nvarchar(50)
 )
 
+create table DanhSachHoiVien (
+	ma char(10),
+	ten nvarchar(50),
+	ngayThamGia date,
+)
 
+insert into DanhSachHoiVien (ma, ten, ngayThamGia) 
+values (1,N'Trương Nguyễn Tuấn Nam','12/02/2021')
+insert into DanhSachHoiVien (ma, ten, ngayThamGia) 
+values (2,N'Nguyễn Tuấn Nam','12/03/2021')
+insert into DanhSachHoiVien (ma, ten, ngayThamGia) 
+values (3,N'Trương Nam','12/04/2021')
+insert into DanhSachHoiVien (ma, ten, ngayThamGia) 
+values (4,N'Nguyễn Tuấn','12/05/2021')
+insert into DanhSachHoiVien (ma, ten, ngayThamGia) 
+values (5,N'TrươngTuấn','12/06/2021')
+insert into DanhSachHoiVien (ma, ten, ngayThamGia) 
+values (6,N'Trương Hồ','13/06/2021')
 
 --dummy Data--
 SET DATEFORMAT dmy;  
@@ -37,19 +54,12 @@ values (N'Máy tập đùi ngoài','Ma-004',N'Trong kho','27/05/2020',10000,12,'
 
 drop table TrangThietBi
 
-CREATE TABLE NHANVIEN (
-    ID       NCHAR (32) NOT NULL,
-    HoTen    NCHAR (32) NOT NULL,
-    GioiTinh NCHAR (10) NOT NULL,
-    Email    NCHAR (32) NOT NULL,
-    SoDT    BIGINT     NOT NULL,
-    DiaChi   NCHAR (50) NOT NULL,
-    ChucVu   NCHAR (10) NOT NULL,
-    Luong    MONEY      NOT NULL,
-    PRIMARY KEY CLUSTERED ([ID] ASC)
-);
+drop procedure GetTotalMembers
 
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'1', N'Phan Duy Đức', N'Nam', N'ducduypm0120@gmai.com', 376771465, N'KTX khu A', N'Admin', CAST(10000000.0000 AS Money))
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'2', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'3', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
-
+create procedure GetTotalMembers
+as
+	select month (ngayThamGia) as Month, count (ma) as Total
+	from DanhSachHoiVien
+	where ngayThamGia is not null
+	group by month (ngayThamGia)
+	order by month (ngayThamGia) asc

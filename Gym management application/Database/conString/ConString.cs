@@ -12,7 +12,7 @@ namespace Gym_management_appication.Database.conString
         string Catalog;
         string userName;//optional
         string password;//optional
-        public ConString(string database = "DESKTOP-KPFBBSK", string Catalog = "GymManagement", string userName = "None", string password = "None")
+        public ConString(string database = "TRUONGNAM\\SQLEXPRESS", string Catalog = "GymManagement", string userName = "None", string password = "None")
         {
             this.database = database;
             this.Catalog = Catalog;
@@ -24,10 +24,11 @@ namespace Gym_management_appication.Database.conString
             string conString;
             if (this.userName == "None" && this.userName == "None")
                 //Data Source=DESKTOP-KPFBBSK;Initial Catalog=GymManagement;Integrated Security=True
-                conString = @"Data Source="+ database + ";Initial Catalog="+ Catalog + ";Integrated Security=True";
+                conString = @"Data Source=" + database + ";Initial Catalog=" + Catalog + ";Integrated Security=True";
             else
-                conString = @"Data Source=" + database + ";Initial Catalog=" + Catalog + ";User ID="+ userName + ";Password="+ password;
+                conString = @"Data Source=" + database + ";Initial Catalog=" + Catalog + ";User ID=" + userName + ";Password=" + password;
             return conString;
         }
+
     }
 }
