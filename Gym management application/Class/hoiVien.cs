@@ -8,8 +8,12 @@ namespace Gym_management_appication.Class
 {
     public class hoiVien
     {
-        public string ten { get; set; }
         public string ma { get; set; }
+        public string ten { get; set; }
+        public int tuoi { get; set; }
+        public string gioiTinh {get;set;}
+        public string sdt { get; set; }
         public DateTime ngayThamGia { get; set; }
+
     }
 }
