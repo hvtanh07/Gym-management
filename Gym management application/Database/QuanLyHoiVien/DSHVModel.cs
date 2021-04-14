@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Gym_management_appication.Class;
 
 namespace Gym_management_appication.Database.QuanLyHoiVien
 {
@@ -36,10 +37,10 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
             }
             return result;
         }
-        public void Insert(string ID, string Ten, string GioiTinh, string Email, string SDT, string DiaChi, string ChucVu, long Luong)
+        public void Insert(Class.hoiVien hoiVien)
         {
-            sqlQuery = "insert into NHANVIEN (ID,HoTen, GioiTinh, Email, SoDT, DiaChi,ChucVu,Luong) values (N'" + ID + "',N'" +
-                Ten + "',N'" + GioiTinh + "',N'" + Email + "'," + SDT + ",N'" + DiaChi + "',N'" + ChucVu + "',CAST(" + Luong + "AS Money))";
+            sqlQuery = "insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) values ('"+hoiVien.ma + "',N'" +
+                hoiVien.ten+"','" + hoiVien.tuoi.ToString() + "',N'" + hoiVien.gioiTinh+ "','" + hoiVien.sdt  + "','" + hoiVien.ngayThamGia.ToString("MM/dd/yyyy") + "','" + hoiVien.ngayTKetThuc.ToString("MM/dd/yyyy") + "')";
             conString.ConString constring = new conString.ConString();
             try
             {

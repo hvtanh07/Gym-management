@@ -14,6 +14,7 @@ namespace Gym_management_appication.Class
         public string gioiTinh {get;set;}
         public string sdt { get; set; }
         public DateTime ngayThamGia { get; set; }
+        public DateTime ngayTKetThuc { get; set; }
 
     }
 }

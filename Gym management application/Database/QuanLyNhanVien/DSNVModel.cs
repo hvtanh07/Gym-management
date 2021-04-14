@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Gym_management_appication.Database.QuanLyNhanVien
 {
@@ -55,7 +56,7 @@ namespace Gym_management_appication.Database.QuanLyNhanVien
             }
             catch (SqlException ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
         public void Update(string ID, string Ten, string GioiTinh, string Email, string SDT, string DiaChi, string ChucVu, long Luong)

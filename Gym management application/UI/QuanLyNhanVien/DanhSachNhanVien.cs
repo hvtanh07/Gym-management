@@ -77,7 +77,7 @@ namespace Gym_management_appication.UI
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Tài khoản đã tồn tại.");
+                    MessageBox.Show("Có lỗi xảy ra. Vui lòng thử lại.");
                 }              
             }
         }

@@ -31,6 +31,10 @@
             this.dataGridViewHoiVien = new System.Windows.Forms.DataGridView();
             this.btnInsert = new System.Windows.Forms.Button();
             this.panelNhanVien = new System.Windows.Forms.Panel();
+            this.dateTimePickerNgayThamGia = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxSDT = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBoxTuoi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.radioButtonNam = new System.Windows.Forms.RadioButton();
@@ -43,10 +47,9 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.textBoxSDT = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePickerNgayThamGia = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePickerNgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHoiVien)).BeginInit();
             this.panelNhanVien.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +84,7 @@
             this.btnInsert.TabIndex = 1;
             this.btnInsert.Text = "INSERT";
             this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
             // panelNhanVien
             // 
@@ -88,6 +92,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(219)))));
+            this.panelNhanVien.Controls.Add(this.label8);
+            this.panelNhanVien.Controls.Add(this.dateTimePickerNgayKetThuc);
+            this.panelNhanVien.Controls.Add(this.label7);
             this.panelNhanVien.Controls.Add(this.dateTimePickerNgayThamGia);
             this.panelNhanVien.Controls.Add(this.label6);
             this.panelNhanVien.Controls.Add(this.textBoxSDT);
@@ -109,6 +116,40 @@
             this.panelNhanVien.Name = "panelNhanVien";
             this.panelNhanVien.Size = new System.Drawing.Size(1149, 244);
             this.panelNhanVien.TabIndex = 4;
+            // 
+            // dateTimePickerNgayThamGia
+            // 
+            this.dateTimePickerNgayThamGia.Location = new System.Drawing.Point(682, 62);
+            this.dateTimePickerNgayThamGia.Name = "dateTimePickerNgayThamGia";
+            this.dateTimePickerNgayThamGia.Size = new System.Drawing.Size(330, 22);
+            this.dateTimePickerNgayThamGia.TabIndex = 34;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(564, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 17);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Ngày tham gia";
+            // 
+            // textBoxSDT
+            // 
+            this.textBoxSDT.Location = new System.Drawing.Point(682, 21);
+            this.textBoxSDT.Name = "textBoxSDT";
+            this.textBoxSDT.Size = new System.Drawing.Size(330, 22);
+            this.textBoxSDT.TabIndex = 32;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(564, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 17);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Số điện thoại";
             // 
             // textBoxTuoi
             // 
@@ -137,6 +178,7 @@
             this.radioButtonNam.TabStop = true;
             this.radioButtonNam.Text = "Nam";
             this.radioButtonNam.UseVisualStyleBackColor = true;
+            this.radioButtonNam.CheckedChanged += new System.EventHandler(this.RadioButtonNam_CheckedChanged);
             // 
             // radioButtonNu
             // 
@@ -148,6 +190,7 @@
             this.radioButtonNu.TabStop = true;
             this.radioButtonNu.Text = "Nữ";
             this.radioButtonNu.UseVisualStyleBackColor = true;
+            this.radioButtonNu.CheckedChanged += new System.EventHandler(this.RadioButtonNu_CheckedChanged);
             // 
             // textBoxTen
             // 
@@ -205,6 +248,7 @@
             this.btnReset.TabIndex = 4;
             this.btnReset.Text = "RESET";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // btnDelete
             // 
@@ -232,39 +276,31 @@
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // textBoxSDT
+            // label7
             // 
-            this.textBoxSDT.Location = new System.Drawing.Point(682, 21);
-            this.textBoxSDT.Name = "textBoxSDT";
-            this.textBoxSDT.Size = new System.Drawing.Size(330, 22);
-            this.textBoxSDT.TabIndex = 32;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(564, 100);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 17);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Ngày kết thúc";
             // 
-            // label4
+            // dateTimePickerNgayKetThuc
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(564, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 17);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Số điện thoại";
+            this.dateTimePickerNgayKetThuc.Location = new System.Drawing.Point(682, 98);
+            this.dateTimePickerNgayKetThuc.Name = "dateTimePickerNgayKetThuc";
+            this.dateTimePickerNgayKetThuc.Size = new System.Drawing.Size(330, 22);
+            this.dateTimePickerNgayKetThuc.TabIndex = 36;
             // 
-            // label6
+            // label8
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(564, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 17);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Ngày tham gia";
-            // 
-            // dateTimePickerNgayThamGia
-            // 
-            this.dateTimePickerNgayThamGia.Location = new System.Drawing.Point(682, 62);
-            this.dateTimePickerNgayThamGia.Name = "dateTimePickerNgayThamGia";
-            this.dateTimePickerNgayThamGia.Size = new System.Drawing.Size(330, 22);
-            this.dateTimePickerNgayThamGia.TabIndex = 34;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(890, 168);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 17);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "label8";
             // 
             // DanhSachHoiVien
             // 
@@ -303,5 +339,8 @@
         private System.Windows.Forms.TextBox textBoxSDT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgayThamGia;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNgayKetThuc;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }
