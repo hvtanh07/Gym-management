@@ -5,11 +5,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using Gym_management_appication.Class;
 
-namespace Gym_management_appication.Database.QuanLyNhanVien
+namespace Gym_management_appication.Database.QuanLyHoiVien
 {
-    class DSNVModel
+    class DSHVModel
     {
         private string sqlQuery;
         private DataTable result = new DataTable();
@@ -37,10 +37,10 @@ namespace Gym_management_appication.Database.QuanLyNhanVien
             }
             return result;
         }
-        public void Insert(string ID, string Ten, string GioiTinh, string Email, string SDT, string DiaChi, string ChucVu, long Luong)
+        public void Insert(Class.hoiVien hoiVien)
         {
-            sqlQuery = "insert into NHANVIEN (ID,HoTen, GioiTinh, Email, SoDT, DiaChi,ChucVu,Luong) values (N'" + ID + "',N'" +
-                Ten + "',N'" + GioiTinh + "',N'" + Email + "'," + SDT + ",N'" + DiaChi + "',N'" + ChucVu + "',CAST(" + Luong + "AS Money))";
+            sqlQuery = "insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) values ('"+hoiVien.ma + "',N'" +
+                hoiVien.ten+"','" + hoiVien.tuoi.ToString() + "',N'" + hoiVien.gioiTinh+ "','" + hoiVien.sdt  + "','" + hoiVien.ngayThamGia.ToString("MM/dd/yyyy") + "','" + hoiVien.ngayTKetThuc.ToString("MM/dd/yyyy") + "')";
             conString.ConString constring = new conString.ConString();
             try
             {
@@ -56,19 +56,13 @@ namespace Gym_management_appication.Database.QuanLyNhanVien
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+
             }
         }
-        public void Update(string ID, string Ten, string GioiTinh, string Email, string SDT, string DiaChi, string ChucVu, long Luong)
+        public void Update(Class.hoiVien hoiVien)
         {
-            sqlQuery = "update NHANVIEN set ID = N'" + ID + "', HoTen = N'" + Ten + "', GioiTinh = N'" +
-                GioiTinh + "', Email= N'" + Email + "', SoDT =" + SDT + ", DiaChi = N'" + DiaChi + "', ChucVu=N'" + ChucVu + "', " +
-                "Luong = CAST(" + Luong + "AS Money)" + "where ID ='" + ID + "'";
-            string str = "update NHANVIEN set ID = N'" + ID + "', HoTen = N'" + Ten + "', GioiTinh = N'" +
-                GioiTinh + "', Email= N'" + Email + "', SoDT =" + SDT + ", DiaChi = N'" + DiaChi + "', ChucVu=N'" + ChucVu + "', " +
-                "Luong = CAST(" + Luong + "AS Money)" + "where ID ='" + ID + "'";
-
-
+            sqlQuery = "update DanhSachHoiVien set ma = N'" + hoiVien.ma.Trim() + "', ten = N'" + hoiVien.ten + "', tuoi = '" +
+                hoiVien.tuoi + "', gioiTinh= N'" + hoiVien.gioiTinh + "', soDT =" + hoiVien.sdt + ", ngayThamGia = '" + hoiVien.ngayThamGia.ToString("MM/dd/yyyy") + "', ngayKetThuc= '"+ hoiVien.ngayTKetThuc.ToString("MM/dd/yyyy")+"' where ma=N'"+hoiVien.ma.Trim()+"'";
             conString.ConString constring = new conString.ConString();
             try
             {
@@ -90,7 +84,7 @@ namespace Gym_management_appication.Database.QuanLyNhanVien
         }
         public void Delete(string ID)
         {
-            sqlQuery = "delete from NHANVIEN where ID ='" + ID + "'";
+            sqlQuery = "delete from DanhSachHoiVien where ma ='" + ID + "'";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of       
             try
             {
@@ -109,36 +103,5 @@ namespace Gym_management_appication.Database.QuanLyNhanVien
 
             }
         }
-        //public DataTable searchData(string keyword)
-        //{
-        //    sqlQuery = " select * from [TrangThietBi]";
-        //    sqlQuery += " WHERE ([ten] LIKE CONCAT('%',@sKeyword,'%'))";
-        //    sqlQuery += " OR ([ma] LIKE CONCAT('%',@sKeyword,'%'))";
-        //    sqlQuery += " OR ([soLuong] LIKE CONCAT('%',@sKeyword,'%'))";
-        //    sqlQuery += " OR ([tinhTrang] LIKE CONCAT('%',@sKeyword,'%'))";
-
-        //    conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
-        //    try
-        //    {
-        //        using (var con = new SqlConnection(constring.initString()))
-        //        {
-        //            using (var cmd = new SqlCommand(sqlQuery, con))
-        //            {
-        //                cmd.Parameters.AddWithValue("@sKeyword", keyword);
-        //                con.Open();
-        //                SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //                // this will query your database and return the result to your datatable
-        //                da.Fill(result);
-        //                con.Close();
-
-        //            }
-        //        }
-        //    }
-        //    catch (SqlException ex)
-        //    {
-
-        //    }
-        //    return result;
-        //}
     }
 }

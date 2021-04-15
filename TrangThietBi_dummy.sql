@@ -26,14 +26,23 @@ CREATE TABLE NHANVIEN (
 create table DanhSachHoiVien (
 	ma char(10),
 	ten nvarchar(50),
+	tuoi INT, 
+	gioiTinh	NCHAR (10),
+	soDT BIGINT,
 	ngayThamGia date,
-	ngayKetThuc date
-)
+	ngayKetThuc date,
+);
+
+drop table DanhSachHoiVien
+
+
+
 CREATE TABLE monthBucket(
 bucketName nvarchar(10),
 bucketFirstDay date,
 bucketLastDay date 
 );
+
 
 ;WITH
   Pass0 as (select 1 as C union all select 1), --2 rows
@@ -85,16 +94,28 @@ INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) V
 
 --drop table DanhSachHoiVien
 
-insert into DanhSachHoiVien (ma, ten, ngayThamGia, ngayKetThuc) 
-values (1,N'Trương Nguyễn Tuấn Nam','12/02/2021','12/08/2021')
-insert into DanhSachHoiVien (ma, ten, ngayThamGia, ngayKetThuc) 
-values (2,N'Nguyễn Tuấn Nam','12/03/2021','12/09/2021')
-insert into DanhSachHoiVien (ma, ten, ngayThamGia, ngayKetThuc) 
-values (3,N'Trương Nam','12/04/2021','12/10/2021')
-insert into DanhSachHoiVien (ma, ten, ngayThamGia, ngayKetThuc) 
-values (4,N'Nguyễn Tuấn','12/05/2021','12/11/2021')
-insert into DanhSachHoiVien (ma, ten, ngayThamGia, ngayKetThuc) 
-values (5,N'TrươngTuấn','12/06/2021','12/12/2021')
-insert into DanhSachHoiVien (ma, ten, ngayThamGia, ngayKetThuc) 
-values (6,N'Trương Hồ','13/06/2021','12/12/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+values (1,N'Trương Nguyễn Tuấn Nam',22,N'Nam',0123456789,'12/02/2021','12/08/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+values (2,N'Phan Duy',21,N'Nam',0123456789,'12/02/2021','12/08/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+values (3,N'Vinh',20,N'Nam',0123456789,'12/02/2021','12/08/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+values (4,N'Vinh',20,N'Nam',0123456789,'12/02/2021','12/08/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+values (5,N'Vinh',20,N'Nam',0123456789,'12/02/2021','12/08/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+values (6,N'Vinh',20,N'Nam',0123456789,'12/02/2021','12/08/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+values (7,N'Vinh',20,N'Nam',0123456789,'12/02/2021','12/08/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+values (8,N'Phan Duy',21,N'Nam',0123456789,'12/02/2021','12/08/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+values (9,N'Vinh',20,N'Nam',0123456789,'12/02/2021','12/08/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+values (10,N'Tuan Anh',22,N'Nu',0123456789,'12/02/2021','12/09/2022')
 
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+values (11,N'Trương Nguyễn Tuấn Nam',22,N'Nam',0123456789,'12/02/2021','12/08/2021')
+
+DELETE FROM DanhSachHoiVien
