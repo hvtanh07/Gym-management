@@ -26,7 +26,7 @@ namespace Gym_management_appication.UI
             DataTable dataTable = new DataTable();
             dataTable = new Database.QuanLyNhanVien.DSNVModel().GetData("Select * from NHANVIEN");
             this.dataGridViewNhanVien.DataSource = dataTable;
-
+            dataGridViewNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         void LoadNhanVienControl() {
@@ -131,6 +131,18 @@ namespace Gym_management_appication.UI
                 MessageBox.Show("Xóa thành công.");
                 LoadDanhSachNhanVien();
             }
+        }
+        private void DataGridViewNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            nhanVien.ID = Convert.ToInt32(dataGridViewNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString());
+            nhanVien.HoTen = dataGridViewNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();
+            nhanVien.GioiTinh = dataGridViewNhanVien.Rows[e.RowIndex].Cells[3].Value.ToString();
+            nhanVien.Email = dataGridViewNhanVien.Rows[e.RowIndex].Cells[4].Value.ToString();
+            nhanVien.SoDT = Convert.ToInt64(dataGridViewNhanVien.Rows[e.RowIndex].Cells[5].Value.ToString());
+            nhanVien.DiaChi = dataGridViewNhanVien.Rows[e.RowIndex].Cells[6].Value.ToString();
+            nhanVien.ChucVu = dataGridViewNhanVien.Rows[e.RowIndex].Cells[7].Value.ToString();
+            nhanVien.Luong = Convert.ToInt64(dataGridViewNhanVien.Rows[e.RowIndex].Cells[8].Value);
+            this.nhanVienControl.SetControlsData(nhanVien.ID.ToString(), nhanVien.HoTen, nhanVien.GioiTinh, nhanVien.Email, nhanVien.SoDT.ToString(), nhanVien.DiaChi, nhanVien.ChucVu, nhanVien.Luong);
         }
     }
 }

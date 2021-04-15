@@ -59,16 +59,10 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
 
             }
         }
-        public void Update(string ID, string Ten, string GioiTinh, string Email, string SDT, string DiaChi, string ChucVu, long Luong)
+        public void Update(Class.hoiVien hoiVien)
         {
-            sqlQuery = "update NHANVIEN set ID = N'" + ID + "', HoTen = N'" + Ten + "', GioiTinh = N'" +
-                GioiTinh + "', Email= N'" + Email + "', SoDT =" + SDT + ", DiaChi = N'" + DiaChi + "', ChucVu=N'" + ChucVu + "', " +
-                "Luong = CAST(" + Luong + "AS Money)" + "where ID ='" + ID + "'";
-            string str = "update NHANVIEN set ID = N'" + ID + "', HoTen = N'" + Ten + "', GioiTinh = N'" +
-                GioiTinh + "', Email= N'" + Email + "', SoDT =" + SDT + ", DiaChi = N'" + DiaChi + "', ChucVu=N'" + ChucVu + "', " +
-                "Luong = CAST(" + Luong + "AS Money)" + "where ID ='" + ID + "'";
-
-
+            sqlQuery = "update DanhSachHoiVien set ma = N'" + hoiVien.ma.Trim() + "', ten = N'" + hoiVien.ten + "', tuoi = '" +
+                hoiVien.tuoi + "', gioiTinh= N'" + hoiVien.gioiTinh + "', soDT =" + hoiVien.sdt + ", ngayThamGia = '" + hoiVien.ngayThamGia.ToString("MM/dd/yyyy") + "', ngayKetThuc= '"+ hoiVien.ngayTKetThuc.ToString("MM/dd/yyyy")+"' where ma=N'"+hoiVien.ma.Trim()+"'";
             conString.ConString constring = new conString.ConString();
             try
             {
@@ -90,7 +84,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         }
         public void Delete(string ID)
         {
-            sqlQuery = "delete from NHANVIEN where ID ='" + ID + "'";
+            sqlQuery = "delete from DanhSachHoiVien where ma ='" + ID + "'";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of       
             try
             {

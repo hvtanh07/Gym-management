@@ -109,36 +109,36 @@ namespace Gym_management_appication.Database.QuanLyNhanVien
 
             }
         }
-        public DataTable searchData(string keyword)
-        {
-            sqlQuery = " select * from [TrangThietBi]";
-            sqlQuery += " WHERE ([ten] LIKE CONCAT('%',@sKeyword,'%'))";
-            sqlQuery += " OR ([ma] LIKE CONCAT('%',@sKeyword,'%'))";
-            sqlQuery += " OR ([soLuong] LIKE CONCAT('%',@sKeyword,'%'))";
-            sqlQuery += " OR ([tinhTrang] LIKE CONCAT('%',@sKeyword,'%'))";
+        //public DataTable searchData(string keyword)
+        //{
+        //    sqlQuery = " select * from [TrangThietBi]";
+        //    sqlQuery += " WHERE ([ten] LIKE CONCAT('%',@sKeyword,'%'))";
+        //    sqlQuery += " OR ([ma] LIKE CONCAT('%',@sKeyword,'%'))";
+        //    sqlQuery += " OR ([soLuong] LIKE CONCAT('%',@sKeyword,'%'))";
+        //    sqlQuery += " OR ([tinhTrang] LIKE CONCAT('%',@sKeyword,'%'))";
 
-            conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
-            try
-            {
-                using (var con = new SqlConnection(constring.initString()))
-                {
-                    using (var cmd = new SqlCommand(sqlQuery, con))
-                    {
-                        cmd.Parameters.AddWithValue("@sKeyword", keyword);
-                        con.Open();
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
-                        // this will query your database and return the result to your datatable
-                        da.Fill(result);
-                        con.Close();
+        //    conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
+        //    try
+        //    {
+        //        using (var con = new SqlConnection(constring.initString()))
+        //        {
+        //            using (var cmd = new SqlCommand(sqlQuery, con))
+        //            {
+        //                cmd.Parameters.AddWithValue("@sKeyword", keyword);
+        //                con.Open();
+        //                SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //                // this will query your database and return the result to your datatable
+        //                da.Fill(result);
+        //                con.Close();
 
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
+        //            }
+        //        }
+        //    }
+        //    catch (SqlException ex)
+        //    {
 
-            }
-            return result;
-        }
+        //    }
+        //    return result;
+        //}
     }
 }

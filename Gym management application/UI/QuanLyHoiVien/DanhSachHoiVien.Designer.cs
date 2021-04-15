@@ -31,6 +31,8 @@
             this.dataGridViewHoiVien = new System.Windows.Forms.DataGridView();
             this.btnInsert = new System.Windows.Forms.Button();
             this.panelNhanVien = new System.Windows.Forms.Panel();
+            this.dateTimePickerNgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.dateTimePickerNgayThamGia = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxSDT = new System.Windows.Forms.TextBox();
@@ -47,9 +49,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePickerNgayKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
+            this.Chọn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHoiVien)).BeginInit();
             this.panelNhanVien.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +64,8 @@
             this.dataGridViewHoiVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewHoiVien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
             this.dataGridViewHoiVien.ColumnHeadersHeight = 29;
+            this.dataGridViewHoiVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Chọn});
             this.dataGridViewHoiVien.Location = new System.Drawing.Point(12, 257);
             this.dataGridViewHoiVien.Name = "dataGridViewHoiVien";
             this.dataGridViewHoiVien.RowHeadersVisible = false;
@@ -71,6 +73,7 @@
             this.dataGridViewHoiVien.RowTemplate.Height = 24;
             this.dataGridViewHoiVien.Size = new System.Drawing.Size(1128, 339);
             this.dataGridViewHoiVien.TabIndex = 3;
+            this.dataGridViewHoiVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewHoiVien_CellContentClick);
             // 
             // btnInsert
             // 
@@ -92,7 +95,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(219)))));
-            this.panelNhanVien.Controls.Add(this.label8);
             this.panelNhanVien.Controls.Add(this.dateTimePickerNgayKetThuc);
             this.panelNhanVien.Controls.Add(this.label7);
             this.panelNhanVien.Controls.Add(this.dateTimePickerNgayThamGia);
@@ -117,6 +119,23 @@
             this.panelNhanVien.Size = new System.Drawing.Size(1149, 244);
             this.panelNhanVien.TabIndex = 4;
             // 
+            // dateTimePickerNgayKetThuc
+            // 
+            this.dateTimePickerNgayKetThuc.Location = new System.Drawing.Point(682, 98);
+            this.dateTimePickerNgayKetThuc.Name = "dateTimePickerNgayKetThuc";
+            this.dateTimePickerNgayKetThuc.Size = new System.Drawing.Size(330, 22);
+            this.dateTimePickerNgayKetThuc.TabIndex = 36;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(564, 100);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 17);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Ngày kết thúc";
+            // 
             // dateTimePickerNgayThamGia
             // 
             this.dateTimePickerNgayThamGia.Location = new System.Drawing.Point(682, 62);
@@ -140,6 +159,7 @@
             this.textBoxSDT.Name = "textBoxSDT";
             this.textBoxSDT.Size = new System.Drawing.Size(330, 22);
             this.textBoxSDT.TabIndex = 32;
+            this.textBoxSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxSDT_KeyPress);
             // 
             // label4
             // 
@@ -157,6 +177,7 @@
             this.textBoxTuoi.Name = "textBoxTuoi";
             this.textBoxTuoi.Size = new System.Drawing.Size(330, 22);
             this.textBoxTuoi.TabIndex = 30;
+            this.textBoxTuoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxTuoi_KeyPress);
             // 
             // label5
             // 
@@ -205,6 +226,7 @@
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(330, 22);
             this.textBoxID.TabIndex = 24;
+            this.textBoxID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxID_KeyPress);
             // 
             // label3
             // 
@@ -262,6 +284,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -275,32 +298,16 @@
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // label7
+            // Chọn
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(564, 100);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 17);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Ngày kết thúc";
-            // 
-            // dateTimePickerNgayKetThuc
-            // 
-            this.dateTimePickerNgayKetThuc.Location = new System.Drawing.Point(682, 98);
-            this.dateTimePickerNgayKetThuc.Name = "dateTimePickerNgayKetThuc";
-            this.dateTimePickerNgayKetThuc.Size = new System.Drawing.Size(330, 22);
-            this.dateTimePickerNgayKetThuc.TabIndex = 36;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(890, 168);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 17);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "label8";
+            this.Chọn.HeaderText = "";
+            this.Chọn.MinimumWidth = 6;
+            this.Chọn.Name = "Chọn";
+            this.Chọn.Text = "Chọn";
+            this.Chọn.UseColumnTextForButtonValue = true;
+            this.Chọn.Width = 6;
             // 
             // DanhSachHoiVien
             // 
@@ -341,6 +348,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerNgayThamGia;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgayKetThuc;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewButtonColumn Chọn;
     }
 }
