@@ -117,3 +117,89 @@ values ('KH010',N'XYZ Else',20,N'Nam',0123456789,'12/05/2021','12/09/2021')
 insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
 values ('KH011',N'LMN',22,N'Nu',0123456789,'12/02/2021','12/11/2022')
 
+---TESTING----
+CREATE TABLE tbl_permision (
+    id_per nchar (10) primary key,
+	name_per nchar(10)
+);
+
+CREATE TABLE tbl_per_detail (
+    id_detail nchar(10),
+	id_per nchar(10),
+	actionName nchar(30),
+	actioncode nchar(10),
+	checkAction nchar(10),
+	foreign key (id_per) references tbl_permision (id_per)
+);
+
+CREATE TABLE tbl_user_per (
+    id_user_per nchar(10) primary key,
+	id_per nchar(10),
+	id_user nchar(32),
+	licensed nchar(10),
+	foreign key (id_per) references tbl_permision (id_per),
+	foreign key (id_user) references NHANVIEN (ID)
+);
+
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'1', N'Phan Duy Đức', N'Nam', N'ducduypm0120@gmai.com', 376771465, N'KTX khu A', N'Admin', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'2', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'3', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
+
+insert into tbl_permision (id_per,name_per) values ('1','Full')
+insert into tbl_permision (id_per,name_per) values ('2','Admin')
+insert into tbl_permision (id_per,name_per) values ('3','Read only')
+insert into tbl_permision (id_per,name_per) values ('4','Edit')
+insert into tbl_permision (id_per,name_per) values ('5','Create')
+
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('1','1','Create','CREATE','1')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('2','1','Edit','EDIT','1')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('3','1','Delete','DELETE','1')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('4','1','View','VIEW','1')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('5','2','Create','CREATE','1')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('6','2','Edit','EDIT','1')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('7','2','Delete','DELETE','0')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('8','2','View','VIEW','1')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('9','3','Create','CREATE','0')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('10','3','Edit','EDIT','0')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('11','3','Delete','DELETE','0')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('12','3','View','VIEW','1')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('13','4','Create','CREATE','0')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('14','4','Edit','EDIT','1')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('15','4','Delete','DELETE','0')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('16','4','View','VIEW','1')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('17','5','Create','CREATE','1')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('18','5','Edit','EDIT','0')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('19','5','Delete','DELETE','0')
+insert into tbl_per_detail (id_detail,id_per,actionName,actioncode,checkAction) values ('20','5','View','VIEW','1')
+
+insert into tbl_user_per (id_user_per,id_per,id_user,licensed) values ('1','1','1','1')
+insert into tbl_user_per (id_user_per,id_per,id_user,licensed) values ('2','2','1','0')
+insert into tbl_user_per (id_user_per,id_per,id_user,licensed) values ('3','4','3','1')
+insert into tbl_user_per (id_user_per,id_per,id_user,licensed) values ('4','5','2','1')
+----------------------
+DECLARE @result NVARCHAR(1000)
+SET @result = N'Những quyền hiện tại của user ('
+
+select @result = @result + HoTen + ') là: ' from NHANVIEN where ID = 2
+select @result = @result + actionName + ', ' from NHANVIEN as u
+	join tbl_user_per as up on u.ID = up.id_user
+	join tbl_permision as p on up.id_per = p.id_per
+	join tbl_per_detail as pd on p.id_per = pd.id_per
+	where u.ID = 2 and up.licensed = 1 and pd.checkAction = 1
+select @result = substring(@result, 0, len(@result))
+
+print @result
+---------------------
+DECLARE @result bit
+select @result = checkAction from NHANVIEN as u
+	join tbl_user_per as up on u.ID = up.id_user
+	join tbl_permision as p on up.id_per = p.id_per
+	join tbl_per_detail as pd on p.id_per = pd.id_per
+	where u.ID = 2 and up.licensed = 1 and actioncode = 'DELETE'
+
+begin
+	if @result = 1
+		print N'Bạn CÓ quyền xóa post'
+	else
+		print N'Bạn KHÔNG có quyền xóa post'
+end
