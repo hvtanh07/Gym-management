@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridViewHoiVien = new System.Windows.Forms.DataGridView();
+            this.Chọn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnInsert = new System.Windows.Forms.Button();
             this.panelNhanVien = new System.Windows.Forms.Panel();
             this.dateTimePickerNgayKetThuc = new System.Windows.Forms.DateTimePicker();
@@ -49,7 +50,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.Chọn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHoiVien)).BeginInit();
             this.panelNhanVien.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +76,15 @@
             this.dataGridViewHoiVien.TabIndex = 3;
             this.dataGridViewHoiVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewHoiVien_CellContentClick);
             // 
+            // Chọn
+            // 
+            this.Chọn.HeaderText = "";
+            this.Chọn.MinimumWidth = 6;
+            this.Chọn.Name = "Chọn";
+            this.Chọn.Text = "Chọn";
+            this.Chọn.UseColumnTextForButtonValue = true;
+            this.Chọn.Width = 6;
+            // 
             // btnInsert
             // 
             this.btnInsert.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -95,6 +105,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(219)))));
+            this.panelNhanVien.Controls.Add(this.button1);
             this.panelNhanVien.Controls.Add(this.dateTimePickerNgayKetThuc);
             this.panelNhanVien.Controls.Add(this.label7);
             this.panelNhanVien.Controls.Add(this.dateTimePickerNgayThamGia);
@@ -300,14 +311,19 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // Chọn
+            // button1
             // 
-            this.Chọn.HeaderText = "";
-            this.Chọn.MinimumWidth = 6;
-            this.Chọn.Name = "Chọn";
-            this.Chọn.Text = "Chọn";
-            this.Chọn.UseColumnTextForButtonValue = true;
-            this.Chọn.Width = 6;
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(960, 157);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 31);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Statistical";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DanhSachHoiVien
             // 
@@ -349,5 +365,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerNgayKetThuc;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewButtonColumn Chọn;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gym_management_appication.Class;
+using Gym_management_appication.UI.ThongKeHoiVien;
 
 namespace Gym_management_appication.Database.QuanLyHoiVien
 {
@@ -185,6 +186,12 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         private void TextBoxTuoi_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            thongKeHoiVien frm = new thongKeHoiVien();
+            frm.Show();
         }
     }
 }

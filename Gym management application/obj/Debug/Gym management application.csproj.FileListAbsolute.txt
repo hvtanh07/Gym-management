@@ -27,3 +27,5 @@ C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_app
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.ThongKeHoiVien.thongKeHoiVien.resources
 C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.ThongKeHoiVien.thongKeHoiVien.resources
 C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.Database.QuanLyHoiVien.DanhSachHoiVien.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.Database.QuanLyHoiVien.DanhSachHoiVien.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.MainMenu.resources
