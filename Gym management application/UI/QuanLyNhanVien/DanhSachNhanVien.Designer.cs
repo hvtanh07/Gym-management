@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridViewNhanVien = new System.Windows.Forms.DataGridView();
+            this.Chọn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnInsert = new System.Windows.Forms.Button();
             this.panelNhanVien = new System.Windows.Forms.Panel();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.Chọn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNhanVien)).BeginInit();
             this.panelNhanVien.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +44,8 @@
             this.dataGridViewNhanVien.AllowUserToAddRows = false;
             this.dataGridViewNhanVien.AllowUserToDeleteRows = false;
             this.dataGridViewNhanVien.AllowUserToResizeRows = false;
-            this.dataGridViewNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewNhanVien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
@@ -60,6 +61,15 @@
             this.dataGridViewNhanVien.TabIndex = 0;
             this.dataGridViewNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewNhanVien_CellContentClick);
             this.dataGridViewNhanVien.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewNhanVien_RowHeaderMouseDoubleClick);
+            // 
+            // Chọn
+            // 
+            this.Chọn.HeaderText = "";
+            this.Chọn.MinimumWidth = 20;
+            this.Chọn.Name = "Chọn";
+            this.Chọn.Text = "Chọn";
+            this.Chọn.UseColumnTextForButtonValue = true;
+            this.Chọn.Width = 20;
             // 
             // btnInsert
             // 
@@ -77,8 +87,7 @@
             // 
             // panelNhanVien
             // 
-            this.panelNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(219)))));
             this.panelNhanVien.Controls.Add(this.btnReset);
@@ -131,15 +140,6 @@
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
-            // 
-            // Chọn
-            // 
-            this.Chọn.HeaderText = "";
-            this.Chọn.MinimumWidth = 20;
-            this.Chọn.Name = "Chọn";
-            this.Chọn.Text = "Chọn";
-            this.Chọn.UseColumnTextForButtonValue = true;
-            this.Chọn.Width = 20;
             // 
             // DanhSachNhanVien
             // 

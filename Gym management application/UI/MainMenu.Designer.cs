@@ -29,83 +29,154 @@ namespace Gym_management_appication.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.sidePanel = new System.Windows.Forms.Panel();
+            this.GroupQuanLyHoiVien = new System.Windows.Forms.Panel();
+            this.btn_ThongKe = new System.Windows.Forms.Button();
+            this.btn_Danhsach = new System.Windows.Forms.Button();
+            this.btn_QuanLyHoiVien = new System.Windows.Forms.Button();
+            this.logoPanel = new System.Windows.Forms.Panel();
+            this.container = new System.Windows.Forms.Panel();
+            this.btn_QuanLyNhanvien = new System.Windows.Forms.Button();
+            this.btn_QuanLyThietbi = new System.Windows.Forms.Button();
+            this.sidePanel.SuspendLayout();
+            this.GroupQuanLyHoiVien.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // sidePanel
             // 
-            this.button1.Location = new System.Drawing.Point(95, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(347, 51);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Quản lý nhân viên";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.sidePanel.Controls.Add(this.btn_QuanLyThietbi);
+            this.sidePanel.Controls.Add(this.btn_QuanLyNhanvien);
+            this.sidePanel.Controls.Add(this.GroupQuanLyHoiVien);
+            this.sidePanel.Controls.Add(this.btn_QuanLyHoiVien);
+            this.sidePanel.Controls.Add(this.logoPanel);
+            this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidePanel.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel.Name = "sidePanel";
+            this.sidePanel.Size = new System.Drawing.Size(250, 763);
+            this.sidePanel.TabIndex = 5;
             // 
-            // button2
+            // GroupQuanLyHoiVien
             // 
-            this.button2.Location = new System.Drawing.Point(95, 137);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(347, 51);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Quản lý thiết bị";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.GroupQuanLyHoiVien.Controls.Add(this.btn_ThongKe);
+            this.GroupQuanLyHoiVien.Controls.Add(this.btn_Danhsach);
+            this.GroupQuanLyHoiVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GroupQuanLyHoiVien.Location = new System.Drawing.Point(0, 180);
+            this.GroupQuanLyHoiVien.Name = "GroupQuanLyHoiVien";
+            this.GroupQuanLyHoiVien.Size = new System.Drawing.Size(250, 101);
+            this.GroupQuanLyHoiVien.TabIndex = 5;
             // 
-            // button3
+            // btn_ThongKe
             // 
-            this.button3.Location = new System.Drawing.Point(95, 194);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(347, 51);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Hội viên";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_ThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_ThongKe.FlatAppearance.BorderSize = 0;
+            this.btn_ThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ThongKe.Location = new System.Drawing.Point(0, 50);
+            this.btn_ThongKe.Name = "btn_ThongKe";
+            this.btn_ThongKe.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btn_ThongKe.Size = new System.Drawing.Size(250, 50);
+            this.btn_ThongKe.TabIndex = 1;
+            this.btn_ThongKe.Text = "Thống kê";
+            this.btn_ThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ThongKe.UseVisualStyleBackColor = true;
+            this.btn_ThongKe.Click += new System.EventHandler(this.btn_ThongKe_Click);
             // 
-            // button4
+            // btn_Danhsach
             // 
-            this.button4.Location = new System.Drawing.Point(95, 251);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(347, 51);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Quản lý thông tin phòng tập";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_Danhsach.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Danhsach.FlatAppearance.BorderSize = 0;
+            this.btn_Danhsach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Danhsach.Location = new System.Drawing.Point(0, 0);
+            this.btn_Danhsach.Name = "btn_Danhsach";
+            this.btn_Danhsach.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btn_Danhsach.Size = new System.Drawing.Size(250, 50);
+            this.btn_Danhsach.TabIndex = 0;
+            this.btn_Danhsach.Text = "Danh sách";
+            this.btn_Danhsach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Danhsach.UseVisualStyleBackColor = true;
+            this.btn_Danhsach.Click += new System.EventHandler(this.btn_Danhsach_Click);
             // 
-            // button5
+            // btn_QuanLyHoiVien
             // 
-            this.button5.Location = new System.Drawing.Point(95, 308);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(347, 51);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_QuanLyHoiVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_QuanLyHoiVien.FlatAppearance.BorderSize = 0;
+            this.btn_QuanLyHoiVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_QuanLyHoiVien.Location = new System.Drawing.Point(0, 100);
+            this.btn_QuanLyHoiVien.Name = "btn_QuanLyHoiVien";
+            this.btn_QuanLyHoiVien.Size = new System.Drawing.Size(250, 80);
+            this.btn_QuanLyHoiVien.TabIndex = 4;
+            this.btn_QuanLyHoiVien.Text = "Quản lý hội viên";
+            this.btn_QuanLyHoiVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_QuanLyHoiVien.UseVisualStyleBackColor = true;
+            this.btn_QuanLyHoiVien.Click += new System.EventHandler(this.btn_QuanLyHoiVien_Click);
+            // 
+            // logoPanel
+            // 
+            this.logoPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logoPanel.Location = new System.Drawing.Point(0, 0);
+            this.logoPanel.Name = "logoPanel";
+            this.logoPanel.Size = new System.Drawing.Size(250, 100);
+            this.logoPanel.TabIndex = 0;
+            // 
+            // container
+            // 
+            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container.Location = new System.Drawing.Point(250, 0);
+            this.container.Name = "container";
+            this.container.Size = new System.Drawing.Size(1006, 763);
+            this.container.TabIndex = 6;
+            // 
+            // btn_QuanLyNhanvien
+            // 
+            this.btn_QuanLyNhanvien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_QuanLyNhanvien.FlatAppearance.BorderSize = 0;
+            this.btn_QuanLyNhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_QuanLyNhanvien.Location = new System.Drawing.Point(0, 281);
+            this.btn_QuanLyNhanvien.Name = "btn_QuanLyNhanvien";
+            this.btn_QuanLyNhanvien.Size = new System.Drawing.Size(250, 80);
+            this.btn_QuanLyNhanvien.TabIndex = 6;
+            this.btn_QuanLyNhanvien.Text = "Quản lý nhân viên";
+            this.btn_QuanLyNhanvien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_QuanLyNhanvien.UseVisualStyleBackColor = true;
+            this.btn_QuanLyNhanvien.Click += new System.EventHandler(this.btn_QuanLyNhanvien_Click);
+            // 
+            // btn_QuanLyThietbi
+            // 
+            this.btn_QuanLyThietbi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_QuanLyThietbi.FlatAppearance.BorderSize = 0;
+            this.btn_QuanLyThietbi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_QuanLyThietbi.Location = new System.Drawing.Point(0, 361);
+            this.btn_QuanLyThietbi.Name = "btn_QuanLyThietbi";
+            this.btn_QuanLyThietbi.Size = new System.Drawing.Size(250, 80);
+            this.btn_QuanLyThietbi.TabIndex = 7;
+            this.btn_QuanLyThietbi.Text = "Quản lý thiết bị";
+            this.btn_QuanLyThietbi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_QuanLyThietbi.UseVisualStyleBackColor = true;
+            this.btn_QuanLyThietbi.Click += new System.EventHandler(this.btn_QuanLyThietbi_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 453);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1256, 763);
+            this.Controls.Add(this.container);
+            this.Controls.Add(this.sidePanel);
             this.Name = "MainMenu";
             this.Text = "MainMenu";
+            this.sidePanel.ResumeLayout(false);
+            this.GroupQuanLyHoiVien.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel sidePanel;
+        private System.Windows.Forms.Panel logoPanel;
+        private System.Windows.Forms.Panel container;
+        private System.Windows.Forms.Panel GroupQuanLyHoiVien;
+        private System.Windows.Forms.Button btn_ThongKe;
+        private System.Windows.Forms.Button btn_Danhsach;
+        private System.Windows.Forms.Button btn_QuanLyHoiVien;
+        private System.Windows.Forms.Button btn_QuanLyNhanvien;
+        private System.Windows.Forms.Button btn_QuanLyThietbi;
     }
 }

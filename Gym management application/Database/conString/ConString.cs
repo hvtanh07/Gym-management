@@ -12,7 +12,7 @@ namespace Gym_management_appication.Database.conString
         string Catalog;
         string userName;//optional
         string password;//optional
-        public ConString(string database = @"TRUONGNAM\SQLEXPRESS", string Catalog = "GymManagement", string userName = "None", string password = "None")
+        public ConString(string database = @"DESKTOP-KPFBBSK", string Catalog = "GymManagement", string userName = "None", string password = "None")
         {
             this.database = database;
             this.Catalog = Catalog;

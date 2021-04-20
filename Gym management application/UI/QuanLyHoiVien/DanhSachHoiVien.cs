@@ -61,7 +61,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         }
         private void BtnInsert_Click(object sender, EventArgs e)
         {
-            if (textBoxID.Text == "" || textBoxTen.Text == "" || textBoxTuoi.Text == "" || (radioButtonNam.Checked == false && radioButtonNu.Checked == false) || textBoxSDT.Text == "") {
+            if (textBoxID.Text.Trim() == "" || textBoxTen.Text.Trim() == "" || textBoxTuoi.Text.Trim() == "" || (radioButtonNam.Checked == false && radioButtonNu.Checked == false) || textBoxSDT.Text.Trim() == "") {
                 MessageBox.Show("Chưa đủ thông tin");
                 return;
             }
@@ -186,12 +186,6 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         private void TextBoxTuoi_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            thongKeHoiVien frm = new thongKeHoiVien();
-            frm.Show();
         }
     }
 }
