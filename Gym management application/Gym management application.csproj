@@ -70,9 +70,17 @@
     <Compile Include="Class\hoiVien.cs" />
     <Compile Include="Class\QuanLyNhanVien\NhanVien.cs" />
     <Compile Include="Class\trangThietBi.cs" />
+    <Compile Include="Class\valiballecommon.cs" />
     <Compile Include="Database\conString\ConString.cs" />
     <Compile Include="Database\hoiVien.cs" />
+    <Compile Include="Database\LogIn.cs" />
     <Compile Include="Database\QuanLyHoiVien\DSHVModel.cs" />
+    <Compile Include="UI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +133,9 @@
     <Compile Include="UI\ThongKeHoiVien\thongKeHoiVien.Designer.cs">
       <DependentUpon>thongKeHoiVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>

@@ -175,6 +175,7 @@ namespace Gym_management_appication.UI
             this.Controls.Add(this.container);
             this.Controls.Add(this.sidePanel);
             this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
             this.sidePanel.ResumeLayout(false);
             this.GroupQuanLyHoiVien.ResumeLayout(false);

@@ -19,7 +19,7 @@ namespace Gym_management_appication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UI.MainMenu());
+            Application.Run(new UI.Login());
             //Application.Run(new DanhSachNhanVien());
         }
     }

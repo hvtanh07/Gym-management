@@ -14,7 +14,7 @@ namespace Gym_management_appication.Database.conString
         string password;//optional
         public ConString(string database = @"DESKTOP-KPFBBSK", string Catalog = "GymManagement", string userName = "None", string password = "None")
         {
-            this.database = database;
+            this.database = Class.valiballecommon.GetStorage().DatabaseName;
             this.Catalog = Catalog;
             this.password = password;
             this.userName = userName;

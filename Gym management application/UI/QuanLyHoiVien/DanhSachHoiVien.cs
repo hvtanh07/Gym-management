@@ -152,7 +152,6 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                 {
                     MessageBox.Show("Lỗi! Cập nhật thất bại!");
                 }
-
             }
             else
             {
