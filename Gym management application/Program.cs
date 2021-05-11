@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Gym_management_appication.Database.QuanLyHoiVien;
 using Gym_management_appication.UI;
 using Gym_management_appication.UI.ThongKeHoiVien;
+using Gym_management_appication.UI.LichTrucPT;
 
 namespace Gym_management_appication
 {
@@ -19,7 +20,7 @@ namespace Gym_management_appication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UI.Login());
+            Application.Run(new LichTrucPT());
             //Application.Run(new DanhSachNhanVien());
         }
     }

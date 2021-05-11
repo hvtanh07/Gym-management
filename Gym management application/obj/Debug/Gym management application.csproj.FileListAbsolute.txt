@@ -30,3 +30,6 @@ C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Deb
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.Database.QuanLyHoiVien.DanhSachHoiVien.resources
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.MainMenu.resources
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.Login.resources
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.LichTrucPT.LichTrucPT.resources
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.Login.resources
+C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.MainMenu.resources
