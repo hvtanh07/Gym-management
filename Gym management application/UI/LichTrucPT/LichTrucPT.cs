@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gym_management_appication.Database.LichTrucPT;
 using Gym_management_appication.UI.LichTrucPT;
+
+
 namespace Gym_management_appication.UI.LichTrucPT
 {
     public partial class LichTrucPT : Form
@@ -19,12 +21,12 @@ namespace Gym_management_appication.UI.LichTrucPT
             InitializeComponent();
             LoadLichTrucPT();
         }
-        public static void LoadLichTrucPT() {
+        public void LoadLichTrucPT() {
             ClearAllControlData();
             dataTable = new LichTrucPTModel().GetData("Select * from PTSchedule");
             resolveData();
         }
-        public static void ClearAllControlData() {
+        public  void ClearAllControlData() {
             panel21.Controls.Clear();
             panel22.Controls.Clear();
             panel23.Controls.Clear();
@@ -44,7 +46,7 @@ namespace Gym_management_appication.UI.LichTrucPT
             panel72.Controls.Clear();
             panel73.Controls.Clear();
         }
-        public static void resolveData() {
+        public  void resolveData() {
             for (int i = 0; i < dataTable.Rows.Count; i++) {
                 Label lb = new Label();
                 lb.Text = dataTable.Rows[i][1].ToString();
@@ -144,7 +146,20 @@ namespace Gym_management_appication.UI.LichTrucPT
         private void ButtonThemLich_Click(object sender, EventArgs e)
         {
             ThemLichTrucPT themLichTrucPT = new ThemLichTrucPT();
+            themLichTrucPT.FormClosed += new FormClosedEventHandler(child_FormClosed);
             themLichTrucPT.ShowDialog();
+        }
+
+        void child_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //when child form is closed, this code is executed
+            LoadLichTrucPT();
+        }
+        private void ButtonXoaLich_Click(object sender, EventArgs e)
+        {
+            XoaLichTrucPT xoaLichTrucPT = new XoaLichTrucPT();
+            xoaLichTrucPT.FormClosed += new FormClosedEventHandler(child_FormClosed);
+            xoaLichTrucPT.ShowDialog();
         }
     }
 }

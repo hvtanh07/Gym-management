@@ -81,9 +81,9 @@ namespace Gym_management_appication.Database.LichTrucPT
 
             }
         }
-        public void Delete(string ID)
+        public void Delete(Class.LichTrucPT lichTrucPT)
         {
-            sqlQuery = "delete from DanhSachHoiVien where ma ='" + ID + "'";
+            sqlQuery = "delete from PTSchedule where ID = N'" + lichTrucPT.ID + "' and HoTen = N'" + lichTrucPT.HoTen +"' and Thu = " + lichTrucPT.Thu +" and Buoi ="+lichTrucPT.Buoi ;
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of       
             try
             {

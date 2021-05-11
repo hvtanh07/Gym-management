@@ -14,9 +14,9 @@ using Gym_management_appication.Class;
 
 namespace Gym_management_appication.UI.LichTrucPT
 {
-    public partial class ThemLichTrucPT : Form
+    public partial class XoaLichTrucPT : Form
     {
-        public ThemLichTrucPT()
+        public XoaLichTrucPT()
         {
             InitializeComponent();
         }
@@ -32,16 +32,17 @@ namespace Gym_management_appication.UI.LichTrucPT
             Class.LichTrucPT lichTrucPT = new Class.LichTrucPT();
             lichTrucPT.ID = this.textBoxID.Text.Trim();
             lichTrucPT.HoTen = this.textBoxTen.Text.Trim();
-            lichTrucPT.Thu = Int32.Parse( this.comboBoxNgayTruc.Text.Last().ToString());
+            lichTrucPT.Thu = Int32.Parse(this.comboBoxNgayTruc.Text.Last().ToString());
             int buoi;
-            switch (comboBoxBuoiTruc.Text) {
-                case "Buổi sáng":
+            switch (comboBoxBuoiTruc.Text)
+            {
+                case "Buổi Sáng":
                     buoi = 1;
                     break;
-                case "Buổi chiều":
+                case "Buổi Chiều":
                     buoi = 2;
                     break;
-                case "Buổi tối":
+                case "Buổi Tối":
                     buoi = 3;
                     break;
                 default:
@@ -66,7 +67,8 @@ namespace Gym_management_appication.UI.LichTrucPT
                 }
                 else
                 {
-                    if (data.Rows[0][6].ToString().Trim() != "PT") {
+                    if (data.Rows[0][6].ToString().Trim() != "PT")
+                    {
                         MessageBox.Show("Nhân viên không phải PT");
                         return;
                     }
@@ -75,23 +77,26 @@ namespace Gym_management_appication.UI.LichTrucPT
             }
 
             LichTrucPTModel lichTrucPTModel = new LichTrucPTModel();
-            data = lichTrucPTModel.GetData("Select * from PTSchedule where Thu =" + lichTrucPT.Thu + " and Buoi =" + lichTrucPT.Buoi +" and ID = N'" + lichTrucPT.ID +"' and HoTen = N'" + lichTrucPT.HoTen+ "'");
-            if (data.Rows.Count == 1 && data.Rows[0][1].ToString().Trim() == lichTrucPT.HoTen.Trim()) {
-                MessageBox.Show("PT đã trực vào buổi này");
+            data = lichTrucPTModel.GetData("Select * from PTSchedule where Thu ='" + lichTrucPT.Thu + "' and Buoi ='" +lichTrucPT.Buoi +"' and ID= '"+lichTrucPT.ID+"'");
+            if (data.Rows.Count == 1 && data.Rows[0][1].ToString().Trim() == lichTrucPT.HoTen.Trim() )
+            {
+                try
+                {
+                    lichTrucPTModel.Delete(lichTrucPT);
+                    MessageBox.Show("Xóa thành công");
+                    this.Close();
+                   // LichTrucPT.LoadLichTrucPT();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Có lỗi xảy ra. Vui lòng thử lại.");
+                }
                 return;
             }
-
-            try
-            {
-                lichTrucPTModel.Insert(lichTrucPT);
-                MessageBox.Show("Thêm mới thành công");
-                this.Close();
-                //LichTrucPT.LoadLichTrucPT();
+            else {
+                MessageBox.Show("PT không trực vào buổi này");
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Có lỗi xảy ra. Vui lòng thử lại.");
-            }
+            
         }
     }
 }
