@@ -166,7 +166,11 @@ where LogInData.username = 'duc'
 
 
 
+
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log01','1',1,'duc','1234')
+
+
+
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Phan Duy Đức',2,1)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Phan Duy Đức',2,2)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Phan Duy Đức',2,3)
@@ -185,3 +189,5 @@ insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'5',N'Hua Van Tuan Anh',6,
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,1)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,2)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,3)
+
+delete from PTSchedule

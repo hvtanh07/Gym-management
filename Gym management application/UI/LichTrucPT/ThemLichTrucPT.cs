@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gym_management_appication.Database.LichTrucPT;
+using Gym_management_appication.UI.LichTrucPT;
 using Gym_management_appication.Database.QuanLyNhanVien;
 using Gym_management_appication.Class;
 
@@ -83,6 +84,8 @@ namespace Gym_management_appication.UI.LichTrucPT
             {
                 lichTrucPTModel.Insert(lichTrucPT);
                 MessageBox.Show("Thêm mới thành công");
+                this.Close();
+                LichTrucPT.LoadLichTrucPT();
             }
             catch (Exception)
             {

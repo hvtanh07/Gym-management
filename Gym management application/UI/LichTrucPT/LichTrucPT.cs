@@ -13,18 +13,38 @@ namespace Gym_management_appication.UI.LichTrucPT
 {
     public partial class LichTrucPT : Form
     {
-        DataTable dataTable = new DataTable();
+        public static DataTable dataTable = new DataTable();
         public LichTrucPT()
         {
-            InitializeComponent();           
+            InitializeComponent();
             LoadLichTrucPT();
-            resolveData();
-
         }
-        public void LoadLichTrucPT() {   
+        public static void LoadLichTrucPT() {
+            ClearAllControlData();
             dataTable = new LichTrucPTModel().GetData("Select * from PTSchedule");
+            resolveData();
         }
-        void resolveData() {
+        public static void ClearAllControlData() {
+            panel21.Controls.Clear();
+            panel22.Controls.Clear();
+            panel23.Controls.Clear();
+            panel31.Controls.Clear();
+            panel32.Controls.Clear();
+            panel33.Controls.Clear();
+            panel41.Controls.Clear();
+            panel42.Controls.Clear();
+            panel43.Controls.Clear();
+            panel51.Controls.Clear();
+            panel52.Controls.Clear();
+            panel53.Controls.Clear();
+            panel61.Controls.Clear();
+            panel62.Controls.Clear();
+            panel63.Controls.Clear();
+            panel71.Controls.Clear();
+            panel72.Controls.Clear();
+            panel73.Controls.Clear();
+        }
+        public static void resolveData() {
             for (int i = 0; i < dataTable.Rows.Count; i++) {
                 Label lb = new Label();
                 lb.Text = dataTable.Rows[i][1].ToString();

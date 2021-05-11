@@ -43,24 +43,24 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel21 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel31 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel22 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel32 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel23 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel33 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel41 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel42 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel43 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel51 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel52 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel53 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel61 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel62 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel63 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel71 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel72 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel73 = new System.Windows.Forms.FlowLayoutPanel();
+            panel21 = new System.Windows.Forms.FlowLayoutPanel();
+            panel31 = new System.Windows.Forms.FlowLayoutPanel();
+            panel22 = new System.Windows.Forms.FlowLayoutPanel();
+            panel32 = new System.Windows.Forms.FlowLayoutPanel();
+            panel23 = new System.Windows.Forms.FlowLayoutPanel();
+            panel33 = new System.Windows.Forms.FlowLayoutPanel();
+            panel41 = new System.Windows.Forms.FlowLayoutPanel();
+            panel42 = new System.Windows.Forms.FlowLayoutPanel();
+            panel43 = new System.Windows.Forms.FlowLayoutPanel();
+            panel51 = new System.Windows.Forms.FlowLayoutPanel();
+            panel52 = new System.Windows.Forms.FlowLayoutPanel();
+            panel53 = new System.Windows.Forms.FlowLayoutPanel();
+            panel61 = new System.Windows.Forms.FlowLayoutPanel();
+            panel62 = new System.Windows.Forms.FlowLayoutPanel();
+            panel63 = new System.Windows.Forms.FlowLayoutPanel();
+            panel71 = new System.Windows.Forms.FlowLayoutPanel();
+            panel72 = new System.Windows.Forms.FlowLayoutPanel();
+            panel73 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -144,23 +144,23 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.Controls.Add(this.panel73, 6, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel72, 6, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel71, 6, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel63, 5, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel62, 5, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel61, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel53, 4, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel52, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel51, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel43, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel42, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel41, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel33, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel23, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel32, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel22, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel31, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(panel73, 6, 3);
+            tableLayoutPanel1.Controls.Add(panel72, 6, 2);
+            tableLayoutPanel1.Controls.Add(panel71, 6, 1);
+            tableLayoutPanel1.Controls.Add(panel63, 5, 3);
+            tableLayoutPanel1.Controls.Add(panel62, 5, 2);
+            tableLayoutPanel1.Controls.Add(panel61, 5, 1);
+            tableLayoutPanel1.Controls.Add(panel53, 4, 3);
+            tableLayoutPanel1.Controls.Add(panel52, 4, 2);
+            tableLayoutPanel1.Controls.Add(panel51, 4, 1);
+            tableLayoutPanel1.Controls.Add(panel43, 3, 3);
+            tableLayoutPanel1.Controls.Add(panel42, 3, 2);
+            tableLayoutPanel1.Controls.Add(panel41, 3, 1);
+            tableLayoutPanel1.Controls.Add(panel33, 2, 3);
+            tableLayoutPanel1.Controls.Add(panel23, 1, 3);
+            tableLayoutPanel1.Controls.Add(panel32, 2, 2);
+            tableLayoutPanel1.Controls.Add(panel22, 1, 2);
+            tableLayoutPanel1.Controls.Add(panel31, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
@@ -170,7 +170,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label8, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel21, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(panel21, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 71);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -271,147 +271,147 @@
             // 
             // panel21
             // 
-            this.panel21.AutoScroll = true;
-            this.panel21.Location = new System.Drawing.Point(164, 35);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(154, 155);
-            this.panel21.TabIndex = 9;
+            panel21.AutoScroll = true;
+            panel21.Location = new System.Drawing.Point(164, 35);
+            panel21.Name = "panel21";
+            panel21.Size = new System.Drawing.Size(154, 155);
+            panel21.TabIndex = 9;
             // 
             // panel31
             // 
-            this.panel31.AutoScroll = true;
-            this.panel31.Location = new System.Drawing.Point(325, 35);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(154, 155);
-            this.panel31.TabIndex = 10;
+            panel31.AutoScroll = true;
+            panel31.Location = new System.Drawing.Point(325, 35);
+            panel31.Name = "panel31";
+            panel31.Size = new System.Drawing.Size(154, 155);
+            panel31.TabIndex = 10;
             // 
             // panel22
             // 
-            this.panel22.AutoScroll = true;
-            this.panel22.Location = new System.Drawing.Point(164, 197);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(154, 155);
-            this.panel22.TabIndex = 10;
+            panel22.AutoScroll = true;
+            panel22.Location = new System.Drawing.Point(164, 197);
+            panel22.Name = "panel22";
+            panel22.Size = new System.Drawing.Size(154, 155);
+            panel22.TabIndex = 10;
             // 
             // panel32
             // 
-            this.panel32.AutoScroll = true;
-            this.panel32.Location = new System.Drawing.Point(325, 197);
-            this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(154, 155);
-            this.panel32.TabIndex = 10;
+            panel32.AutoScroll = true;
+            panel32.Location = new System.Drawing.Point(325, 197);
+            panel32.Name = "panel32";
+            panel32.Size = new System.Drawing.Size(154, 155);
+            panel32.TabIndex = 10;
             // 
             // panel23
             // 
-            this.panel23.AutoScroll = true;
-            this.panel23.Location = new System.Drawing.Point(164, 359);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(154, 155);
-            this.panel23.TabIndex = 10;
+            panel23.AutoScroll = true;
+            panel23.Location = new System.Drawing.Point(164, 359);
+            panel23.Name = "panel23";
+            panel23.Size = new System.Drawing.Size(154, 155);
+            panel23.TabIndex = 10;
             // 
             // panel33
             // 
-            this.panel33.AutoScroll = true;
-            this.panel33.Location = new System.Drawing.Point(325, 359);
-            this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(154, 155);
-            this.panel33.TabIndex = 10;
+            panel33.AutoScroll = true;
+            panel33.Location = new System.Drawing.Point(325, 359);
+            panel33.Name = "panel33";
+            panel33.Size = new System.Drawing.Size(154, 155);
+            panel33.TabIndex = 10;
             // 
             // panel41
             // 
-            this.panel41.AutoScroll = true;
-            this.panel41.Location = new System.Drawing.Point(486, 35);
-            this.panel41.Name = "panel41";
-            this.panel41.Size = new System.Drawing.Size(154, 155);
-            this.panel41.TabIndex = 10;
+            panel41.AutoScroll = true;
+            panel41.Location = new System.Drawing.Point(486, 35);
+            panel41.Name = "panel41";
+            panel41.Size = new System.Drawing.Size(154, 155);
+            panel41.TabIndex = 10;
             // 
             // panel42
             // 
-            this.panel42.AutoScroll = true;
-            this.panel42.Location = new System.Drawing.Point(486, 197);
-            this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(154, 155);
-            this.panel42.TabIndex = 10;
+            panel42.AutoScroll = true;
+            panel42.Location = new System.Drawing.Point(486, 197);
+            panel42.Name = "panel42";
+            panel42.Size = new System.Drawing.Size(154, 155);
+            panel42.TabIndex = 10;
             // 
             // panel43
             // 
-            this.panel43.AutoScroll = true;
-            this.panel43.Location = new System.Drawing.Point(486, 359);
-            this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(154, 155);
-            this.panel43.TabIndex = 10;
+            panel43.AutoScroll = true;
+            panel43.Location = new System.Drawing.Point(486, 359);
+            panel43.Name = "panel43";
+            panel43.Size = new System.Drawing.Size(154, 155);
+            panel43.TabIndex = 10;
             // 
             // panel51
             // 
-            this.panel51.AutoScroll = true;
-            this.panel51.Location = new System.Drawing.Point(647, 35);
-            this.panel51.Name = "panel51";
-            this.panel51.Size = new System.Drawing.Size(154, 155);
-            this.panel51.TabIndex = 10;
+            panel51.AutoScroll = true;
+            panel51.Location = new System.Drawing.Point(647, 35);
+            panel51.Name = "panel51";
+            panel51.Size = new System.Drawing.Size(154, 155);
+            panel51.TabIndex = 10;
             // 
             // panel52
             // 
-            this.panel52.AutoScroll = true;
-            this.panel52.Location = new System.Drawing.Point(647, 197);
-            this.panel52.Name = "panel52";
-            this.panel52.Size = new System.Drawing.Size(154, 155);
-            this.panel52.TabIndex = 10;
+            panel52.AutoScroll = true;
+            panel52.Location = new System.Drawing.Point(647, 197);
+            panel52.Name = "panel52";
+            panel52.Size = new System.Drawing.Size(154, 155);
+            panel52.TabIndex = 10;
             // 
             // panel53
             // 
-            this.panel53.AutoScroll = true;
-            this.panel53.Location = new System.Drawing.Point(647, 359);
-            this.panel53.Name = "panel53";
-            this.panel53.Size = new System.Drawing.Size(154, 155);
-            this.panel53.TabIndex = 10;
+            panel53.AutoScroll = true;
+            panel53.Location = new System.Drawing.Point(647, 359);
+            panel53.Name = "panel53";
+            panel53.Size = new System.Drawing.Size(154, 155);
+            panel53.TabIndex = 10;
             // 
             // panel61
             // 
-            this.panel61.AutoScroll = true;
-            this.panel61.Location = new System.Drawing.Point(808, 35);
-            this.panel61.Name = "panel61";
-            this.panel61.Size = new System.Drawing.Size(154, 155);
-            this.panel61.TabIndex = 10;
+            panel61.AutoScroll = true;
+            panel61.Location = new System.Drawing.Point(808, 35);
+            panel61.Name = "panel61";
+            panel61.Size = new System.Drawing.Size(154, 155);
+            panel61.TabIndex = 10;
             // 
             // panel62
             // 
-            this.panel62.AutoScroll = true;
-            this.panel62.Location = new System.Drawing.Point(808, 197);
-            this.panel62.Name = "panel62";
-            this.panel62.Size = new System.Drawing.Size(154, 155);
-            this.panel62.TabIndex = 10;
+            panel62.AutoScroll = true;
+            panel62.Location = new System.Drawing.Point(808, 197);
+            panel62.Name = "panel62";
+            panel62.Size = new System.Drawing.Size(154, 155);
+            panel62.TabIndex = 10;
             // 
             // panel63
             // 
-            this.panel63.AutoScroll = true;
-            this.panel63.Location = new System.Drawing.Point(808, 359);
-            this.panel63.Name = "panel63";
-            this.panel63.Size = new System.Drawing.Size(154, 155);
-            this.panel63.TabIndex = 10;
+            panel63.AutoScroll = true;
+            panel63.Location = new System.Drawing.Point(808, 359);
+            panel63.Name = "panel63";
+            panel63.Size = new System.Drawing.Size(154, 155);
+            panel63.TabIndex = 10;
             // 
             // panel71
             // 
-            this.panel71.AutoScroll = true;
-            this.panel71.Location = new System.Drawing.Point(969, 35);
-            this.panel71.Name = "panel71";
-            this.panel71.Size = new System.Drawing.Size(154, 155);
-            this.panel71.TabIndex = 10;
+            panel71.AutoScroll = true;
+            panel71.Location = new System.Drawing.Point(969, 35);
+            panel71.Name = "panel71";
+            panel71.Size = new System.Drawing.Size(154, 155);
+            panel71.TabIndex = 10;
             // 
             // panel72
             // 
-            this.panel72.AutoScroll = true;
-            this.panel72.Location = new System.Drawing.Point(969, 197);
-            this.panel72.Name = "panel72";
-            this.panel72.Size = new System.Drawing.Size(154, 155);
-            this.panel72.TabIndex = 10;
+            panel72.AutoScroll = true;
+            panel72.Location = new System.Drawing.Point(969, 197);
+            panel72.Name = "panel72";
+            panel72.Size = new System.Drawing.Size(154, 155);
+            panel72.TabIndex = 10;
             // 
             // panel73
             // 
-            this.panel73.AutoScroll = true;
-            this.panel73.Location = new System.Drawing.Point(969, 359);
-            this.panel73.Name = "panel73";
-            this.panel73.Size = new System.Drawing.Size(154, 155);
-            this.panel73.TabIndex = 10;
+            panel73.AutoScroll = true;
+            panel73.Location = new System.Drawing.Point(969, 359);
+            panel73.Name = "panel73";
+            panel73.Size = new System.Drawing.Size(154, 155);
+            panel73.TabIndex = 10;
             // 
             // LichTrucPT
             // 
@@ -454,23 +454,23 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.FlowLayoutPanel panel73;
-        private System.Windows.Forms.FlowLayoutPanel panel72;
-        private System.Windows.Forms.FlowLayoutPanel panel71;
-        private System.Windows.Forms.FlowLayoutPanel panel63;
-        private System.Windows.Forms.FlowLayoutPanel panel62;
-        private System.Windows.Forms.FlowLayoutPanel panel61;
-        private System.Windows.Forms.FlowLayoutPanel panel53;
-        private System.Windows.Forms.FlowLayoutPanel panel52;
-        private System.Windows.Forms.FlowLayoutPanel panel51;
-        private System.Windows.Forms.FlowLayoutPanel panel43;
-        private System.Windows.Forms.FlowLayoutPanel panel42;
-        private System.Windows.Forms.FlowLayoutPanel panel41;
-        private System.Windows.Forms.FlowLayoutPanel panel33;
-        private System.Windows.Forms.FlowLayoutPanel panel23;
-        private System.Windows.Forms.FlowLayoutPanel panel32;
-        private System.Windows.Forms.FlowLayoutPanel panel22;
-        private System.Windows.Forms.FlowLayoutPanel panel31;
-        private System.Windows.Forms.FlowLayoutPanel panel21;
+        private static System.Windows.Forms.FlowLayoutPanel panel73;
+        private static System.Windows.Forms.FlowLayoutPanel panel72;
+        private static System.Windows.Forms.FlowLayoutPanel panel71;
+        private static System.Windows.Forms.FlowLayoutPanel panel63;
+        private static System.Windows.Forms.FlowLayoutPanel panel62;
+        private static System.Windows.Forms.FlowLayoutPanel panel61;
+        private static System.Windows.Forms.FlowLayoutPanel panel53;
+        private static System.Windows.Forms.FlowLayoutPanel panel52;
+        private static System.Windows.Forms.FlowLayoutPanel panel51;
+        private static System.Windows.Forms.FlowLayoutPanel panel43;
+        private static System.Windows.Forms.FlowLayoutPanel panel42;
+        private static System.Windows.Forms.FlowLayoutPanel panel41;
+        private static System.Windows.Forms.FlowLayoutPanel panel33;
+        private static System.Windows.Forms.FlowLayoutPanel panel23;
+        private static System.Windows.Forms.FlowLayoutPanel panel32;
+        private static System.Windows.Forms.FlowLayoutPanel panel22;
+        private static System.Windows.Forms.FlowLayoutPanel panel31;
+        private static System.Windows.Forms.FlowLayoutPanel panel21;
     }
 }
