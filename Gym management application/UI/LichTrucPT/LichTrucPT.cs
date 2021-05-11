@@ -28,7 +28,7 @@ namespace Gym_management_appication.UI.LichTrucPT
             for (int i = 0; i < dataTable.Rows.Count; i++) {
                 Label lb = new Label();
                 lb.Text = dataTable.Rows[i][1].ToString();
-                lb.Font = new Font("Microsoft Sans Serif", 8);
+                lb.Font = new Font("Microsoft Sans Serif", 10);
                 lb.AutoSize = true;
                 lb.BackColor = Color.FromArgb(254, 129, 118);              
                 switch (dataTable.Rows[i][2]) {
@@ -114,9 +114,7 @@ namespace Gym_management_appication.UI.LichTrucPT
                                 panel73.Controls.Add(lb);
                                 break;
                         }
-                        break;
-                   
-
+                        break;                  
                 }
             }
 
