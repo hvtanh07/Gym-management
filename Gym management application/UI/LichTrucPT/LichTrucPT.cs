@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gym_management_appication.Database.LichTrucPT;
-
+using Gym_management_appication.UI.LichTrucPT;
 namespace Gym_management_appication.UI.LichTrucPT
 {
     public partial class LichTrucPT : Form
@@ -30,7 +30,8 @@ namespace Gym_management_appication.UI.LichTrucPT
                 lb.Text = dataTable.Rows[i][1].ToString();
                 lb.Font = new Font("Microsoft Sans Serif", 10);
                 lb.AutoSize = true;
-                lb.BackColor = Color.FromArgb(254, 129, 118);              
+                lb.BackColor = Color.FromArgb(254, 129, 118);
+                lb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                 switch (dataTable.Rows[i][2]) {
                     case 2:
                         switch (dataTable.Rows[i][3]) {
@@ -118,6 +119,12 @@ namespace Gym_management_appication.UI.LichTrucPT
                 }
             }
 
+        }
+
+        private void ButtonThemLich_Click(object sender, EventArgs e)
+        {
+            ThemLichTrucPT themLichTrucPT = new ThemLichTrucPT();
+            themLichTrucPT.ShowDialog();
         }
     }
 }

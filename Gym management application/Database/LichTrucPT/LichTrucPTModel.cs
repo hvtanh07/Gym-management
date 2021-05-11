@@ -37,10 +37,9 @@ namespace Gym_management_appication.Database.LichTrucPT
             }
             return result;
         }
-        public void Insert(Class.hoiVien hoiVien)
+        public void Insert(Class.LichTrucPT lichTrucPT)
         {
-            sqlQuery = "insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) values ('" + hoiVien.ma + "',N'" +
-                hoiVien.ten + "','" + hoiVien.tuoi.ToString() + "',N'" + hoiVien.gioiTinh + "','" + hoiVien.sdt + "','" + hoiVien.ngayThamGia.ToString("MM/dd/yyyy") + "','" + hoiVien.ngayTKetThuc.ToString("MM/dd/yyyy") + "')";
+            sqlQuery = "insert into PTSchedule (ID,HoTen,Thu,Buoi) values (N'" +lichTrucPT.ID +"',N'" + lichTrucPT.HoTen+"',"+lichTrucPT.Thu+","+ lichTrucPT.Buoi +")";
             conString.ConString constring = new conString.ConString();
             try
             {

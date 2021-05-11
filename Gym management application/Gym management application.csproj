@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\hoiVien.cs" />
+    <Compile Include="Class\LichTrucPT.cs" />
     <Compile Include="Class\QuanLyNhanVien\NhanVien.cs" />
     <Compile Include="Class\trangThietBi.cs" />
     <Compile Include="Class\valiballecommon.cs" />
@@ -81,6 +82,12 @@
     </Compile>
     <Compile Include="UI\LichTrucPT\LichTrucPT.Designer.cs">
       <DependentUpon>LichTrucPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LichTrucPT\ThemLichTrucPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LichTrucPT\ThemLichTrucPT.Designer.cs">
+      <DependentUpon>ThemLichTrucPT.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Login.cs">
       <SubType>Form</SubType>
@@ -142,6 +149,9 @@
     </Compile>
     <EmbeddedResource Include="UI\LichTrucPT\LichTrucPT.resx">
       <DependentUpon>LichTrucPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LichTrucPT\ThemLichTrucPT.resx">
+      <DependentUpon>ThemLichTrucPT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
