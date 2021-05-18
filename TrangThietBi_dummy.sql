@@ -70,6 +70,15 @@ create table LogInData (
 	passW nvarchar(30)
 )
 
+Create table PTSchedule (
+	ID       NCHAR (32) NOT NULL,
+    HoTen    NCHAR (32) NOT NULL,
+	Thu	int,
+	Buoi int
+)
+
+
+
 --dummy Data--
 SET DATEFORMAT dmy; 
 
@@ -99,6 +108,12 @@ INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) V
 INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'2', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
 INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'3', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
 
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'4', N'Phan Duy Đức', N'Nam', N'ducduypm0120@gmai.com', 376771465, N'KTX khu A', N'PT', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'5', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'PT', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'6', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'PT', CAST(10000000.0000 AS Money))
+
+
+delete from NHANVIEN
 
 --drop table DanhSachHoiVien
 
@@ -126,9 +141,8 @@ insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetTh
 values ('KH011',N'LMN',22,N'Nu',0123456789,'12/02/2021','12/11/2022')
 
 
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'1', N'Phan Duy Đức', N'Nam', N'ducduypm0120@gmai.com', 376771465, N'KTX khu A', N'Admin', CAST(10000000.0000 AS Money))
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'2', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'3', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
+
+
 
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log01','1',1,'duc','1234')
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log02','2',1,'anh','1234')
@@ -149,3 +163,33 @@ where LogInData.username = 'duc'
 Select LogInData.permissionLevel 
 from NHANVIEN inner join LogInData on NHANVIEN.ID = LogInData.ma
 where LogInData.username = 'duc'
+
+
+
+
+INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log01','1',1,'duc','1234')
+
+
+
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Phan Duy Đức',2,1)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Phan Duy Đức',2,2)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Phan Duy Đức',2,3)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'5',N'Hua Van Tuan Anh',3,1)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'5',N'Hua Van Tuan Anh',3,2)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'5',N'Hua Van Tuan Anh',3,3)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',4,1)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',4,2)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',4,3)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Phan Duy Đức',5,1)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Phan Duy Đức',5,2)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Phan Duy Đức',5,3)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'5',N'Hua Van Tuan Anh',6,1)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'5',N'Hua Van Tuan Anh',6,2)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'5',N'Hua Van Tuan Anh',6,3)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,1)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,2)
+insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,3)
+
+delete from PTSchedule
+
+

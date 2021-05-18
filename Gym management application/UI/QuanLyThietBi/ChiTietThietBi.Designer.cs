@@ -36,16 +36,16 @@ namespace Gym_management_appication.UI
             this.txt_Ma = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.UD_baoHanh = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             this.txt_hangSX = new System.Windows.Forms.TextBox();
+            this.cb_tinhTrang = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.UD_giaThanh = new System.Windows.Forms.NumericUpDown();
             this.dT_ngayHetHan = new System.Windows.Forms.DateTimePicker();
-            this.dT_ngayMua = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cb_tinhTrang = new System.Windows.Forms.ComboBox();
+            this.dT_ngayMua = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UD_baoHanh)).BeginInit();
@@ -136,6 +136,7 @@ namespace Gym_management_appication.UI
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết thiết bị";
+            this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
             // 
             // UD_baoHanh
             // 
@@ -148,6 +149,18 @@ namespace Gym_management_appication.UI
             this.UD_baoHanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.UD_baoHanh.ValueChanged += new System.EventHandler(this.UD_baoHanh_ValueChanged);
             // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(43, 353);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(201, 20);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Ngày hết hạn bảo hành";
+            // 
             // txt_hangSX
             // 
             this.txt_hangSX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -157,6 +170,34 @@ namespace Gym_management_appication.UI
             this.txt_hangSX.Size = new System.Drawing.Size(220, 22);
             this.txt_hangSX.TabIndex = 18;
             this.txt_hangSX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cb_tinhTrang
+            // 
+            this.cb_tinhTrang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_tinhTrang.FormattingEnabled = true;
+            this.cb_tinhTrang.Items.AddRange(new object[] {
+            "Còn tốt",
+            "Đang bảo trì",
+            "Hỏng",
+            "Lỗi",
+            "Trong kho"});
+            this.cb_tinhTrang.Location = new System.Drawing.Point(47, 182);
+            this.cb_tinhTrang.Name = "cb_tinhTrang";
+            this.cb_tinhTrang.Size = new System.Drawing.Size(130, 24);
+            this.cb_tinhTrang.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(43, 305);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 20);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Bảo hành";
             // 
             // UD_giaThanh
             // 
@@ -184,6 +225,18 @@ namespace Gym_management_appication.UI
             this.dT_ngayHetHan.Size = new System.Drawing.Size(187, 22);
             this.dT_ngayHetHan.TabIndex = 16;
             // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(43, 257);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Giá thành";
+            // 
             // dT_ngayMua
             // 
             this.dT_ngayMua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -195,18 +248,6 @@ namespace Gym_management_appication.UI
             this.dT_ngayMua.Size = new System.Drawing.Size(187, 22);
             this.dT_ngayMua.TabIndex = 15;
             this.dT_ngayMua.ValueChanged += new System.EventHandler(this.dT_ngayMua_ValueChanged);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(43, 401);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 20);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Hãng sản xuất";
             // 
             // label5
             // 
@@ -220,57 +261,17 @@ namespace Gym_management_appication.UI
             this.label5.TabIndex = 10;
             this.label5.Text = "Ngày mua";
             // 
-            // label6
+            // label9
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(43, 257);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 20);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Giá thành";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(43, 305);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 20);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Bảo hành";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(43, 353);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(201, 20);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Ngày hết hạn bảo hành";
-            // 
-            // cb_tinhTrang
-            // 
-            this.cb_tinhTrang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cb_tinhTrang.FormattingEnabled = true;
-            this.cb_tinhTrang.Items.AddRange(new object[] {
-            "Còn tốt",
-            "Đang bảo trì",
-            "Hỏng",
-            "Lỗi",
-            "Trong kho"});
-            this.cb_tinhTrang.Location = new System.Drawing.Point(47, 182);
-            this.cb_tinhTrang.Name = "cb_tinhTrang";
-            this.cb_tinhTrang.Size = new System.Drawing.Size(130, 24);
-            this.cb_tinhTrang.TabIndex = 7;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(43, 401);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(130, 20);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Hãng sản xuất";
             // 
             // btn_Sua
             // 

@@ -12,9 +12,9 @@ namespace Gym_management_appication.Database.conString
         string Catalog;
         string userName;//optional
         string password;//optional
-        public ConString(string database = @"DESKTOP-KPFBBSK", string Catalog = "GymManagement", string userName = "None", string password = "None")
+        public ConString(string database = @"DESKTOP-7B5BAC1", string Catalog = "GymManagement", string userName = "None", string password = "None")
         {
-            this.database = Class.valiballecommon.GetStorage().DatabaseName;
+            this.database = Class.valiballecommon.GetStorage().DatabaseName.Trim() != "" ? Class.valiballecommon.GetStorage().DatabaseName: database;
             this.Catalog = Catalog;
             this.password = password;
             this.userName = userName;

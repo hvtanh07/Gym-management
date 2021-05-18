@@ -103,5 +103,10 @@ namespace Gym_management_appication.UI
         {
             dT_ngayHetHan.Value = dT_ngayMua.Value.AddMonths((int)UD_baoHanh.Value);
         }
+
+        private void GroupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
