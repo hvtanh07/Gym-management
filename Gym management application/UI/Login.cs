@@ -38,14 +38,16 @@ namespace Gym_management_appication.UI
         private void button1_Click(object sender, EventArgs e)
         {
             Properties.Settings setting = Properties.Settings.Default;
+            valiballecommon valiballecommon = valiballecommon.GetStorage();
+            valiballecommon.DatabaseName = txt_DB.Text;
+
             LogIn login = new LogIn();
             if(!login.getRefication(txt_userName.Text.Trim().ToLower(), txt_pass.Text.Trim()))
             {
                 MessageBox.Show("Tên đắng nhập hoặc mật khẩu sai!","Error!");
             }
             else
-            {
-                valiballecommon valiballecommon = valiballecommon.GetStorage();
+            {                
                 valiballecommon.UserName = txt_userName.Text;
                 valiballecommon.Permission = login.getPermission(txt_userName.Text.Trim().ToLower());
                 valiballecommon.UserCode = login.getID(txt_userName.Text.Trim().ToLower());

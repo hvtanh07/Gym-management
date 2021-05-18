@@ -35,3 +35,6 @@ C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Deb
 C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.MainMenu.resources
 C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.LichTrucPT.ThemLichTrucPT.resources
 C:\Users\Dell\Documents\GitHub\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.LichTrucPT.XoaLichTrucPt.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.LichTrucPT.LichTrucPT.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.LichTrucPT.ThemLichTrucPT.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.LichTrucPT.XoaLichTrucPT.resources
