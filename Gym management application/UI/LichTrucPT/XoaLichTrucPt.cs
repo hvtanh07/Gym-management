@@ -19,19 +19,32 @@ namespace Gym_management_appication.UI.LichTrucPT
         public XoaLichTrucPT()
         {
             InitializeComponent();
+            LoadPTName();
         }
 
+        void LoadPTName()
+        {
+            DataTable nameData = new DataTable();
+            nameData = new DSNVModel().GetData("Select * from NHANVIEN where ChucVu = N'PT'");
+            for (int i = 0; i < nameData.Rows.Count; i++)
+            {
+                comboBoxHoTen.Items.Add(nameData.Rows[i][1].ToString());
+            }
+
+        }
         private void ButtonOk_Click(object sender, EventArgs e)
         {
-            if (textBoxID.Text == "" || textBoxTen.Text == "" || comboBoxNgayTruc.Text == "" || comboBoxBuoiTruc.Text == "")
+            DataTable data = new DataTable();
+            if (comboBoxHoTen.Text == "" || comboBoxNgayTruc.Text == "" || comboBoxBuoiTruc.Text == "")
             {
                 MessageBox.Show("Chưa đủ thông tin.");
                 return;
             }
 
             Class.LichTrucPT lichTrucPT = new Class.LichTrucPT();
-            lichTrucPT.ID = this.textBoxID.Text.Trim();
-            lichTrucPT.HoTen = this.textBoxTen.Text.Trim();
+            data = new DSNVModel().GetData("Select * from NHANVIEN where HoTen = N'" + comboBoxHoTen.Text.Trim() + "' and ChucVu = N'PT'");
+            lichTrucPT.ID = data.Rows[0][0].ToString().Trim();
+            lichTrucPT.HoTen = this.comboBoxHoTen.Text.Trim();
             lichTrucPT.Thu = Int32.Parse(this.comboBoxNgayTruc.Text.Last().ToString());
             int buoi;
             switch (comboBoxBuoiTruc.Text)
@@ -51,7 +64,7 @@ namespace Gym_management_appication.UI.LichTrucPT
             }
             lichTrucPT.Buoi = buoi;
 
-            DataTable data = new DataTable();
+            
             data = new DSNVModel().GetData("Select * from NHANVIEN where ID ='" + lichTrucPT.ID + "'");
             if (data.Rows.Count == 0)
             {
