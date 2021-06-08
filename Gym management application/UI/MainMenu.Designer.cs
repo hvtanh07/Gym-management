@@ -41,14 +41,20 @@ namespace Gym_management_appication.UI
             this.btn_QuanLyHoiVien = new System.Windows.Forms.Button();
             this.logoPanel = new System.Windows.Forms.Panel();
             this.container = new System.Windows.Forms.Panel();
+            this.btn_QuanLyDoanhThu = new System.Windows.Forms.Button();
+            this.GroupQuanLyDoanhThu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.sidePanel.SuspendLayout();
             this.GroupQuanLyNhanVien.SuspendLayout();
             this.GroupQuanLyHoiVien.SuspendLayout();
+            this.GroupQuanLyDoanhThu.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(185)))), ((int)(((byte)(179)))));
+            this.sidePanel.Controls.Add(this.GroupQuanLyDoanhThu);
+            this.sidePanel.Controls.Add(this.btn_QuanLyDoanhThu);
             this.sidePanel.Controls.Add(this.btn_QuanLyThietbi);
             this.sidePanel.Controls.Add(this.GroupQuanLyNhanVien);
             this.sidePanel.Controls.Add(this.btn_QuanLyNhanvien);
@@ -216,6 +222,47 @@ namespace Gym_management_appication.UI
             this.container.Size = new System.Drawing.Size(1006, 763);
             this.container.TabIndex = 6;
             // 
+            // btn_QuanLyDoanhThu
+            // 
+            this.btn_QuanLyDoanhThu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
+            this.btn_QuanLyDoanhThu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_QuanLyDoanhThu.FlatAppearance.BorderSize = 0;
+            this.btn_QuanLyDoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_QuanLyDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuanLyDoanhThu.Location = new System.Drawing.Point(0, 543);
+            this.btn_QuanLyDoanhThu.Name = "btn_QuanLyDoanhThu";
+            this.btn_QuanLyDoanhThu.Size = new System.Drawing.Size(250, 80);
+            this.btn_QuanLyDoanhThu.TabIndex = 11;
+            this.btn_QuanLyDoanhThu.Text = "Quản lý doanh thu";
+            this.btn_QuanLyDoanhThu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_QuanLyDoanhThu.UseVisualStyleBackColor = false;
+            this.btn_QuanLyDoanhThu.Click += new System.EventHandler(this.btn_QuanLyDoanhThu_Click);
+            // 
+            // GroupQuanLyDoanhThu
+            // 
+            this.GroupQuanLyDoanhThu.Controls.Add(this.button1);
+            this.GroupQuanLyDoanhThu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GroupQuanLyDoanhThu.Location = new System.Drawing.Point(0, 623);
+            this.GroupQuanLyDoanhThu.Name = "GroupQuanLyDoanhThu";
+            this.GroupQuanLyDoanhThu.Size = new System.Drawing.Size(250, 102);
+            this.GroupQuanLyDoanhThu.TabIndex = 12;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(250, 50);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Báo cáo";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -229,6 +276,7 @@ namespace Gym_management_appication.UI
             this.sidePanel.ResumeLayout(false);
             this.GroupQuanLyNhanVien.ResumeLayout(false);
             this.GroupQuanLyHoiVien.ResumeLayout(false);
+            this.GroupQuanLyDoanhThu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -246,5 +294,8 @@ namespace Gym_management_appication.UI
         private System.Windows.Forms.Button btn_LichTrucPT;
         private System.Windows.Forms.Button btn_DsNhanVien;
         private System.Windows.Forms.Panel GroupQuanLyNhanVien;
+        private System.Windows.Forms.Panel GroupQuanLyDoanhThu;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_QuanLyDoanhThu;
     }
 }

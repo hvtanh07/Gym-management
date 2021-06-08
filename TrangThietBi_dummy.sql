@@ -77,6 +77,13 @@ Create table PTSchedule (
 	Buoi int
 )
 
+Create table MonthlyIncome (
+	maKH		char(10),
+	dateOfPay   date,
+	moth
+    price       int,
+	Payyet		bit
+)
 
 
 --dummy Data--
@@ -148,7 +155,6 @@ INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Lo
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log02','2',1,'anh','1234')
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log03','3',1,'vinh','1234')
 
-select passW from LogInData where username = 'Duc'
 
 SELECT CASE WHEN EXISTS ( SELECT * FROM LogInData WHERE username = 'duc' and passW = '1234') THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT) END
 
@@ -190,6 +196,4 @@ insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,1)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,2)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,3)
 
-delete from PTSchedule
-
-
+drop table PTSchedule
