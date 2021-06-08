@@ -33,9 +33,6 @@ create table DanhSachHoiVien (
 	ngayKetThuc date,
 );
 
-drop table DanhSachHoiVien
-
-
 
 CREATE TABLE monthBucket(
 bucketName nvarchar(10),
@@ -77,14 +74,23 @@ Create table PTSchedule (
 	Buoi int
 )
 
-Create table MonthlyIncome (
-	maKH		char(10),
-	dateOfPay   date,
-	moth
-    price       int,
-	Payyet		bit
+create table GoiTap (
+	ma		nvarchar(20),
+	ten		nvarchar(30),
+	thoiHan	int,
+	moTa	nvarchar(50)
 )
 
+Create table MonthlyIncome (
+	ID				char(10) primary key,
+	maKH			char(10),
+	maGoiTap		char(20),
+	dateOfPay		date,
+	PaymentPeriod	int, --pay for how long		
+    price			int,
+	Paystatus		char(20)  --paid/due/exprired
+)
+drop table MonthlyIncome
 
 --dummy Data--
 SET DATEFORMAT dmy; 
@@ -197,3 +203,74 @@ insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,2)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,3)
 
 drop table PTSchedule
+
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'yoga1','Yoga 1 tháng',1,N'Gói tập Yoga 1 tháng') --300
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'yoga3','Yoga 3 tháng',1,N'Gói tập Yoga 3 tháng') --800
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'yoga-pt1','Yoga PT 1 tháng',1,N'Gói tập Yoga 1 tháng có PT kèm 1-1') --600
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'yoga-pt3','Yoga PT 3 tháng',1,N'Gói tập Yoga 3 tháng có PT kèm 1-1') --1200
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'fitness1','fitness 1 tháng',1,N'Gói tập fitness 1 tháng') --400
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'fitness3','fitness 3 tháng',1,N'Gói tập fitness 3 tháng') --1000
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'fitness-pt1','fitness PT 1 tháng',1,N'Gói tập fitness 1 tháng có PT kèm 1-1') --500
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'fitness-pt3','fitness PT 3 tháng',1,N'Gói tập fitness 3 tháng có PT kèm 1-1') --1200
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'gym1','gym 1 tháng',1,N'Gói tập gym 1 tháng') --500
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'gym3','gym 3 tháng',1,N'Gói tập gym 3 tháng') --1200
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'gym-pt1','gym PT 1 tháng',1,N'Gói tập gym 1 tháng có PT kèm 1-1') --700
+insert into GoiTap (ma,ten,thoiHan,moTa) 
+values (N'gym-pt3','gym PT 3 tháng',1,N'Gói tập gym 3 tháng có PT kèm 1-1') --1900
+
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
+values (N'PM001','KH001','yoga1','12/02/2021',1,300000,'paid')
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
+values (N'PM002','KH002','gym-pt3','12/01/2021',3,1900000,'paid')
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
+values (N'PM003','KH003','fitness-pt1','12/03/2021',1,500000,'paid')
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
+values (N'PM004','KH004','fitness1','12/05/2021',1,400000,'paid')
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
+values (N'PM005','KH005','yoga1','12/01/2021',1,300000,'paid')
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
+values (N'PM006','KH006','fitness-pt3','12/05/2021',3,1200000,'due')
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
+values (N'PM007','KH007','fitness1','12/04/2021',1,400000,'paid')
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
+values (N'PM008','KH008','fitness-pt3','12/04/2021',3,1200000,'paid')
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
+values (N'PM009','KH009','fitness-pt3','12/03/2021',3,1200000,'exprired')
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
+values (N'PM010','KH010','gym-pt3','12/05/2021',3,1900000,'paid')
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
+values (N'PM011','KH011','fitness3','12/02/2021',3,1000000,'paid')
+--Lay thu nhap hang thang
+SELECT YEAR(dateOfPay) as SalesYear,
+       MONTH(dateOfPay) as SalesMonth,
+       SUM(price) AS TotalSales
+FROM MonthlyIncome
+GROUP BY YEAR(dateOfPay), MONTH(dateOfPay)
+ORDER BY YEAR(dateOfPay), MONTH(dateOfPay)
+--Lay hoi vien và tình trạng thanh toán
+Select DanhSachHoiVien.ten as HoiVien, DATEDIFF(day,getdate(),DATEADD(month,MonthlyIncome.PaymentPeriod,MonthlyIncome.dateOfPay)) as DayRemain, GoiTap.ten as Goi, MonthlyIncome.Paystatus
+From MonthlyIncome inner join 
+	 DanhSachHoiVien on DanhSachHoiVien.ma = MonthlyIncome.maKH inner join 
+	 GoiTap			 on GoiTap.ma = MonthlyIncome.maGoiTap
+--s
+
+
+
+
+	 
+
+
+
+
+	
