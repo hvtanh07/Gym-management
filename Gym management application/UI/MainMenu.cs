@@ -65,7 +65,15 @@ namespace Gym_management_appication.UI
             showSubMenu(GroupQuanLyDoanhThu);
         }
 
+        private void btn_baoCao_Click(object sender, EventArgs e)
+        {
+            openChildForm(new QuanLyDoanhThu.ThongKeDoangThu());
+
+            hideSubMenu();
+        }
         #endregion
+
+        #region QuanLyNhanVien
         private void btn_QuanLyNhanvien_Click(object sender, EventArgs e)
         {
             showSubMenu(GroupQuanLyNhanVien);
@@ -85,6 +93,8 @@ namespace Gym_management_appication.UI
 
             hideSubMenu();
         }
+
+        #endregion
 
         private void btn_QuanLyThietbi_Click(object sender, EventArgs e)
         {
@@ -111,6 +121,6 @@ namespace Gym_management_appication.UI
             childForm.Show();
         }
 
-        
+      
     }
 }

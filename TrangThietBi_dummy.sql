@@ -251,19 +251,33 @@ insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, 
 values (N'PM010','KH010','gym-pt3','12/05/2021',3,1900000,'paid')
 insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
 values (N'PM011','KH011','fitness3','12/02/2021',3,1000000,'paid')
---Lay thu nhap hang thang
-SELECT YEAR(dateOfPay) as SalesYear,
-       MONTH(dateOfPay) as SalesMonth,
-       SUM(price) AS TotalSales
+
+--Lay thu nhap hang năm
+SELECT YEAR(dateOfPay) as SalesYear, SUM(price) AS TotalSales
 FROM MonthlyIncome
+WHERE dateOfPay > '01/01/2021' AND dateOfPay < '13/12/2021'
+GROUP BY YEAR(dateOfPay)
+ORDER BY YEAR(dateOfPay)
+--Lay thu nhap hang tháng
+SELECT cast(month(dateOfPay) as varchar) + '/' + cast(year(dateOfPay) as varchar) as SalesMonth, SUM(price) AS TotalSales
+FROM MonthlyIncome
+WHERE dateOfPay >= '01/01/2021' AND dateOfPay <= '01/12/2021'
 GROUP BY YEAR(dateOfPay), MONTH(dateOfPay)
 ORDER BY YEAR(dateOfPay), MONTH(dateOfPay)
+
+
 --Lay hoi vien và tình trạng thanh toán
 Select DanhSachHoiVien.ten as HoiVien, DATEDIFF(day,getdate(),DATEADD(month,MonthlyIncome.PaymentPeriod,MonthlyIncome.dateOfPay)) as DayRemain, GoiTap.ten as Goi, MonthlyIncome.Paystatus
 From MonthlyIncome inner join 
 	 DanhSachHoiVien on DanhSachHoiVien.ma = MonthlyIncome.maKH inner join 
 	 GoiTap			 on GoiTap.ma = MonthlyIncome.maGoiTap
 --s
+
+SELECT cast(month(dateOfPay) as varchar) + '/' + cast(year(dateOfPay) as varchar) as SalesMonth, SUM(price) AS TotalSales 
+FROM MonthlyIncome 
+WHERE dateOfPay >= '9/1/2021 3:09:27 PM' AND dateOfPay <= '9/11/2021 3:09:27 PM' 
+GROUP BY YEAR(dateOfPay), MONTH(dateOfPay) 
+ORDER BY YEAR(dateOfPay), MONTH(dateOfPay)
 
 
 
