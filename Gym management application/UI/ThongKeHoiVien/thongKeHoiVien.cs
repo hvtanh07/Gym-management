@@ -31,11 +31,7 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
                 MessageBox.Show("Ngày bắt đầu phải bé hơn ngày kết thúc 2 tháng!","Error!");
                 return;
             }
-            //if (dt_toDate.Value > DateTime.Today)
-            //{
-            //    MessageBox.Show("Ngày kết thúc không được lớn hơn hiện tại!", "Error!");
-            //    return;
-            //}
+
             if (cb_DataType.Text.Trim() == "")
             {
                 MessageBox.Show("Chọn loại thống kê!", "Error!");
@@ -100,8 +96,6 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
             c_ThongKe.Series["Số lượng"].XValueMember = "thang";
             c_ThongKe.Series["Số lượng"].YValueMembers = "total";
             c_ThongKe.Series["Số lượng"].Color = Color.Red;
-
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

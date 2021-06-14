@@ -255,7 +255,7 @@ values (N'PM011','KH011','fitness3','12/02/2021',3,1000000,'paid')
 --Lay thu nhap hang năm
 SELECT YEAR(dateOfPay) as SalesYear, SUM(price) AS TotalSales
 FROM MonthlyIncome
-WHERE dateOfPay > '01/01/2021' AND dateOfPay < '13/12/2021'
+WHERE dateOfPay > '01/01/2020' AND dateOfPay < '13/12/2022'
 GROUP BY YEAR(dateOfPay)
 ORDER BY YEAR(dateOfPay)
 --Lay thu nhap hang tháng
@@ -281,7 +281,11 @@ ORDER BY YEAR(dateOfPay), MONTH(dateOfPay)
 
 
 
-
+SELECT YEAR(dateOfPay) as SalesYear, SUM(price) AS TotalSales 
+FROM MonthlyIncome 
+WHERE dateOfPay >= '14/14/2020' AND dateOfPay <= '6/14/2022' 
+GROUP BY YEAR(dateOfPay) 
+ORDER BY YEAR(dateOfPay)
 	 
 
 

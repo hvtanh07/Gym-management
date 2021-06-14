@@ -40,7 +40,7 @@ namespace Gym_management_appication.Database
         }
         public DataTable getIncomeofYear(DateTime fromDate, DateTime toDate)
         {
-            sqlQuery = "YEAR(dateOfPay) as SalesYear, SUM(price) AS TotalSales" +
+            sqlQuery = "SELECT YEAR(dateOfPay) as SalesYear, SUM(price) AS TotalSales" +
                        " FROM MonthlyIncome" +
                        " WHERE dateOfPay >= '" + fromDate + "' AND dateOfPay <= '" + toDate + "'" +
                        " GROUP BY YEAR(dateOfPay)" +
