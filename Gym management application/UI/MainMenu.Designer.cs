@@ -44,6 +44,7 @@ namespace Gym_management_appication.UI
             this.btn_QuanLyHoiVien = new System.Windows.Forms.Button();
             this.logoPanel = new System.Windows.Forms.Panel();
             this.container = new System.Windows.Forms.Panel();
+            this.btn_thanhToan = new System.Windows.Forms.Button();
             this.sidePanel.SuspendLayout();
             this.GroupQuanLyDoanhThu.SuspendLayout();
             this.GroupQuanLyNhanVien.SuspendLayout();
@@ -69,6 +70,7 @@ namespace Gym_management_appication.UI
             // 
             // GroupQuanLyDoanhThu
             // 
+            this.GroupQuanLyDoanhThu.Controls.Add(this.btn_thanhToan);
             this.GroupQuanLyDoanhThu.Controls.Add(this.btn_baoCao);
             this.GroupQuanLyDoanhThu.Dock = System.Windows.Forms.DockStyle.Top;
             this.GroupQuanLyDoanhThu.Location = new System.Drawing.Point(0, 623);
@@ -264,6 +266,23 @@ namespace Gym_management_appication.UI
             this.container.Size = new System.Drawing.Size(1006, 763);
             this.container.TabIndex = 6;
             // 
+            // btn_thanhToan
+            // 
+            this.btn_thanhToan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
+            this.btn_thanhToan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_thanhToan.FlatAppearance.BorderSize = 0;
+            this.btn_thanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_thanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_thanhToan.Location = new System.Drawing.Point(0, 50);
+            this.btn_thanhToan.Name = "btn_thanhToan";
+            this.btn_thanhToan.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btn_thanhToan.Size = new System.Drawing.Size(250, 50);
+            this.btn_thanhToan.TabIndex = 1;
+            this.btn_thanhToan.Text = "Thanh toán";
+            this.btn_thanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_thanhToan.UseVisualStyleBackColor = false;
+            this.btn_thanhToan.Click += new System.EventHandler(this.btn_thanhToan_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -298,5 +317,6 @@ namespace Gym_management_appication.UI
         private System.Windows.Forms.Panel GroupQuanLyDoanhThu;
         private System.Windows.Forms.Button btn_baoCao;
         private System.Windows.Forms.Button btn_QuanLyDoanhThu;
+        private System.Windows.Forms.Button btn_thanhToan;
     }
 }

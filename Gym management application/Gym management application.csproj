@@ -74,6 +74,7 @@
     <Compile Include="Class\valiballecommon.cs" />
     <Compile Include="Database\conString\ConString.cs" />
     <Compile Include="Database\DoanhThu.cs" />
+    <Compile Include="Database\GoiTap.cs" />
     <Compile Include="Database\hoiVien.cs" />
     <Compile Include="Database\LichTrucPT\LichTrucPTModel.cs" />
     <Compile Include="Database\LogIn.cs" />
@@ -154,6 +155,12 @@
     <Compile Include="UI\QuanLyThietBi\QuanLyThietBi.Designer.cs">
       <DependentUpon>QuanLyThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\QuanLyDoanhThu\ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QuanLyDoanhThu\ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ThongKeHoiVien\thongKeHoiVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QuanLyThietBi\QuanLyThietBi.resx">
       <DependentUpon>QuanLyThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QuanLyDoanhThu\ThanhToan.resx">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ThongKeHoiVien\thongKeHoiVien.resx">
       <DependentUpon>thongKeHoiVien.cs</DependentUpon>

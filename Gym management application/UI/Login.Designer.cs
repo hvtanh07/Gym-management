@@ -54,6 +54,7 @@ namespace Gym_management_appication.UI
             this.txt_pass.TabIndex = 1;
             this.txt_pass.Text = "Password";
             this.txt_pass.Enter += new System.EventHandler(this.txt_pass_Enter);
+            this.txt_pass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_pass_KeyDown);
             this.txt_pass.Leave += new System.EventHandler(this.txt_pass_Leave);
             // 
             // btn_Login

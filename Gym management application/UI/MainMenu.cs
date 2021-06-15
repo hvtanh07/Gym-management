@@ -71,6 +71,12 @@ namespace Gym_management_appication.UI
 
             hideSubMenu();
         }
+        private void btn_thanhToan_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ThanhToan());
+
+            hideSubMenu();
+        }
         #endregion
 
         #region QuanLyNhanVien
@@ -121,6 +127,6 @@ namespace Gym_management_appication.UI
             childForm.Show();
         }
 
-      
+        
     }
 }

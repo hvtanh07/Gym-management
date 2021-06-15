@@ -87,10 +87,9 @@ Create table MonthlyIncome (
 	maGoiTap		char(20),
 	dateOfPay		date,
 	PaymentPeriod	int, --pay for how long		
-    price			int,
-	Paystatus		char(20)  --paid/due/exprired
+    price			int
 )
-drop table MonthlyIncome
+drop table DanhSachHoiVien
 
 --dummy Data--
 SET DATEFORMAT dmy; 
@@ -130,32 +129,51 @@ delete from NHANVIEN
 
 --drop table DanhSachHoiVien
 
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
-values ('KH001',N'Trương Nguyễn Tuấn Nam',22,N'Nam',0123456789,'12/02/2021','12/08/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
-values ('KH002',N'Phan Duy',21,N'Nam',0123456789,'12/01/2021','12/08/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
-values ('KH003',N'Vinh',20,N'Nam',0123456789,'12/03/2021','12/05/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
-values ('KH004',N'Tuan Anh',22,N'Nu',0123456789,'12/05/2021','12/09/2022')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
-values ('KH005',N'Hoang Tuan Kiet',22,N'Nam',0123456789,'12/01/2021','12/07/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
-values ('KH006',N'Someone',21,N'Nam',0123456789,'12/05/2021','12/08/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
-values ('KH007',N'Someone Else',20,N'Nam',0123456789,'12/04/2021','12/12/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--values ('KH001',N'Trương Nguyễn Tuấn Nam',22,N'Nam',0123456789,'12/02/2021','12/08/2021')
+--insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--values ('KH002',N'Phan Duy',21,N'Nam',0123456789,'12/01/2021','12/08/2021')
+--insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--values ('KH003',N'Vinh',20,N'Nam',0123456789,'12/03/2021','12/05/2021')
+--insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--values ('KH004',N'Tuan Anh',22,N'Nu',0123456789,'12/05/2021','12/09/2022')
+--insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--values ('KH005',N'Hoang Tuan Kiet',22,N'Nam',0123456789,'12/01/2021','12/07/2021')
+--insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--values ('KH006',N'Someone',21,N'Nam',0123456789,'12/05/2021','12/08/2021')
+--insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--values ('KH007',N'Someone Else',20,N'Nam',0123456789,'12/04/2021','12/12/2021')
+--insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--values ('KH008',N'Stranger',22,N'Nu',0123456789,'12/04/2021','12/10/2022')
+--insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--values ('KH009',N'ABC',21,N'Nam',0123456789,'12/03/2021','12/11/2021')
+--insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--values ('KH010',N'XYZ Else',20,N'Nam',0123456789,'12/05/2021','12/09/2021')
+--insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
+--values ('KH011',N'LMN',22,N'Nu',0123456789,'12/02/2021','12/11/2022')
+
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+values ('KH001',N'Trương Nguyễn Tuấn Nam',22,N'Nam',0123456789,'12/02/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+values ('KH002',N'Phan Duy',21,N'Nam',0123456789,'12/01/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) --
+values ('KH003',N'Vinh',20,N'Nam',0123456789,'12/03/2021','12/07/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+values ('KH004',N'Tuan Anh',22,N'Nu',0123456789,'12/05/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+values ('KH005',N'Hoang Tuan Kiet',22,N'Nam',0123456789,'12/01/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+values ('KH006',N'Someone',21,N'Nam',0123456789,'12/05/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+values ('KH007',N'Someone Else',20,N'Nam',0123456789,'12/04/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) --
 values ('KH008',N'Stranger',22,N'Nu',0123456789,'12/04/2021','12/10/2022')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
-values ('KH009',N'ABC',21,N'Nam',0123456789,'12/03/2021','12/11/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
-values ('KH010',N'XYZ Else',20,N'Nam',0123456789,'12/05/2021','12/09/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
-values ('KH011',N'LMN',22,N'Nu',0123456789,'12/02/2021','12/11/2022')
-
-
-
-
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+values ('KH009',N'ABC',21,N'Nam',0123456789,'12/03/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+values ('KH010',N'XYZ Else',20,N'Nam',0123456789,'12/05/2021')
+insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+values ('KH011',N'LMN',22,N'Nu',0123456789,'12/02/2021')
 
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log01','1',1,'duc','1234')
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log02','2',1,'anh','1234')
@@ -229,63 +247,115 @@ values (N'gym-pt1','gym PT 1 tháng',1,N'Gói tập gym 1 tháng có PT kèm 1-1
 insert into GoiTap (ma,ten,thoiHan,moTa) 
 values (N'gym-pt3','gym PT 3 tháng',1,N'Gói tập gym 3 tháng có PT kèm 1-1') --1900
 
-insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
-values (N'PM001','KH001','yoga1','12/02/2021',1,300000,'paid')
-insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
-values (N'PM002','KH002','gym-pt3','12/01/2021',3,1900000,'paid')
-insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
-values (N'PM003','KH003','fitness-pt1','12/03/2021',1,500000,'paid')
-insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
-values (N'PM004','KH004','fitness1','12/05/2021',1,400000,'paid')
-insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
-values (N'PM005','KH005','yoga1','12/01/2021',1,300000,'paid')
-insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
-values (N'PM006','KH006','fitness-pt3','12/05/2021',3,1200000,'due')
-insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
-values (N'PM007','KH007','fitness1','12/04/2021',1,400000,'paid')
-insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
-values (N'PM008','KH008','fitness-pt3','12/04/2021',3,1200000,'paid')
-insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
-values (N'PM009','KH009','fitness-pt3','12/03/2021',3,1200000,'exprired')
-insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
-values (N'PM010','KH010','gym-pt3','12/05/2021',3,1900000,'paid')
-insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price, Paystatus) 
-values (N'PM011','KH011','fitness3','12/02/2021',3,1000000,'paid')
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM001','KH001','yoga1','12/02/2021',1,300000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM012','KH001','yoga1','12/03/2021',1,300000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM013','KH001','yoga1','12/04/2021',1,300000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM014','KH001','yoga1','12/05/2021',1,300000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM015','KH001','yoga1','12/06/2021',1,300000)
 
---Lay thu nhap hang năm
-SELECT YEAR(dateOfPay) as SalesYear, SUM(price) AS TotalSales
-FROM MonthlyIncome
-WHERE dateOfPay > '01/01/2020' AND dateOfPay < '13/12/2022'
-GROUP BY YEAR(dateOfPay)
-ORDER BY YEAR(dateOfPay)
---Lay thu nhap hang tháng
-SELECT cast(month(dateOfPay) as varchar) + '/' + cast(year(dateOfPay) as varchar) as SalesMonth, SUM(price) AS TotalSales
-FROM MonthlyIncome
-WHERE dateOfPay >= '01/01/2021' AND dateOfPay <= '01/12/2021'
-GROUP BY YEAR(dateOfPay), MONTH(dateOfPay)
-ORDER BY YEAR(dateOfPay), MONTH(dateOfPay)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM002','KH002','gym-pt3','12/01/2021',3,1900000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM017','KH002','gym-pt3','12/02/2021',3,1900000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM018','KH002','gym-pt3','12/03/2021',3,1900000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM019','KH002','gym-pt3','12/04/2021',3,1900000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM020','KH002','gym-pt3','12/05/2021',3,1900000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM021','KH002','gym-pt3','12/06/2021',3,1900000)
+
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM003','KH003','fitness-pt1','12/03/2021',1,500000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM016','KH003','fitness-pt1','12/04/2021',1,500000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM022','KH003','fitness-pt1','12/05/2021',1,500000)
+
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM004','KH004','fitness1','12/05/2021',1,400000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM023','KH004','fitness1','12/06/2021',1,400000)
+
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM005','KH005','yoga1','12/01/2021',1,300000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM024','KH005','yoga1','12/02/2021',1,300000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM025','KH005','yoga1','12/03/2021',1,300000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM026','KH005','yoga1','12/04/2021',1,300000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM027','KH005','yoga1','12/05/2021',1,300000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM028','KH005','yoga1','12/06/2021',1,300000)
+
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM006','KH006','fitness-pt3','12/05/2021',3,1200000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM029','KH006','fitness-pt3','12/06/2021',3,1200000)
+
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM007','KH007','fitness1','12/04/2021',1,400000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM030','KH007','fitness1','12/05/2021',1,400000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM031','KH007','fitness1','12/06/2021',1,400000)
+
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM008','KH008','fitness-pt3','12/04/2021',3,1200000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM032','KH008','fitness-pt3','12/05/2021',3,1200000)
+
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM009','KH009','fitness-pt3','12/03/2021',3,1200000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM033','KH009','fitness-pt3','12/04/2021',3,1200000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM034','KH009','fitness-pt3','12/05/2021',3,1200000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM035','KH009','fitness-pt3','12/06/2021',3,1200000)
+
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM010','KH010','gym-pt3','12/05/2021',3,1900000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM036','KH010','gym-pt3','12/06/2021',3,1900000)
+
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM011','KH011','fitness3','12/02/2021',3,1000000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM037','KH011','fitness3','12/03/2021',3,1000000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM038','KH011','fitness3','12/04/2021',3,1000000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM039','KH011','fitness3','12/05/2021',3,1000000)
+insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
+values (N'PM040','KH011','fitness3','12/06/2021',3,1000000)
 
 
 --Lay hoi vien và tình trạng thanh toán
-Select DanhSachHoiVien.ten as HoiVien, DATEDIFF(day,getdate(),DATEADD(month,MonthlyIncome.PaymentPeriod,MonthlyIncome.dateOfPay)) as DayRemain, GoiTap.ten as Goi, MonthlyIncome.Paystatus
+
+--, DATEDIFF(day,getdate(),DATEADD(month,MonthlyIncome.PaymentPeriod,MonthlyIncome.dateOfPay)) as DayRemain
+Select DanhSachHoiVien.ten as HoiVien, MonthlyIncome.dateOfPay,
+trim(GoiTap.ma) + ' - ' + trim(GoiTap.ten) as Goi, MonthlyIncome.price
 From MonthlyIncome inner join 
 	 DanhSachHoiVien on DanhSachHoiVien.ma = MonthlyIncome.maKH inner join 
 	 GoiTap			 on GoiTap.ma = MonthlyIncome.maGoiTap
---s
+Where DanhSachHoiVien.ma = 'KH004'
 
-SELECT cast(month(dateOfPay) as varchar) + '/' + cast(year(dateOfPay) as varchar) as SalesMonth, SUM(price) AS TotalSales 
-FROM MonthlyIncome 
-WHERE dateOfPay >= '9/1/2021 3:09:27 PM' AND dateOfPay <= '9/11/2021 3:09:27 PM' 
-GROUP BY YEAR(dateOfPay), MONTH(dateOfPay) 
-ORDER BY YEAR(dateOfPay), MONTH(dateOfPay)
+Delete from MonthlyIncome 
+where maKH = 'Trương Nguyễn Tuấn Nam' AND year(dateOfPay) = '2021' and month(dateOfPay) = '7' and day(dateOfPay) = '15'
 
 
+select ma from DanhSachHoiVien where ten = N'Trương Nguyễn Tuấn Nam'
 
-SELECT YEAR(dateOfPay) as SalesYear, SUM(price) AS TotalSales 
-FROM MonthlyIncome 
-WHERE dateOfPay >= '14/14/2020' AND dateOfPay <= '6/14/2022' 
-GROUP BY YEAR(dateOfPay) 
-ORDER BY YEAR(dateOfPay)
+
 	 
 
 

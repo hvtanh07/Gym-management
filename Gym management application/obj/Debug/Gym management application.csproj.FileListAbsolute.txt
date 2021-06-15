@@ -59,3 +59,4 @@ D:\Github\Gym-management\Gym management application\obj\Debug\Gym management app
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym management appication.exe
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym management appication.pdb
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyDoanhThu.ThongKeDoangThu.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.ThongKeHoiVien.ThanhToan.resources
