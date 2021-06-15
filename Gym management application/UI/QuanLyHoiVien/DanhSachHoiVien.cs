@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gym_management_appication.Class;
+using Gym_management_appication.UI.QuanLyHoiVien;
 using Gym_management_appication.UI.ThongKeHoiVien;
 
 namespace Gym_management_appication.Database.QuanLyHoiVien
@@ -193,6 +194,14 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         private void TextBoxTuoi_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void btnQRCode_Click(object sender, EventArgs e) {
+
+            if (dataGridViewHoiVien.SelectedCells.Count > 0) { 
+                QRCodeForm form = new QRCodeForm(dataGridViewHoiVien.Rows[dataGridViewHoiVien.SelectedCells[0].RowIndex].Cells[0].Value.ToString());
+                form.ShowDialog();
+            }
         }
     }
 }
