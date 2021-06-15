@@ -24,6 +24,7 @@ namespace Gym_management_appication.UI
         {
             GroupQuanLyHoiVien.Visible = false;
             GroupQuanLyNhanVien.Visible = false;
+            GroupQuanLyDoanhThu.Visible = false;
             //Add more Group of Form 
         }
         private void showSubMenu(Panel subMenu)
@@ -57,6 +58,28 @@ namespace Gym_management_appication.UI
         }
 
         #endregion
+
+        #region QuanLyDoanhThu
+        private void btn_QuanLyDoanhThu_Click(object sender, EventArgs e)
+        {
+            showSubMenu(GroupQuanLyDoanhThu);
+        }
+
+        private void btn_baoCao_Click(object sender, EventArgs e)
+        {
+            openChildForm(new QuanLyDoanhThu.ThongKeDoangThu());
+
+            hideSubMenu();
+        }
+        private void btn_thanhToan_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ThanhToan());
+
+            hideSubMenu();
+        }
+        #endregion
+
+        #region QuanLyNhanVien
         private void btn_QuanLyNhanvien_Click(object sender, EventArgs e)
         {
             showSubMenu(GroupQuanLyNhanVien);
@@ -76,6 +99,8 @@ namespace Gym_management_appication.UI
 
             hideSubMenu();
         }
+
+        #endregion
 
         private void btn_QuanLyThietbi_Click(object sender, EventArgs e)
         {
@@ -102,6 +127,6 @@ namespace Gym_management_appication.UI
             childForm.Show();
         }
 
-       
+        
     }
 }

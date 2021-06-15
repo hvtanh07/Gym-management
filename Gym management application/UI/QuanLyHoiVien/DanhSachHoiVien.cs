@@ -101,6 +101,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
 
         private void DataGridViewHoiVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             textBoxID.Text = dataGridViewHoiVien.Rows[e.RowIndex].Cells[1].Value.ToString();
             textBoxTen.Text = dataGridViewHoiVien.Rows[e.RowIndex].Cells[2].Value.ToString();
             textBoxTuoi.Text = dataGridViewHoiVien.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -110,7 +111,14 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                 radioButtonNu.Checked = true;
             textBoxSDT.Text = dataGridViewHoiVien.Rows[e.RowIndex].Cells[5].Value.ToString();
             dateTimePickerNgayThamGia.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[e.RowIndex].Cells[6].Value.ToString());
-            dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[e.RowIndex].Cells[7].Value.ToString());
+            try
+            {
+                dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[e.RowIndex].Cells[7].Value.ToString());
+            }
+            catch(Exception ex)
+            {
+                dateTimePickerNgayKetThuc.Value = DateTime.Today.AddYears(1);
+            }            
             hoiVien.ma = textBoxID.Text;
             hoiVien.ten = textBoxTen.Text;
             hoiVien.tuoi = Convert.ToInt32(textBoxTuoi.Text.ToString());

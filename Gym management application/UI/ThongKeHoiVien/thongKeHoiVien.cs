@@ -28,14 +28,10 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
         {
             if(dt_fromDate.Value.AddMonths(1) >= dt_toDate.Value)
             {
-                MessageBox.Show("Ngày bắt đầu phải bé hơn ngày kết thúc 1 tháng!","Error!");
+                MessageBox.Show("Ngày bắt đầu phải bé hơn ngày kết thúc 2 tháng!","Error!");
                 return;
             }
-            //if (dt_toDate.Value > DateTime.Today)
-            //{
-            //    MessageBox.Show("Ngày kết thúc không được lớn hơn hiện tại!", "Error!");
-            //    return;
-            //}
+
             if (cb_DataType.Text.Trim() == "")
             {
                 MessageBox.Show("Chọn loại thống kê!", "Error!");
@@ -63,9 +59,9 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
         private void numOfMemeachMonth()
         {
             c_ThongKe.DataSource = null;
-            hoiVien trangThietBi = new hoiVien();
-            DataTable thietbiList = trangThietBi.getMemberofMonth(dt_fromDate.Value, dt_toDate.Value);
-            c_ThongKe.DataSource = thietbiList;
+            hoiVien hoivien = new hoiVien();
+            DataTable hoivienList = hoivien.getMemberofMonth(dt_fromDate.Value, dt_toDate.Value);
+            c_ThongKe.DataSource = hoivienList;
             c_ThongKe.ChartAreas["ChartArea1"].AxisX.Title = "Nhóm";
             c_ThongKe.ChartAreas["ChartArea1"].AxisX.Title = "Tổng số lượng";
 
@@ -77,9 +73,9 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
         {
             c_ThongKe.DataSource = null;
             //c_ThongKe.typ
-            hoiVien trangThietBi = new hoiVien();
-            DataTable thietbiList = trangThietBi.getNewMemberofMonth(dt_fromDate.Value, dt_toDate.Value);
-            c_ThongKe.DataSource = thietbiList;
+            hoiVien hoivien = new hoiVien();
+            DataTable hoivienList = hoivien.getNewMemberofMonth(dt_fromDate.Value, dt_toDate.Value);
+            c_ThongKe.DataSource = hoivienList;
             c_ThongKe.ChartAreas["ChartArea1"].AxisX.Title = "Nhóm";
             c_ThongKe.ChartAreas["ChartArea1"].AxisX.Title = "Tổng số lượng";
 
@@ -91,17 +87,15 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
         {
             c_ThongKe.DataSource = null;
             //c_ThongKe.typ
-            hoiVien trangThietBi = new hoiVien();
-            DataTable thietbiList = trangThietBi.getResignMemberofMonth(dt_fromDate.Value, dt_toDate.Value);
-            c_ThongKe.DataSource = thietbiList;
+            hoiVien hoivien = new hoiVien();
+            DataTable hoivienList = hoivien.getResignMemberofMonth(dt_fromDate.Value, dt_toDate.Value);
+            c_ThongKe.DataSource = hoivienList;
             c_ThongKe.ChartAreas["ChartArea1"].AxisX.Title = "Nhóm";
             c_ThongKe.ChartAreas["ChartArea1"].AxisX.Title = "Tổng số lượng";
 
             c_ThongKe.Series["Số lượng"].XValueMember = "thang";
             c_ThongKe.Series["Số lượng"].YValueMembers = "total";
             c_ThongKe.Series["Số lượng"].Color = Color.Red;
-
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

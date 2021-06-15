@@ -37,17 +37,24 @@ namespace Gym_management_appication.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            tryLogin();
+
+
+        }
+
+        private void tryLogin()
+        {
             Properties.Settings setting = Properties.Settings.Default;
             valiballecommon valiballecommon = valiballecommon.GetStorage();
             valiballecommon.DatabaseName = txt_DB.Text;
 
             LogIn login = new LogIn();
-            if(!login.getRefication(txt_userName.Text.Trim().ToLower(), txt_pass.Text.Trim()))
+            if (!login.getRefication(txt_userName.Text.Trim().ToLower(), txt_pass.Text.Trim()))
             {
-                MessageBox.Show("Tên đắng nhập hoặc mật khẩu sai!","Error!");
+                MessageBox.Show("Tên đắng nhập hoặc mật khẩu sai!", "Error!");
             }
             else
-            {                
+            {
                 valiballecommon.UserName = txt_userName.Text;
                 valiballecommon.Permission = login.getPermission(txt_userName.Text.Trim().ToLower());
                 valiballecommon.UserCode = login.getID(txt_userName.Text.Trim().ToLower());
@@ -63,7 +70,6 @@ namespace Gym_management_appication.UI
                 form2.Closed += (s, args) => this.Close();
                 form2.Show();
             }
-            
         }
 
         private void txt_userName_Enter(object sender, EventArgs e)
@@ -123,6 +129,14 @@ namespace Gym_management_appication.UI
                 setting.tickedCheck = false;
             else
                 setting.tickedCheck = true;
+        }
+
+        private void txt_pass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                tryLogin();
+            }
         }
     }
 }
