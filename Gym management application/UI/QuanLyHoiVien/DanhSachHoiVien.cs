@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gym_management_appication.Class;
 using Gym_management_appication.UI.QuanLyHoiVien;
+using Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature;
 using Gym_management_appication.UI.ThongKeHoiVien;
 
 namespace Gym_management_appication.Database.QuanLyHoiVien
@@ -199,8 +200,35 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         private void btnQRCode_Click(object sender, EventArgs e) {
 
             if (dataGridViewHoiVien.SelectedCells.Count > 0) { 
-                QRCodeForm form = new QRCodeForm(dataGridViewHoiVien.Rows[dataGridViewHoiVien.SelectedCells[0].RowIndex].Cells[0].Value.ToString());
+                QRCodeForm form = new QRCodeForm(dataGridViewHoiVien.Rows[dataGridViewHoiVien.SelectedCells[0].RowIndex].Cells[1].Value.ToString()); //Member ID
                 form.ShowDialog();
+            }
+        }
+
+        private void btnScanQR_Click(object sender, EventArgs e) {
+            QRScanForm scanForm = new QRScanForm((DataTable)dataGridViewHoiVien.DataSource);
+            string Result = scanForm.ShowDialogWithReturnedID();
+
+            for (int i=0; i<dataGridViewHoiVien.Rows.Count; i++) {
+                if (dataGridViewHoiVien.Rows[i].Cells[1].Value.ToString().Trim()==Result) {
+                    textBoxID.Text = dataGridViewHoiVien.Rows[i].Cells[1].Value.ToString();
+                    textBoxTen.Text = dataGridViewHoiVien.Rows[i].Cells[2].Value.ToString();
+                    textBoxTuoi.Text = dataGridViewHoiVien.Rows[i].Cells[3].Value.ToString();
+                    if (dataGridViewHoiVien.Rows[i].Cells[4].Value.ToString().Trim() == "Nam" || dataGridViewHoiVien.Rows[i].Cells[4].Value.ToString().Trim() == "")
+                        radioButtonNam.Checked = true;
+                    else
+                        radioButtonNu.Checked = true;
+                    textBoxSDT.Text = dataGridViewHoiVien.Rows[i].Cells[5].Value.ToString();
+                    dateTimePickerNgayThamGia.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[i].Cells[6].Value.ToString());
+                    dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[i].Cells[7].Value.ToString());
+                    hoiVien.ma = textBoxID.Text;
+                    hoiVien.ten = textBoxTen.Text;
+                    hoiVien.tuoi = Convert.ToInt32(textBoxTuoi.Text.ToString());
+                    hoiVien.gioiTinh = (radioButtonNam.Checked ? "Nam" : "Nữ");
+                    hoiVien.sdt = textBoxSDT.Text;
+                    hoiVien.ngayThamGia = dateTimePickerNgayThamGia.Value;
+                    hoiVien.ngayTKetThuc = dateTimePickerNgayKetThuc.Value;
+                }
             }
         }
     }

@@ -51,6 +51,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnScanQR = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHoiVien)).BeginInit();
             this.panelNhanVien.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +108,7 @@
             this.panelNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(219)))));
+            this.panelNhanVien.Controls.Add(this.btnScanQR);
             this.panelNhanVien.Controls.Add(this.btnQRCode);
             this.panelNhanVien.Controls.Add(this.dateTimePickerNgayKetThuc);
             this.panelNhanVien.Controls.Add(this.label7);
@@ -353,6 +355,21 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
+            // btnScanQR
+            // 
+            this.btnScanQR.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnScanQR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
+            this.btnScanQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnScanQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnScanQR.Location = new System.Drawing.Point(606, 163);
+            this.btnScanQR.Margin = new System.Windows.Forms.Padding(2);
+            this.btnScanQR.Name = "btnScanQR";
+            this.btnScanQR.Size = new System.Drawing.Size(88, 25);
+            this.btnScanQR.TabIndex = 38;
+            this.btnScanQR.Text = "SCAN QR";
+            this.btnScanQR.UseVisualStyleBackColor = false;
+            this.btnScanQR.Click += new System.EventHandler(this.btnScanQR_Click);
+            // 
             // DanhSachHoiVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,5 +413,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewButtonColumn Chọn;
         private System.Windows.Forms.Button btnQRCode;
+        private System.Windows.Forms.Button btnScanQR;
     }
 }
