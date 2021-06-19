@@ -95,9 +95,6 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                         MessageBox.Show("Có lỗi xảy ra. Vui Lòng thử lại.");
                     }
                 }
-
-
-
             }
         }
 

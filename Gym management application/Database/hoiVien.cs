@@ -148,6 +148,34 @@ namespace Gym_management_appication.Database
             }
             return result;
         }
+        public DataTable getMemberExpireday(String maHV)
+        {
+            sqlQuery = "Select DanhSachHoiVien.ma, DATEADD(MONTH, SUM(PaymentPeriod), DanhSachHoiVien.ngayThamGia) AS expireDate" +
+                       " From DanhSachHoiVien inner join MonthlyIncome on DanhSachHoiVien.ma = MonthlyIncome.maKH" +
+                       " Where DanhSachHoiVien.ma = '" + maHV + "'" +
+                       " Group by DanhSachHoiVien.ngayThamGia, DanhSachHoiVien.ma";
+            conString.ConString constring = new conString.ConString();             
+            try
+            {
+                using (var con = new SqlConnection(constring.initString()))
+                {
+                    using (var cmd = new SqlCommand(sqlQuery, con))
+                    {
+                        con.Open();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                       
+                        da.Fill(result);
+                        con.Close();
+                        con.Dispose();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            return result;
+        }
         public DataTable AddPayment(string ID, string maKH, string maGoiTap, DateTime dateOfPay,int PaymentPeriod,int price)
         {
             sqlQuery = "insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) " +
