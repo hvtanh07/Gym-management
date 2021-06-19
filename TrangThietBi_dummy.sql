@@ -1,8 +1,30 @@
-﻿create database GymManagement
+﻿USE MASTER
+GO
 
-use GymManagement
+-- Create a new database called 'GymManagement'
+-- Connect to the 'master' database to run this snippet
+USE master
+GO
+-- Create the new database if it does not exist already
+IF NOT EXISTS (
+	SELECT [name]
+		FROM sys.databases
+		WHERE [name] = N'GymManagement'
+)
+CREATE DATABASE GymManagement
+GO
 
-create table TrangThietBi (
+USE GymManagement
+GO
+
+-- Create a new table called '[TrangThietBi]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[TrangThietBi]', 'U') IS NOT NULL
+DROP TABLE [dbo].[TrangThietBi]
+GO
+-- Create the table in the specified schema
+CREATE TABLE [dbo].[TrangThietBi]
+(
 	ten nvarchar(50),
 	ma nvarchar(10),
 	tinhTrang nvarchar(50),
@@ -11,8 +33,17 @@ create table TrangThietBi (
 	baoHanh int,
 	ngayHetHanBaoHanh date,
 	hangSanXuat nvarchar(50)
-)
-CREATE TABLE NHANVIEN (
+);
+GO
+
+-- Create a new table called '[NHANVIEN]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[NHANVIEN]', 'U') IS NOT NULL
+DROP TABLE [dbo].[NHANVIEN]
+GO
+-- Create the table in the specified schema
+CREATE TABLE [dbo].[NHANVIEN]
+(
     ID       NCHAR (32) NOT NULL,
     HoTen    NCHAR (32) NOT NULL,
     GioiTinh NCHAR (10) NOT NULL,
@@ -23,7 +54,16 @@ CREATE TABLE NHANVIEN (
     Luong    MONEY      NOT NULL,
     PRIMARY KEY CLUSTERED ([ID] ASC)
 );
-create table DanhSachHoiVien (
+GO
+
+-- Create a new table called '[DanhSachHoiVien]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[DanhSachHoiVien]', 'U') IS NOT NULL
+DROP TABLE [dbo].[DanhSachHoiVien]
+GO
+-- Create the table in the specified schema
+CREATE TABLE [dbo].[DanhSachHoiVien]
+(
 	ma char(10) primary key,
 	ten nvarchar(50),
 	tuoi INT, 
@@ -32,13 +72,82 @@ create table DanhSachHoiVien (
 	ngayThamGia date,
 	ngayKetThuc date,
 );
+GO
+
+-- Create a new table called '[LogInData]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[LogInData]', 'U') IS NOT NULL
+DROP TABLE [dbo].[LogInData]
+GO
+-- Create the table in the specified schema
+CREATE TABLE [dbo].[LogInData]
+(
+	dataID nvarchar(10),
+	ma char(10) ,
+	permissionLevel int,
+	username nvarchar(30),
+	passW nvarchar(30)
+);
+GO
 
 
-CREATE TABLE monthBucket(
+-- Create a new table called '[PTSchedule]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[PTSchedule]', 'U') IS NOT NULL
+DROP TABLE [dbo].[PTSchedule]
+GO
+-- Create the table in the specified schema
+CREATE TABLE [dbo].[PTSchedule]
+(
+	ID       NCHAR (32) NOT NULL,
+    HoTen    NCHAR (32) NOT NULL,
+	Thu	int,
+	Buoi int
+);
+
+-- Create a new table called '[PTSchedule]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[GoiTap]', 'U') IS NOT NULL
+DROP TABLE [dbo].[GoiTap]
+GO
+-- Create the table in the specified schema
+create table GoiTap (
+	ma		nvarchar(20),
+	ten		nvarchar(30),
+	thoiHan	int,
+	moTa	nvarchar(50)
+)
+
+-- Create a new table called '[PTSchedule]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[MonthlyIncome]', 'U') IS NOT NULL
+DROP TABLE [dbo].[MonthlyIncome]
+GO
+-- Create the table in the specified schema
+Create table MonthlyIncome (
+	ID				char(10) primary key,
+	maKH			char(10),
+	maGoiTap		char(20),
+	dateOfPay		date,
+	PaymentPeriod	int, --pay for how long		
+    price			int
+)
+GO
+
+
+-- Create a new table called '[monthBucket]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[monthBucket]', 'U') IS NOT NULL
+DROP TABLE [dbo].[monthBucket]
+GO
+-- Create the table in the specified schema
+CREATE TABLE [dbo].[monthBucket]
+(
 bucketName nvarchar(10),
 bucketFirstDay date,
 bucketLastDay date 
 );
+GO
 
 
 ;WITH
@@ -59,37 +168,8 @@ AND M.Number <= 12
 
 ;UPDATE monthBucket SET bucketLastDay = EOMONTH(bucketFirstDay)
 
-create table LogInData (
-	dataID nvarchar(10),
-	ma char(10) ,
-	permissionLevel int,
-	username nvarchar(30),
-	passW nvarchar(30)
-)
 
-Create table PTSchedule (
-	ID       NCHAR (32) NOT NULL,
-    HoTen    NCHAR (32) NOT NULL,
-	Thu	int,
-	Buoi int
-)
 
-create table GoiTap (
-	ma		nvarchar(20),
-	ten		nvarchar(30),
-	thoiHan	int,
-	moTa	nvarchar(50)
-)
-
-Create table MonthlyIncome (
-	ID				char(10) primary key,
-	maKH			char(10),
-	maGoiTap		char(20),
-	dateOfPay		date,
-	PaymentPeriod	int, --pay for how long		
-    price			int
-)
-drop table DanhSachHoiVien
 
 --dummy Data--
 SET DATEFORMAT dmy; 
@@ -116,41 +196,13 @@ values (N'Máy tập đùi ngoài','Ma-004',N'Trong kho','27/05/2020',10000,12,'
 
 
 
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'1', N'Phan Duy Đức', N'Nam', N'ducduypm0120@gmai.com', 376771465, N'KTX khu A', N'Admin', CAST(10000000.0000 AS Money))
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'2', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'3', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV001', N'Phan Duy Đức', N'Nam', N'ducduypm0120@gmai.com', 376771465, N'KTX khu A', N'Admin', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV002', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV003', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV004', N'Phan Duy Đức', N'Nam', N'ducduypm0120@gmai.com', 376771465, N'KTX khu A', N'PT', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV005', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'PT', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV006', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'PT', CAST(10000000.0000 AS Money))
 
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'4', N'Phan Duy Đức', N'Nam', N'ducduypm0120@gmai.com', 376771465, N'KTX khu A', N'PT', CAST(10000000.0000 AS Money))
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'5', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'PT', CAST(10000000.0000 AS Money))
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'6', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'PT', CAST(10000000.0000 AS Money))
-
-
-delete from NHANVIEN
-
---drop table DanhSachHoiVien
-
---insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
---values ('KH001',N'Trương Nguyễn Tuấn Nam',22,N'Nam',0123456789,'12/02/2021','12/08/2021')
---insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
---values ('KH002',N'Phan Duy',21,N'Nam',0123456789,'12/01/2021','12/08/2021')
---insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
---values ('KH003',N'Vinh',20,N'Nam',0123456789,'12/03/2021','12/05/2021')
---insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
---values ('KH004',N'Tuan Anh',22,N'Nu',0123456789,'12/05/2021','12/09/2022')
---insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
---values ('KH005',N'Hoang Tuan Kiet',22,N'Nam',0123456789,'12/01/2021','12/07/2021')
---insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
---values ('KH006',N'Someone',21,N'Nam',0123456789,'12/05/2021','12/08/2021')
---insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
---values ('KH007',N'Someone Else',20,N'Nam',0123456789,'12/04/2021','12/12/2021')
---insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
---values ('KH008',N'Stranger',22,N'Nu',0123456789,'12/04/2021','12/10/2022')
---insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
---values ('KH009',N'ABC',21,N'Nam',0123456789,'12/03/2021','12/11/2021')
---insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
---values ('KH010',N'XYZ Else',20,N'Nam',0123456789,'12/05/2021','12/09/2021')
---insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) 
---values ('KH011',N'LMN',22,N'Nu',0123456789,'12/02/2021','12/11/2022')
 
 insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
 values ('KH001',N'Trương Nguyễn Tuấn Nam',22,N'Nam',0123456789,'12/02/2021')
@@ -180,25 +232,7 @@ INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Lo
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log03','3',1,'vinh','1234')
 
 
-SELECT CASE WHEN EXISTS ( SELECT * FROM LogInData WHERE username = 'duc' and passW = '1234') THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT) END
-
-Select NHANVIEN.ID 
-from NHANVIEN inner join LogInData on NHANVIEN.ID = LogInData.ma
-where LogInData.username = 'duc'
-
-Select NHANVIEN.ID 
-from NHANVIEN inner join LogInData on NHANVIEN.ID = LogInData.ma
-where LogInData.username = 'duc'
-
-Select LogInData.permissionLevel 
-from NHANVIEN inner join LogInData on NHANVIEN.ID = LogInData.ma
-where LogInData.username = 'duc'
-
-
-
-
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log01','1',1,'duc','1234')
-
 
 
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Phan Duy Đức',2,1)
@@ -220,7 +254,6 @@ insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,1)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,2)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Pham Xuan Vinh',7,3)
 
-drop table PTSchedule
 
 insert into GoiTap (ma,ten,thoiHan,moTa) 
 values (N'yoga1','Yoga 1 tháng',1,N'Gói tập Yoga 1 tháng') --300
@@ -338,22 +371,6 @@ values (N'PM039','KH011','fitness3','12/05/2021',3,1000000)
 insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
 values (N'PM040','KH011','fitness3','12/06/2021',3,1000000)
 
-
---Lay hoi vien và tình trạng thanh toán
-
---, DATEDIFF(day,getdate(),DATEADD(month,MonthlyIncome.PaymentPeriod,MonthlyIncome.dateOfPay)) as DayRemain
-Select DanhSachHoiVien.ten as HoiVien, MonthlyIncome.dateOfPay,
-trim(GoiTap.ma) + ' - ' + trim(GoiTap.ten) as Goi, MonthlyIncome.price
-From MonthlyIncome inner join 
-	 DanhSachHoiVien on DanhSachHoiVien.ma = MonthlyIncome.maKH inner join 
-	 GoiTap			 on GoiTap.ma = MonthlyIncome.maGoiTap
-Where DanhSachHoiVien.ma = 'KH004'
-
-Delete from MonthlyIncome 
-where maKH = 'Trương Nguyễn Tuấn Nam' AND year(dateOfPay) = '2021' and month(dateOfPay) = '7' and day(dateOfPay) = '15'
-
-
-select ma from DanhSachHoiVien where ten = N'Trương Nguyễn Tuấn Nam'
 
 
 	 
