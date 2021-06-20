@@ -73,8 +73,8 @@ namespace Gym_management_appication.Database
         }
         public int getPermission(string UserName)
         {
-            sqlQuery = "Select LogInData.permissionLevel from NHANVIEN inner join LogInData on NHANVIEN.ID = LogInData.ma " +
-                       "where LogInData.username = '" + UserName + "'";
+            sqlQuery = "Select LogInData.permissionLevel from LogInData where LogInData.username =  '" + UserName + "'";
+            
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
             try
             {
