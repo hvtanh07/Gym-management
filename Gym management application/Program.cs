@@ -7,6 +7,7 @@ using Gym_management_appication.Database.QuanLyHoiVien;
 using Gym_management_appication.UI;
 using Gym_management_appication.UI.ThongKeHoiVien;
 using Gym_management_appication.UI.LichTrucPT;
+using Gym_management_appication.UI.QuanLyHoiVien;
 
 namespace Gym_management_appication
 {

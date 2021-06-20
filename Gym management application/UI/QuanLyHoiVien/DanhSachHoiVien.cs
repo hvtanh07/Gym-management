@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Gym_management_appication.Class;
-using Gym_management_appication.UI.QuanLyHoiVien;
 using Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature;
-using Gym_management_appication.UI.ThongKeHoiVien;
 
 namespace Gym_management_appication.Database.QuanLyHoiVien
 {
