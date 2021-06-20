@@ -149,6 +149,19 @@ bucketLastDay date
 );
 GO
 
+-- Create a new table called '[Attendance]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[Attendance]', 'U') IS NOT NULL
+DROP TABLE [dbo].[Attendance]
+GO
+-- Create the table in the specified schema
+CREATE TABLE [dbo].[Attendance]
+(
+	ma nvarchar(10), 
+	thoigian DATETIME ,
+	alias nvarchar(10),
+);
+GO
 
 ;WITH
   Pass0 as (select 1 as C union all select 1), --2 rows
@@ -198,6 +211,7 @@ GO
 --dummy Data--
 SET DATEFORMAT dmy; 
 
+truncate table TrangThietBi
 insert into TrangThietBi (ten, ma, tinhTrang, ngayMua, giaThanh, baoHanh, ngayHetHanBaoHanh, hangSanXuat) 
 values (N'Tạ tay','Ta-001',N'Còn tốt','04/05/2020',500,0,'04/05/2020',N'workoutNow') 
 
@@ -219,7 +233,7 @@ values (N'Máy tập đùi ngoài','Ma-004',N'Trong kho','27/05/2020',10000,12,'
 
 
 
-
+truncate table NHANVIEN
 INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV001', N'Phan Duy Đức', N'Nam', N'ducduypm0120@gmai.com', 376771465, N'KTX khu A', N'Admin', CAST(10000000.0000 AS Money))
 INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV002', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
 INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV003', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
@@ -227,10 +241,12 @@ INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) V
 INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV005', N'Phan Viet Duc', N'Nam', N'duc09@gmail.com', 167645234, N'Thu Duc', N'PT', CAST(10000000.0000 AS Money))
 INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV006', N'Nguyen Viet My', N'Nam', N'mydep@gmail.com', 234567891, N'Thu Duc', N'PT', CAST(10000000.0000 AS Money))
 
+truncate table LogInData
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log01','NV001',1,'duc','1234')
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log02','NV002',1,'anh','1234')
 INSERT INTO LogInData (dataID, ma, permissionLevel, username, passW) VALUES ('Log03','NV003',1,'vinh','1234')
 
+truncate table DanhSachHoiVien
 insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
 values ('KH0001',N'Trương Nguyễn Tuấn Nam',22,N'Nam',0123456789,'12/02/2021')
 insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
@@ -255,7 +271,7 @@ insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia)
 values ('KH0011',N'LMN',22,N'Nu',0123456789,'12/02/2021')
 
 
-
+truncate table PTSchedule
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Pham Viet Hoang',2,1)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Pham Viet Hoang',2,2)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'4',N'Pham Viet Hoang',2,3)
@@ -275,7 +291,7 @@ insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Nguyen Viet My',7,1)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Nguyen Viet My',7,2)
 insert into PTSchedule (ID, HoTen, Thu,Buoi) values (N'6',N'Nguyen Viet My',7,3)
 
-
+truncate table GoiTap
 insert into GoiTap (ma,ten,thoiHan,moTa) 
 values (N'yoga1','Yoga 1 tháng',1,N'Gói tập Yoga 1 tháng') --300
 insert into GoiTap (ma,ten,thoiHan,moTa) 
@@ -301,6 +317,7 @@ values (N'gym-pt1','gym PT 1 tháng',1,N'Gói tập gym 1 tháng có PT kèm 1-1
 insert into GoiTap (ma,ten,thoiHan,moTa) 
 values (N'gym-pt3','gym PT 3 tháng',1,N'Gói tập gym 3 tháng có PT kèm 1-1') --1900
 
+truncate table MonthlyIncome
 insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
 values (N'PM001','KH0001','yoga1','12/02/2021',1,300000)
 insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
@@ -392,6 +409,17 @@ values (N'PM039','KH0011','fitness3','12/05/2021',3,1000000)
 insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) 
 values (N'PM040','KH0011','fitness3','12/06/2021',3,1000000)
 
+truncate table Attendance
+insert into Attendance (ma,thoigian, alias) 
+values ('KH0011','2021-06-20 19:44:36.443',N'Hội viên')
+insert into Attendance (ma,thoigian,alias)
+values ('KH0011','2021-06-20 19:46:36.443',N'Hội viên')
+insert into Attendance (ma,thoigian,alias)
+values ('KH0011','2021-06-20 19:45:36.443',N'Hội viên')
+insert into Attendance (ma,thoigian,alias)
+values ('KH0011','2021-06-20 19:47:36.443',N'Hội viên')
+insert into Attendance (ma,thoigian,alias)
+values ('KH0011','2021-06-20 19:50:36.443',N'Hội viên')
 
 
 

@@ -22,7 +22,7 @@ namespace Gym_management_appication.UI.QuanLyHoiVien
             DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("SELECT MAX(dbo.udf_GetNumeric(DanhSachHoiVien.ma)) from DanhSachHoiVien"));
             int lastID = Convert.ToInt32(dataTable.Rows[0][0].ToString());
             lastID++;
-            string num = lastID.ToString().PadLeft(4, '0');
+            string num = lastID.ToString().PadLeft(3, '0');
             return "KH" + num;
         }
         private void RadioButtonNam_CheckedChanged(object sender, EventArgs e)

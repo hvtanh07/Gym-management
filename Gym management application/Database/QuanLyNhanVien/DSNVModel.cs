@@ -37,6 +37,32 @@ namespace Gym_management_appication.Database.QuanLyNhanVien
             }
             return result;
         }
+        public DataTable getStaffDetailInfo(string ma)
+        {
+            sqlQuery = "select ID,HoTen from NHANVIEN " +
+                       " where ID = '" + ma + "' ";
+            conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
+            try
+            {
+                using (var con = new SqlConnection(constring.initString()))
+                {
+                    using (var cmd = new SqlCommand(sqlQuery, con))
+                    {
+                        con.Open();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        // this will query your database and return the result to your datatable
+                        da.Fill(result);
+                        con.Close();
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            return result;
+        }
         public void Insert(string ID, string Ten, string GioiTinh, string Email, string SDT, string DiaChi, string ChucVu, long Luong)
         {
             sqlQuery = "insert into NHANVIEN (ID,HoTen, GioiTinh, Email, SoDT, DiaChi,ChucVu,Luong) values (N'" + ID + "',N'" +

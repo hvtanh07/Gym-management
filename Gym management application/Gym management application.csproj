@@ -85,11 +85,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\AttendanceClass.cs" />
     <Compile Include="Class\hoiVien.cs" />
     <Compile Include="Class\LichTrucPT.cs" />
     <Compile Include="Class\QuanLyNhanVien\NhanVien.cs" />
     <Compile Include="Class\trangThietBi.cs" />
     <Compile Include="Class\valiballecommon.cs" />
+    <Compile Include="Database\Attendance.cs" />
     <Compile Include="Database\conString\ConString.cs" />
     <Compile Include="Database\DoanhThu.cs" />
     <Compile Include="Database\GoiTap.cs" />
@@ -97,6 +99,12 @@
     <Compile Include="Database\LichTrucPT\LichTrucPTModel.cs" />
     <Compile Include="Database\LogIn.cs" />
     <Compile Include="Database\QuanLyHoiVien\DSHVModel.cs" />
+    <Compile Include="UI\Scanning\Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Scanning\Attendance.Designer.cs">
+      <DependentUpon>Attendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\LichTrucPT\LichTrucPT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +205,12 @@
     <Compile Include="UI\QuanLyDoanhThu\ThanhToan.Designer.cs">
       <DependentUpon>ThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Scanning\Scanning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Scanning\Scanning.Designer.cs">
+      <DependentUpon>Scanning.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ThongKeHoiVien\thongKeHoiVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +269,12 @@
     <EmbeddedResource Include="UI\QuanLyDoanhThu\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Scanning\Attendance.resx">
+      <DependentUpon>Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Scanning\Scanning.resx">
+      <DependentUpon>Scanning.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ThongKeHoiVien\thongKeHoiVien.resx">
       <DependentUpon>thongKeHoiVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -291,4 +311,8 @@
     <None Include="Resources\istockphoto-953455856-170667a.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
 </Project>

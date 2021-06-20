@@ -30,6 +30,8 @@ namespace Gym_management_appication.UI
         private void InitializeComponent()
         {
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.btn_attendance = new System.Windows.Forms.Button();
+            this.btn_Scan = new System.Windows.Forms.Button();
             this.GroupQuanLyDoanhThu = new System.Windows.Forms.Panel();
             this.btn_thanhToan = new System.Windows.Forms.Button();
             this.btn_baoCao = new System.Windows.Forms.Button();
@@ -40,12 +42,12 @@ namespace Gym_management_appication.UI
             this.btn_DsNhanVien = new System.Windows.Forms.Button();
             this.btn_QuanLyNhanvien = new System.Windows.Forms.Button();
             this.GroupQuanLyHoiVien = new System.Windows.Forms.Panel();
+            this.btn_Dangky = new System.Windows.Forms.Button();
             this.btn_ThongKe = new System.Windows.Forms.Button();
             this.btn_Danhsach = new System.Windows.Forms.Button();
             this.btn_QuanLyHoiVien = new System.Windows.Forms.Button();
             this.logoPanel = new System.Windows.Forms.Panel();
             this.container = new System.Windows.Forms.Panel();
-            this.btn_Dangky = new System.Windows.Forms.Button();
             this.sidePanel.SuspendLayout();
             this.GroupQuanLyDoanhThu.SuspendLayout();
             this.GroupQuanLyNhanVien.SuspendLayout();
@@ -55,6 +57,8 @@ namespace Gym_management_appication.UI
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(185)))), ((int)(((byte)(179)))));
+            this.sidePanel.Controls.Add(this.btn_attendance);
+            this.sidePanel.Controls.Add(this.btn_Scan);
             this.sidePanel.Controls.Add(this.GroupQuanLyDoanhThu);
             this.sidePanel.Controls.Add(this.btn_QuanLyDoanhThu);
             this.sidePanel.Controls.Add(this.btn_QuanLyThietbi);
@@ -68,6 +72,38 @@ namespace Gym_management_appication.UI
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(250, 763);
             this.sidePanel.TabIndex = 5;
+            // 
+            // btn_attendance
+            // 
+            this.btn_attendance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
+            this.btn_attendance.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_attendance.FlatAppearance.BorderSize = 0;
+            this.btn_attendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_attendance.Location = new System.Drawing.Point(0, 854);
+            this.btn_attendance.Name = "btn_attendance";
+            this.btn_attendance.Size = new System.Drawing.Size(250, 80);
+            this.btn_attendance.TabIndex = 14;
+            this.btn_attendance.Text = "Attendance";
+            this.btn_attendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_attendance.UseVisualStyleBackColor = false;
+            this.btn_attendance.Click += new System.EventHandler(this.btn_attendance_Click);
+            // 
+            // btn_Scan
+            // 
+            this.btn_Scan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
+            this.btn_Scan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Scan.FlatAppearance.BorderSize = 0;
+            this.btn_Scan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Scan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Scan.Location = new System.Drawing.Point(0, 774);
+            this.btn_Scan.Name = "btn_Scan";
+            this.btn_Scan.Size = new System.Drawing.Size(250, 80);
+            this.btn_Scan.TabIndex = 13;
+            this.btn_Scan.Text = "Scanning";
+            this.btn_Scan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Scan.UseVisualStyleBackColor = false;
+            this.btn_Scan.Click += new System.EventHandler(this.btn_Scan_Click);
             // 
             // GroupQuanLyDoanhThu
             // 
@@ -216,6 +252,23 @@ namespace Gym_management_appication.UI
             this.GroupQuanLyHoiVien.Size = new System.Drawing.Size(250, 150);
             this.GroupQuanLyHoiVien.TabIndex = 5;
             // 
+            // btn_Dangky
+            // 
+            this.btn_Dangky.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
+            this.btn_Dangky.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Dangky.FlatAppearance.BorderSize = 0;
+            this.btn_Dangky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Dangky.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Dangky.Location = new System.Drawing.Point(0, 100);
+            this.btn_Dangky.Name = "btn_Dangky";
+            this.btn_Dangky.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btn_Dangky.Size = new System.Drawing.Size(250, 50);
+            this.btn_Dangky.TabIndex = 2;
+            this.btn_Dangky.Text = "Đăng ký hội viên";
+            this.btn_Dangky.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Dangky.UseVisualStyleBackColor = false;
+            this.btn_Dangky.Click += new System.EventHandler(this.btn_Dangky_Click);
+            // 
             // btn_ThongKe
             // 
             this.btn_ThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
@@ -285,23 +338,6 @@ namespace Gym_management_appication.UI
             this.container.Size = new System.Drawing.Size(1006, 763);
             this.container.TabIndex = 6;
             // 
-            // btn_Dangky
-            // 
-            this.btn_Dangky.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
-            this.btn_Dangky.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Dangky.FlatAppearance.BorderSize = 0;
-            this.btn_Dangky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Dangky.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Dangky.Location = new System.Drawing.Point(0, 100);
-            this.btn_Dangky.Name = "btn_Dangky";
-            this.btn_Dangky.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btn_Dangky.Size = new System.Drawing.Size(250, 50);
-            this.btn_Dangky.TabIndex = 2;
-            this.btn_Dangky.Text = "Đăng ký hội viên";
-            this.btn_Dangky.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Dangky.UseVisualStyleBackColor = false;
-            this.btn_Dangky.Click += new System.EventHandler(this.btn_Dangky_Click);
-            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -338,5 +374,7 @@ namespace Gym_management_appication.UI
         private System.Windows.Forms.Button btn_QuanLyDoanhThu;
         private System.Windows.Forms.Button btn_thanhToan;
         private System.Windows.Forms.Button btn_Dangky;
+        private System.Windows.Forms.Button btn_Scan;
+        private System.Windows.Forms.Button btn_attendance;
     }
 }

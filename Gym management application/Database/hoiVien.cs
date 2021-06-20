@@ -34,6 +34,58 @@ namespace Gym_management_appication.Database
             }
             return result;
         }
+        public DataTable getMemberListCode()
+        {
+            sqlQuery = "Select Trim(DanhSachHoiVien.ma) as list" +
+                       " From  DanhSachHoiVien ";
+            conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
+            try
+            {
+                using (var con = new SqlConnection(constring.initString()))
+                {
+                    using (var cmd = new SqlCommand(sqlQuery, con))
+                    {
+                        con.Open();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        // this will query your database and return the result to your datatable
+                        da.Fill(result);
+                        con.Close();
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            return result;
+        }
+        public DataTable getMemberDetailInfo(string ma)
+        {
+            sqlQuery = "Select ma, ten from DanhSachHoiVien " +
+                       " where ma = '" + ma + "' ";
+            conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
+            try
+            {
+                using (var con = new SqlConnection(constring.initString()))
+                {
+                    using (var cmd = new SqlCommand(sqlQuery, con))
+                    {
+                        con.Open();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        // this will query your database and return the result to your datatable
+                        da.Fill(result);
+                        con.Close();
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            return result;
+        }
         public DataTable getMemberofMonth (DateTime fromDate, DateTime toDate)
         {
             sqlQuery = "SELECT bucketName AS thang," +
@@ -148,9 +200,10 @@ namespace Gym_management_appication.Database
             }
             return result;
         }
-        public DataTable getMemberExpireday(String maHV)
+        public DateTime getMemberExpireday(String maHV)
         {
-            sqlQuery = "Select DanhSachHoiVien.ma, DATEADD(MONTH, SUM(PaymentPeriod), DanhSachHoiVien.ngayThamGia) AS expireDate" +
+            DateTime date = DateTime.Today;
+            sqlQuery = "Select DATEADD(MONTH, SUM(PaymentPeriod), DanhSachHoiVien.ngayThamGia) AS expireDate" +
                        " From DanhSachHoiVien inner join MonthlyIncome on DanhSachHoiVien.ma = MonthlyIncome.maKH" +
                        " Where DanhSachHoiVien.ma = '" + maHV + "'" +
                        " Group by DanhSachHoiVien.ngayThamGia, DanhSachHoiVien.ma";
@@ -162,10 +215,7 @@ namespace Gym_management_appication.Database
                     using (var cmd = new SqlCommand(sqlQuery, con))
                     {
                         con.Open();
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
-                       
-                        da.Fill(result);
-                        con.Close();
+                        date = DateTime.Parse(cmd.ExecuteScalar().ToString());
                         con.Dispose();
                     }
                 }
@@ -174,7 +224,7 @@ namespace Gym_management_appication.Database
             {
 
             }
-            return result;
+            return date;
         }
         public DataTable AddPayment(string ID, string maKH, string maGoiTap, DateTime dateOfPay,int PaymentPeriod,int price)
         {

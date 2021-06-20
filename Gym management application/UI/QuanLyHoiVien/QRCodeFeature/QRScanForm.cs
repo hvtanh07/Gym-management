@@ -14,13 +14,9 @@ using Gym_management_appication.Class;
 namespace Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature {
     public partial class QRScanForm : Form {
         public QRScanForm() {
+            Database.hoiVien hoiVien = new Database.hoiVien();
             InitializeComponent();
-        }
-
-        public QRScanForm(DataTable dt) {
-            InitializeComponent();
-            this.dataTable = new DataTable();
-            this.dataTable = dt;
+            this.dataTable = hoiVien.getMemberListCode();
         }
 
         private DataTable dataTable;
@@ -59,6 +55,8 @@ namespace Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature {
 
                     if (SearchMember(decoded)) {
                         this.Result = decoded;
+                        timer1.Stop();
+                        stream.Stop();
                         this.Close();
                     }
 
@@ -73,7 +71,7 @@ namespace Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature {
 
         private bool SearchMember(string id) {
             foreach (DataRow row in this.dataTable.Rows) {
-                if (row["ma"].ToString().Trim() == id)
+                if (row["list"].ToString().Trim() == id)
                     return true;
             }
 

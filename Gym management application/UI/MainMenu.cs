@@ -115,6 +115,18 @@ namespace Gym_management_appication.UI
 
             hideSubMenu();
         }
+        private void btn_Scan_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Scanning());
+
+            hideSubMenu();
+        }
+        private void btn_attendance_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Attendance());
+
+            hideSubMenu();
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();

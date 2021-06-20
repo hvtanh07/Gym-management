@@ -77,7 +77,10 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                     hoiVien.ngayTKetThuc = dateTimePickerNgayKetThuc.Value;                  
                     try
                     {
-                        danhSachHoiVienModel.Insert(hoiVien);
+                        if (cb_endDayincluded.Checked == true)
+                            danhSachHoiVienModel.FullInsert(hoiVien);
+                        else
+                            danhSachHoiVienModel.Insert(hoiVien);
                         MessageBox.Show("Thêm mới thành công.");
                         LoadDanhSachHoiVien();
                     }
@@ -104,10 +107,12 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
             try
             {
                 dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[e.RowIndex].Cells[7].Value.ToString());
+                cb_endDayincluded.Checked = true;
             }
             catch(Exception ex)
             {
                 dateTimePickerNgayKetThuc.Value = DateTime.Today.AddYears(1);
+                cb_endDayincluded.Checked = false;
             }            
             hoiVien.ma = textBoxID.Text;
             hoiVien.ten = textBoxTen.Text;
@@ -142,7 +147,10 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                 Database.QuanLyHoiVien.DSHVModel danhSachHoiVienModel = new Database.QuanLyHoiVien.DSHVModel();
                 try
                 {
-                    danhSachHoiVienModel.Update(hoiVien);
+                    if (cb_endDayincluded.Checked == true)
+                        danhSachHoiVienModel.FullUpdate(hoiVien);
+                    else
+                        danhSachHoiVienModel.Insert(hoiVien);                  
                     MessageBox.Show("Cập nhật thành công.");
                     LoadDanhSachHoiVien();
                 }
@@ -194,7 +202,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         }
 
         private void btnScanQR_Click(object sender, EventArgs e) {
-            QRScanForm scanForm = new QRScanForm((DataTable)dataGridViewHoiVien.DataSource);
+            QRScanForm scanForm = new QRScanForm();
             string Result = scanForm.ShowDialogWithReturnedID();
 
             for (int i=0; i<dataGridViewHoiVien.Rows.Count; i++) {
@@ -208,7 +216,15 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                         radioButtonNu.Checked = true;
                     textBoxSDT.Text = dataGridViewHoiVien.Rows[i].Cells[5].Value.ToString();
                     dateTimePickerNgayThamGia.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[i].Cells[6].Value.ToString());
-                    dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[i].Cells[7].Value.ToString());
+                    //dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[i].Cells[7].Value.ToString());
+                    try
+                    {
+                        dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[i].Cells[7].Value.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        dateTimePickerNgayKetThuc.Value = DateTime.Today.AddYears(1);
+                    }
                     hoiVien.ma = textBoxID.Text;
                     hoiVien.ten = textBoxTen.Text;
                     hoiVien.tuoi = Convert.ToInt32(textBoxTuoi.Text.ToString());
