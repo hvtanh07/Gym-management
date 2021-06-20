@@ -41,7 +41,6 @@ C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_app
 D:\Github\Gym-management\Gym management application\bin\Debug\Gym management appication.exe.config
 D:\Github\Gym-management\Gym management application\bin\Debug\Gym management appication.exe
 D:\Github\Gym-management\Gym management application\bin\Debug\Gym management appication.pdb
-D:\Github\Gym-management\Gym management application\obj\Debug\Gym management application.csprojAssemblyReference.cache
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.LichTrucPT.LichTrucPT.resources
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.LichTrucPT.ThemLichTrucPT.resources
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.LichTrucPT.XoaLichTrucPT.resources
@@ -73,3 +72,19 @@ C:\Github\Gym-management\Gym management application\bin\Debug\zxing.xml
 C:\Github\Gym-management\Gym management application\bin\Debug\zxing.presentation.xml
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature.QRScanForm.resources
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym management application.csproj.CopyComplete
+D:\Github\Gym-management\Gym management application\bin\Debug\AForge.dll
+D:\Github\Gym-management\Gym management application\bin\Debug\AForge.Video.DirectShow.dll
+D:\Github\Gym-management\Gym management application\bin\Debug\AForge.Video.dll
+D:\Github\Gym-management\Gym management application\bin\Debug\QRCoder.dll
+D:\Github\Gym-management\Gym management application\bin\Debug\zxing.dll
+D:\Github\Gym-management\Gym management application\bin\Debug\zxing.presentation.dll
+D:\Github\Gym-management\Gym management application\bin\Debug\AForge.xml
+D:\Github\Gym-management\Gym management application\bin\Debug\AForge.Video.xml
+D:\Github\Gym-management\Gym management application\bin\Debug\AForge.Video.DirectShow.xml
+D:\Github\Gym-management\Gym management application\bin\Debug\zxing.xml
+D:\Github\Gym-management\Gym management application\bin\Debug\zxing.presentation.xml
+D:\Github\Gym-management\Gym management application\obj\Debug\Gym management application.csproj.AssemblyReference.cache
+D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyDoanhThu.ThongKeDoangThu.resources
+D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature.QRScanForm.resources
+D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.ThongKeHoiVien.ThanhToan.resources
+D:\Github\Gym-management\Gym management application\obj\Debug\Gym management application.csproj.CopyComplete
