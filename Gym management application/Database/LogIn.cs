@@ -100,5 +100,26 @@ namespace Gym_management_appication.Database
             }
             return permission;
         }
+        public void Insert(string maNV, int level, string UserName, string pass)
+        {
+            sqlQuery = "INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('" + maNV + "'," + level + ",'" + UserName + "','" + pass + "')";
+            conString.ConString constring = new conString.ConString();
+            try
+            {
+                using (var con = new SqlConnection(constring.initString()))
+                {
+                    using (var cmd = new SqlCommand(sqlQuery, con))
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+
+            }
+        }
     }
 }

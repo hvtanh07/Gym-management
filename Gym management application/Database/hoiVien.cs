@@ -226,10 +226,10 @@ namespace Gym_management_appication.Database
             }
             return date;
         }
-        public DataTable AddPayment(string ID, string maKH, string maGoiTap, DateTime dateOfPay,int PaymentPeriod,int price)
+        public DataTable AddPayment(string maKH, string maGoiTap, DateTime dateOfPay,int PaymentPeriod,int price)
         {
-            sqlQuery = "insert into MonthlyIncome (ID, maKH, maGoiTap, dateOfPay, PaymentPeriod, price) " +
-                       " values (N'" + ID + "','" + maKH + "','" + maGoiTap + "','" + dateOfPay + "'," + PaymentPeriod + "," + price + ")";
+            sqlQuery = "insert into MonthlyIncome (maKH, maGoiTap, dateOfPay, PaymentPeriod, price) " +
+                       " values ('" + maKH + "','" + maGoiTap + "','" + dateOfPay + "'," + PaymentPeriod + "," + price + ")";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
             try
             {

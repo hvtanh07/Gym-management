@@ -37,8 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePickerNgayKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             this.dateTimePickerNgayThamGia = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxSDT = new System.Windows.Forms.TextBox();
@@ -144,28 +142,6 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "Họ tên";
             // 
-            // dateTimePickerNgayKetThuc
-            // 
-            this.dateTimePickerNgayKetThuc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePickerNgayKetThuc.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNgayKetThuc.Location = new System.Drawing.Point(130, 275);
-            this.dateTimePickerNgayKetThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePickerNgayKetThuc.Name = "dateTimePickerNgayKetThuc";
-            this.dateTimePickerNgayKetThuc.Size = new System.Drawing.Size(250, 22);
-            this.dateTimePickerNgayKetThuc.TabIndex = 45;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 277);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 17);
-            this.label7.TabIndex = 44;
-            this.label7.Text = "Ngày kết thúc";
-            // 
             // dateTimePickerNgayThamGia
             // 
             this.dateTimePickerNgayThamGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -213,7 +189,7 @@
             this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(152, 377);
+            this.btnOK.Location = new System.Drawing.Point(152, 337);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(117, 31);
@@ -229,8 +205,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(435, 474);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.dateTimePickerNgayKetThuc);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePickerNgayThamGia);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxSDT);
@@ -263,8 +237,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePickerNgayKetThuc;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePickerNgayThamGia;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxSDT;

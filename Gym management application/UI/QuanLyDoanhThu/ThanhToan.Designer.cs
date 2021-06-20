@@ -43,8 +43,6 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
             this.cmb_goiTap = new System.Windows.Forms.ComboBox();
             this.dtP_payDate = new System.Windows.Forms.DateTimePicker();
             this.dtgv_PaymentHistory = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_id = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xóaLịchSửGiaoDịchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_PaymentHistory)).BeginInit();
@@ -182,6 +180,7 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgv_PaymentHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_PaymentHistory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(129)))), ((int)(((byte)(118)))));
             this.dtgv_PaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_PaymentHistory.ContextMenuStrip = this.contextMenuStrip1;
             this.dtgv_PaymentHistory.Location = new System.Drawing.Point(12, 252);
@@ -191,25 +190,6 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
             this.dtgv_PaymentHistory.RowTemplate.Height = 24;
             this.dtgv_PaymentHistory.Size = new System.Drawing.Size(911, 206);
             this.dtgv_PaymentHistory.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(562, 144);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "ID ";
-            // 
-            // txt_id
-            // 
-            this.txt_id.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_id.Location = new System.Drawing.Point(728, 144);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(159, 22);
-            this.txt_id.TabIndex = 14;
             // 
             // contextMenuStrip1
             // 
@@ -232,8 +212,6 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(935, 470);
-            this.Controls.Add(this.txt_id);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.dtgv_PaymentHistory);
             this.Controls.Add(this.dtP_payDate);
             this.Controls.Add(this.cmb_goiTap);
@@ -272,8 +250,6 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
         private System.Windows.Forms.ComboBox cmb_goiTap;
         private System.Windows.Forms.DateTimePicker dtP_payDate;
         private System.Windows.Forms.DataGridView dtgv_PaymentHistory;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xóaLịchSửGiaoDịchToolStripMenuItem;
     }

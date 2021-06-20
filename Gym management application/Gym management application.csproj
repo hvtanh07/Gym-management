@@ -99,6 +99,12 @@
     <Compile Include="Database\LichTrucPT\LichTrucPTModel.cs" />
     <Compile Include="Database\LogIn.cs" />
     <Compile Include="Database\QuanLyHoiVien\DSHVModel.cs" />
+    <Compile Include="UI\QuanLyNhanVien\TaoTaiKhoanDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QuanLyNhanVien\TaoTaiKhoanDangNhap.Designer.cs">
+      <DependentUpon>TaoTaiKhoanDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Scanning\Attendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </Compile>
     <EmbeddedResource Include="UI\QuanLyHoiVien\QRCodeFeature\QRScanForm.resx">
       <DependentUpon>QRScanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QuanLyNhanVien\TaoTaiKhoanDangNhap.resx">
+      <DependentUpon>TaoTaiKhoanDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QuanLyThietBi\ChiTietThietBi.resx">
       <DependentUpon>ChiTietThietBi.cs</DependentUpon>

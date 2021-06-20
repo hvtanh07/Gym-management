@@ -91,15 +91,10 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
 
         private void btn_Thanhtoan_Click(object sender, EventArgs e)
         {
-            if(txt_id.Text.Trim() == "")
-            {
-                MessageBox.Show("Nhập id của giao dịch này!!!", "Caution!");
-                return;
-            }
             hoiVien data = new hoiVien();
             GoiTap data2 = new GoiTap();
             int Duration = data2.getDuration(cmb_goiTap.Text.Split('-')[0]);
-            data.AddPayment(txt_id.Text, txt_maHV.Text.Split('-')[0], cmb_goiTap.Text.Split('-')[0], dtP_payDate.Value, 2, int.Parse(txt_amount.Text));
+            data.AddPayment(txt_maHV.Text.Split('-')[0], cmb_goiTap.Text.Split('-')[0], dtP_payDate.Value, Duration, int.Parse(txt_amount.Text));
             retrieveInfo();
         }
 

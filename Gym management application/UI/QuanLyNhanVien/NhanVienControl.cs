@@ -67,8 +67,8 @@ namespace Gym_management_appication.UI
                 return false;
         }
 
-        public int GetID() {
-            return Convert.ToInt32( textBoxID.Text.ToString().Trim());
+        public string GetID() {
+            return textBoxID.Text.ToString().Trim();
         }
         public string GetTen()
         {

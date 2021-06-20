@@ -61,7 +61,6 @@ namespace Gym_management_appication.UI.QuanLyHoiVien
                     hoiVien.gioiTinh = (radioButtonNam.Checked ? "Nam" : "Nữ");
                     hoiVien.sdt = textBoxSDT.Text;
                     hoiVien.ngayThamGia = dateTimePickerNgayThamGia.Value;
-                    hoiVien.ngayTKetThuc = dateTimePickerNgayKetThuc.Value;
                     try
                     {
                         danhSachHoiVienModel.Insert(hoiVien);

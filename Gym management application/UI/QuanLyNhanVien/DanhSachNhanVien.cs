@@ -1,4 +1,5 @@
 ﻿using Gym_management_appication.Class;
+using Gym_management_appication.UI.QuanLyNhanVien;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,7 +39,7 @@ namespace Gym_management_appication.UI
         {
             if (dataGridViewNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString().Trim() == "")
                 return;
-            nhanVien.ID = Convert.ToInt32(dataGridViewNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString());
+            nhanVien.ID = dataGridViewNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
             nhanVien.HoTen = dataGridViewNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
             nhanVien.GioiTinh = dataGridViewNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();
             nhanVien.Email = dataGridViewNhanVien.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -73,6 +74,8 @@ namespace Gym_management_appication.UI
                 {
                     danhSachNhanVienModel.Insert(nhanVienControl.GetID().ToString(), nhanVienControl.GetTen(), nhanVienControl.GetGioiTinh(), nhanVienControl.GetEmail(), nhanVienControl.GetSDT(), nhanVienControl.GetDiaChi(), nhanVienControl.GetChucVu(), nhanVienControl.GetLuong());
                     MessageBox.Show("Thêm mới thành công.");
+                    TaoTaiKhoanDangNhap taoTaiKhoanDangNhap = new TaoTaiKhoanDangNhap(nhanVienControl.GetID().ToString());
+                    taoTaiKhoanDangNhap.ShowDialog();
                     LoadDanhSachNhanVien();
                 }
                 catch (Exception)
@@ -134,7 +137,7 @@ namespace Gym_management_appication.UI
         }
         private void DataGridViewNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            nhanVien.ID = Convert.ToInt32(dataGridViewNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString());
+            nhanVien.ID = dataGridViewNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
             nhanVien.HoTen = dataGridViewNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();
             nhanVien.GioiTinh = dataGridViewNhanVien.Rows[e.RowIndex].Cells[3].Value.ToString();
             nhanVien.Email = dataGridViewNhanVien.Rows[e.RowIndex].Cells[4].Value.ToString();

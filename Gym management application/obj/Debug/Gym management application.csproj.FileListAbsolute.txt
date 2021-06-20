@@ -106,3 +106,5 @@ D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_app
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym management application.csproj.CopyComplete
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.Scanning.resources
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.Attendance.resources
+D:\Github\Gym-management\Gym management application\obj\Debug\Gym management application.csproj.AssemblyReference.cache
+D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyNhanVien.TaoTaiKhoanDangNhap.resources

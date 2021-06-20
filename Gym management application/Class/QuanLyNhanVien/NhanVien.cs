@@ -8,7 +8,7 @@ namespace Gym_management_appication.Class
 {
     public class NhanVien
     {
-        public int ID { get; set; }
+        public string ID { get; set; }
         public string HoTen { get; set; }
         public string GioiTinh { get; set; }
         public string Email { get; set; }

@@ -88,11 +88,12 @@ namespace Gym_management_appication.UI
         {
             if (id.Contains("KH"))
             {
+                result = hoiVien.getMemberDetailInfo(id);
+                if (result.Rows.Count == 0) return false;
                 txt_Alias.Text = "Hội viên";
                 label4.Visible = true;
                 expireDate.Visible = true;
-                PrevResult = id;
-                result = hoiVien.getMemberDetailInfo(id);
+                PrevResult = id;            
                 DateTime expiry = hoiVien.getMemberExpireday(id);
                 expireDate.Value = expiry;
                 foreach (DataRow row in result.Rows)
@@ -109,11 +110,12 @@ namespace Gym_management_appication.UI
             }
             else if (id.Contains("NV"))
             {
+                result = NhanVien.getStaffDetailInfo(id);
+                if (result.Rows.Count == 0) return false;
                 txt_Alias.Text = "Nhân viên";
                 label4.Visible = false;
                 expireDate.Visible = false;
-                PrevResult = id;
-                result = NhanVien.getStaffDetailInfo(id);
+                PrevResult = id;             
                 foreach (DataRow row in result.Rows)
                 {
                     txt_ID.Text = Convert.ToString(row["ID"]);
