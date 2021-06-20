@@ -15,13 +15,15 @@ namespace Gym_management_appication.UI.QuanLyHoiVien
 
         private void SetAutoGenerateID()
         {
-            textBoxID.Text = autoGenerateID().ToString();
+            textBoxID.Text = autoGenerateID();
         }
-        private int autoGenerateID()
+        private string autoGenerateID()
         {
-            DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("SELECT MAX(ma) AS MaxID FROM DanhSachHoiVien"));
+            DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("SELECT MAX(dbo.udf_GetNumeric(DanhSachHoiVien.ma)) from DanhSachHoiVien"));
             int lastID = Convert.ToInt32(dataTable.Rows[0][0].ToString());
-            return lastID + 1;
+            lastID++;
+            string num = lastID.ToString().PadLeft(4, '0');
+            return "KH" + num;
         }
         private void RadioButtonNam_CheckedChanged(object sender, EventArgs e)
         {

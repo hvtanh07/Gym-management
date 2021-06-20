@@ -48,6 +48,8 @@
             // 
             // textBoxTuoi
             // 
+            this.textBoxTuoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTuoi.Location = new System.Drawing.Point(120, 112);
             this.textBoxTuoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTuoi.Name = "textBoxTuoi";
@@ -93,6 +95,8 @@
             // 
             // textBoxTen
             // 
+            this.textBoxTen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTen.Location = new System.Drawing.Point(120, 69);
             this.textBoxTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTen.Name = "textBoxTen";
@@ -101,6 +105,8 @@
             // 
             // textBoxID
             // 
+            this.textBoxID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxID.Enabled = false;
             this.textBoxID.Location = new System.Drawing.Point(120, 33);
             this.textBoxID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -140,7 +146,10 @@
             // 
             // dateTimePickerNgayKetThuc
             // 
-            this.dateTimePickerNgayKetThuc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePickerNgayKetThuc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePickerNgayKetThuc.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerNgayKetThuc.Location = new System.Drawing.Point(130, 275);
             this.dateTimePickerNgayKetThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerNgayKetThuc.Name = "dateTimePickerNgayKetThuc";
@@ -149,7 +158,6 @@
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(12, 277);
@@ -160,7 +168,10 @@
             // 
             // dateTimePickerNgayThamGia
             // 
-            this.dateTimePickerNgayThamGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePickerNgayThamGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePickerNgayThamGia.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerNgayThamGia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerNgayThamGia.Location = new System.Drawing.Point(130, 239);
             this.dateTimePickerNgayThamGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerNgayThamGia.Name = "dateTimePickerNgayThamGia";
@@ -169,7 +180,6 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(12, 239);
@@ -180,7 +190,8 @@
             // 
             // textBoxSDT
             // 
-            this.textBoxSDT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSDT.Location = new System.Drawing.Point(130, 198);
             this.textBoxSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSDT.Name = "textBoxSDT";
@@ -189,7 +200,6 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 198);
@@ -200,7 +210,6 @@
             // 
             // btnOK
             // 
-            this.btnOK.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

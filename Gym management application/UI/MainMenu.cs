@@ -57,6 +57,13 @@ namespace Gym_management_appication.UI
             hideSubMenu();
         }
 
+        private void btn_Dangky_Click(object sender, EventArgs e)
+        {
+            openChildForm(new UI.QuanLyHoiVien.DangKyHoiVien());
+
+            hideSubMenu();
+        }
+
         #endregion
 
         #region QuanLyDoanhThu
