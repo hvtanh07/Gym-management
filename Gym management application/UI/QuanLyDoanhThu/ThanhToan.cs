@@ -57,9 +57,7 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
         {
             hoiVien data = new hoiVien();
             DataTable hoiVienList = data.getMemberpaymentinfo(txt_maHV.Text.Split('-')[0]);
-            txt_tenHV.Text = (from DataRow dr in hoiVienList.Rows
-                              where true
-                              select (string)dr["HoiVien"]).LastOrDefault();
+            txt_tenHV.Text = txt_maHV.Text.Split('-')[1].Trim();
             cmb_goiTap.Text = (from DataRow dr in hoiVienList.Rows
                               where true
                               select (string)dr["Goi"]).LastOrDefault();
@@ -100,14 +98,18 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
 
         private void xóaLịchSửGiaoDịchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int currentRowIndex = dtgv_PaymentHistory.CurrentCellAddress.Y;// 'current row selected
-            if (-1 < currentRowIndex && currentRowIndex < dtgv_PaymentHistory.RowCount)
+            DialogResult dlg = MessageBox.Show("Bạn muốn xóa lịch sử giao dịch này?", "Xóa hội viên", MessageBoxButtons.YesNo);
+            if (dlg == DialogResult.Yes)
             {
-                hoiVien data = new hoiVien();
-                string mahv = data.GetIDfromName(dtgv_PaymentHistory.Rows[currentRowIndex].Cells["HoiVien"].Value.ToString());
-                DateTime payDate = Convert.ToDateTime(dtgv_PaymentHistory.Rows[currentRowIndex].Cells["dateOfPay"].Value.ToString());
-                data.DeletePayment(mahv, payDate);
-                retrieveInfo();
+                int currentRowIndex = dtgv_PaymentHistory.CurrentCellAddress.Y;// 'current row selected
+                if (-1 < currentRowIndex && currentRowIndex < dtgv_PaymentHistory.RowCount)
+                {
+                    hoiVien data = new hoiVien();
+                    string mahv = data.GetIDfromName(dtgv_PaymentHistory.Rows[currentRowIndex].Cells["HoiVien"].Value.ToString());
+                    DateTime payDate = Convert.ToDateTime(dtgv_PaymentHistory.Rows[currentRowIndex].Cells["dateOfPay"].Value.ToString());
+                    data.DeletePayment(mahv, payDate);
+                    retrieveInfo();
+                }
             }
         }
 
