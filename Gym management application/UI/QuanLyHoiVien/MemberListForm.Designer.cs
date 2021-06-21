@@ -1,6 +1,6 @@
 ﻿namespace Gym_management_appication.Database.QuanLyHoiVien
 {
-    partial class DanhSachHoiVien
+    partial class MemberListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,7 @@
             this.Chọn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnInsert = new System.Windows.Forms.Button();
             this.panelNhanVien = new System.Windows.Forms.Panel();
+            this.cb_endDayincluded = new System.Windows.Forms.CheckBox();
             this.btnScanQR = new System.Windows.Forms.Button();
             this.btnQRCode = new System.Windows.Forms.Button();
             this.dateTimePickerNgayKetThuc = new System.Windows.Forms.DateTimePicker();
@@ -52,7 +53,6 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.cb_endDayincluded = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHoiVien)).BeginInit();
             this.panelNhanVien.SuspendLayout();
             this.SuspendLayout();
@@ -136,6 +136,18 @@
             this.panelNhanVien.Name = "panelNhanVien";
             this.panelNhanVien.Size = new System.Drawing.Size(1149, 244);
             this.panelNhanVien.TabIndex = 4;
+            // 
+            // cb_endDayincluded
+            // 
+            this.cb_endDayincluded.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_endDayincluded.AutoSize = true;
+            this.cb_endDayincluded.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_endDayincluded.Location = new System.Drawing.Point(799, 142);
+            this.cb_endDayincluded.Name = "cb_endDayincluded";
+            this.cb_endDayincluded.Size = new System.Drawing.Size(111, 21);
+            this.cb_endDayincluded.TabIndex = 39;
+            this.cb_endDayincluded.Text = "đã kết thúc";
+            this.cb_endDayincluded.UseVisualStyleBackColor = true;
             // 
             // btnScanQR
             // 
@@ -365,17 +377,7 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // cb_endDayincluded
-            // 
-            this.cb_endDayincluded.AutoSize = true;
-            this.cb_endDayincluded.Location = new System.Drawing.Point(799, 142);
-            this.cb_endDayincluded.Name = "cb_endDayincluded";
-            this.cb_endDayincluded.Size = new System.Drawing.Size(174, 21);
-            this.cb_endDayincluded.TabIndex = 39;
-            this.cb_endDayincluded.Text = "bao gồm ngày kết thúc";
-            this.cb_endDayincluded.UseVisualStyleBackColor = true;
-            // 
-            // DanhSachHoiVien
+            // MemberListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -384,8 +386,8 @@
             this.Controls.Add(this.dataGridViewHoiVien);
             this.Controls.Add(this.panelNhanVien);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "DanhSachHoiVien";
-            this.Text = "DanhSachHoiVien";
+            this.Name = "MemberListForm";
+            this.Text = "MemberListForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHoiVien)).EndInit();
             this.panelNhanVien.ResumeLayout(false);
             this.panelNhanVien.PerformLayout();

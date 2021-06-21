@@ -10,8 +10,8 @@ namespace Gym_management_appication.Database
         private DataTable result = new DataTable();
         public DataTable getMemberList()
         {
-            sqlQuery = "Select Trim(DanhSachHoiVien.ma) + ' - ' + trim(DanhSachHoiVien.ten) as list" +
-                       " From  DanhSachHoiVien ";
+            sqlQuery = "Select Trim(Member.ma) + ' - ' + trim(Member.ten) as list" +
+                       " From  Member ";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
             try
             {
@@ -36,8 +36,8 @@ namespace Gym_management_appication.Database
         }
         public DataTable getMemberListCode()
         {
-            sqlQuery = "Select Trim(DanhSachHoiVien.ma) as list" +
-                       " From  DanhSachHoiVien ";
+            sqlQuery = "Select Trim(Member.ma) as list" +
+                       " From  Member ";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
             try
             {
@@ -62,7 +62,7 @@ namespace Gym_management_appication.Database
         }
         public DataTable getMemberDetailInfo(string ma)
         {
-            sqlQuery = "Select ma, ten from DanhSachHoiVien " +
+            sqlQuery = "Select ma, ten from Member " +
                        " where ma = '" + ma + "' ";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
             try
@@ -89,8 +89,8 @@ namespace Gym_management_appication.Database
         public DataTable getMemberofMonth (DateTime fromDate, DateTime toDate)
         {
             sqlQuery = "SELECT bucketName AS thang," +
-                       " (SELECT COUNT(*) FROM DanhSachHoiVien WHERE ngayThamGia <= bucketLastDay)"+
-                       "- (SELECT COUNT(*) FROM DanhSachHoiVien WHERE ngayKetThuc<bucketFirstDay) as total"+
+                       " (SELECT COUNT(*) FROM Member WHERE ngayThamGia <= bucketLastDay)"+
+                       "- (SELECT COUNT(*) FROM Member WHERE ngayKetThuc<bucketFirstDay) as total"+
                        " FROM monthBucket WHERE bucketLastDay >= '"+ fromDate +"' AND bucketFirstDay <= '" + toDate + "'"+
                        " ORDER BY bucketFirstDay";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
@@ -118,7 +118,7 @@ namespace Gym_management_appication.Database
         public DataTable getNewMemberofMonth(DateTime fromDate, DateTime toDate)
         {
             sqlQuery = "SELECT bucketName AS thang," +
-                       " (SELECT COUNT(*) FROM DanhSachHoiVien WHERE MONTH(ngayThamGia) = MONTH(bucketLastDay)) as total" +
+                       " (SELECT COUNT(*) FROM Member WHERE MONTH(ngayThamGia) = MONTH(bucketLastDay)) as total" +
                        " FROM monthBucket WHERE bucketLastDay >= '" + fromDate + "' AND bucketFirstDay <= '" + toDate + "'" +
                        " ORDER BY bucketFirstDay";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
@@ -146,7 +146,7 @@ namespace Gym_management_appication.Database
         public DataTable getResignMemberofMonth(DateTime fromDate, DateTime toDate)
         {
             sqlQuery = "SELECT bucketName AS thang," +
-                       " (SELECT COUNT(*) FROM DanhSachHoiVien WHERE MONTH(ngayKetThuc) = MONTH(bucketLastDay)) as total" +
+                       " (SELECT COUNT(*) FROM Member WHERE MONTH(ngayKetThuc) = MONTH(bucketLastDay)) as total" +
                        " FROM monthBucket WHERE bucketLastDay >= '" + fromDate + "' AND bucketFirstDay <= '" + toDate + "'" +
                        " ORDER BY bucketFirstDay";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
@@ -173,11 +173,11 @@ namespace Gym_management_appication.Database
         }
         public DataTable getMemberpaymentinfo(String maHV)
         {
-            sqlQuery = "Select DanhSachHoiVien.ten as HoiVien, MonthlyIncome.dateOfPay," +
+            sqlQuery = "Select Member.ten as HoiVien, MonthlyIncome.dateOfPay," +
                        " trim(GoiTap.ma) + ' - ' + trim(GoiTap.ten) as Goi, MonthlyIncome.price" +
-                       " From MonthlyIncome inner join DanhSachHoiVien on DanhSachHoiVien.ma = MonthlyIncome.maKH inner join" +
+                       " From MonthlyIncome inner join Member on Member.ma = MonthlyIncome.maKH inner join" +
                        " GoiTap	on GoiTap.ma = MonthlyIncome.maGoiTap" +
-                       " Where DanhSachHoiVien.ma = '" + maHV + "'";
+                       " Where Member.ma = '" + maHV + "'";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
             try
             {
@@ -203,10 +203,10 @@ namespace Gym_management_appication.Database
         public DateTime getMemberExpireday(String maHV)
         {
             DateTime date = DateTime.Today;
-            sqlQuery = "Select DATEADD(MONTH, SUM(PaymentPeriod), DanhSachHoiVien.ngayThamGia) AS expireDate" +
-                       " From DanhSachHoiVien inner join MonthlyIncome on DanhSachHoiVien.ma = MonthlyIncome.maKH" +
-                       " Where DanhSachHoiVien.ma = '" + maHV + "'" +
-                       " Group by DanhSachHoiVien.ngayThamGia, DanhSachHoiVien.ma";
+            sqlQuery = "Select DATEADD(MONTH, SUM(PaymentPeriod), Member.ngayThamGia) AS expireDate" +
+                       " From Member inner join MonthlyIncome on Member.ma = MonthlyIncome.maKH" +
+                       " Where Member.ma = '" + maHV + "'" +
+                       " Group by Member.ngayThamGia, Member.ma";
             conString.ConString constring = new conString.ConString();             
             try
             {
@@ -276,7 +276,7 @@ namespace Gym_management_appication.Database
         }
         public string GetIDfromName(string ten)
         {
-            sqlQuery = "select ma from DanhSachHoiVien where ten = N'" + ten + "'" ;
+            sqlQuery = "select ma from Member where ten = N'" + ten + "'" ;
             string ma = "";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of                
             try

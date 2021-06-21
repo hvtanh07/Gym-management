@@ -45,7 +45,7 @@ namespace Gym_management_appication.UI
         }
         private void btn_Danhsach_Click(object sender, EventArgs e)
         {
-            openChildForm(new DanhSachHoiVien());
+            openChildForm(new MemberListForm());
 
             hideSubMenu();
         }

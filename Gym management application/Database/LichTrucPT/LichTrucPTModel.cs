@@ -60,7 +60,7 @@ namespace Gym_management_appication.Database.LichTrucPT
         }
         public void Update(Class.hoiVien hoiVien)
         {
-            sqlQuery = "update DanhSachHoiVien set ma = N'" + hoiVien.ma.Trim() + "', ten = N'" + hoiVien.ten + "', tuoi = '" +
+            sqlQuery = "update Member set ma = N'" + hoiVien.ma.Trim() + "', ten = N'" + hoiVien.ten + "', tuoi = '" +
                 hoiVien.tuoi + "', gioiTinh= N'" + hoiVien.gioiTinh + "', soDT =" + hoiVien.sdt + ", ngayThamGia = '" + hoiVien.ngayThamGia.ToString("MM/dd/yyyy") + "', ngayKetThuc= '" + hoiVien.ngayTKetThuc.ToString("MM/dd/yyyy") + "' where ma=N'" + hoiVien.ma.Trim() + "'";
             conString.ConString constring = new conString.ConString();
             try

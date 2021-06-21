@@ -19,7 +19,7 @@ namespace Gym_management_appication.UI.QuanLyHoiVien
         }
         private string autoGenerateID()
         {
-            DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("SELECT MAX(dbo.udf_GetNumeric(DanhSachHoiVien.ma)) from DanhSachHoiVien"));
+            DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("SELECT MAX(dbo.udf_GetNumeric(Member.ma)) from Member"));
             int lastID = Convert.ToInt32(dataTable.Rows[0][0].ToString());
             lastID++;
             string num = lastID.ToString().PadLeft(3, '0');
@@ -46,7 +46,7 @@ namespace Gym_management_appication.UI.QuanLyHoiVien
             }
             else
             {
-                DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("Select ma from DanhSachHoiVien where ma='" + textBoxID.Text.ToString().Trim() + "'"));
+                DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("Select ma from Member where ma='" + textBoxID.Text.ToString().Trim() + "'"));
                 if (dataTable.Rows.Count == 1)
                 {
                     MessageBox.Show("ID đã tồn tại");
@@ -54,7 +54,7 @@ namespace Gym_management_appication.UI.QuanLyHoiVien
                 else
                 {
 
-                    Database.QuanLyHoiVien.DSHVModel danhSachHoiVienModel = new Database.QuanLyHoiVien.DSHVModel();
+                    Database.QuanLyHoiVien.DSHVModel MemberModel = new Database.QuanLyHoiVien.DSHVModel();
                     hoiVien.ma = textBoxID.Text;
                     hoiVien.ten = textBoxTen.Text;
                     hoiVien.tuoi = Convert.ToInt32(textBoxTuoi.Text.ToString());
@@ -63,7 +63,7 @@ namespace Gym_management_appication.UI.QuanLyHoiVien
                     hoiVien.ngayThamGia = dateTimePickerNgayThamGia.Value;
                     try
                     {
-                        danhSachHoiVienModel.Insert(hoiVien);
+                        MemberModel.Insert(hoiVien);
                         MessageBox.Show("Đăng ký thành công.");
                     }
                     catch (Exception)
