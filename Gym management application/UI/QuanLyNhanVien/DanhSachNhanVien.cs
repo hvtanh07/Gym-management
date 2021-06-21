@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gym_management_appication.UI.QuanLyNhanVien.QRCodeFeature;
 
 namespace Gym_management_appication.UI
 {
@@ -146,6 +147,34 @@ namespace Gym_management_appication.UI
             nhanVien.ChucVu = dataGridViewNhanVien.Rows[e.RowIndex].Cells[7].Value.ToString();
             nhanVien.Luong = Convert.ToInt64(dataGridViewNhanVien.Rows[e.RowIndex].Cells[8].Value);
             this.nhanVienControl.SetControlsData(nhanVien.ID.ToString(), nhanVien.HoTen, nhanVien.GioiTinh, nhanVien.Email, nhanVien.SoDT.ToString(), nhanVien.DiaChi, nhanVien.ChucVu, nhanVien.Luong);
+        }
+
+        private void btnQRCode_Click(object sender, EventArgs e) {
+            if (dataGridViewNhanVien.SelectedCells.Count > 0) {
+                QRCodeForm form = new QRCodeForm(dataGridViewNhanVien.Rows[dataGridViewNhanVien.SelectedCells[0].RowIndex].Cells[1].Value.ToString()); //Employee ID
+                form.ShowDialog();
+            }
+        }
+
+        private void btnScanQR_Click(object sender, EventArgs e) {
+            QRScanForm scanForm = new QRScanForm();
+            NHANVIEN foundEmployee = scanForm.ShowDialogWithReturnedEmployee();
+
+            showEmployeeInfo(foundEmployee);
+        }
+
+        private void showEmployeeInfo(NHANVIEN employee) {
+            if (employee!=null) {
+                nhanVien.ID = employee.ID;
+                nhanVien.HoTen = employee.HoTen;
+                nhanVien.GioiTinh = employee.GioiTinh;
+                nhanVien.Email = employee.Email;
+                nhanVien.SoDT = employee.SoDT;
+                nhanVien.DiaChi = employee.DiaChi;
+                nhanVien.ChucVu = employee.ChucVu;
+                nhanVien.Luong = (long)employee.Luong;
+                this.nhanVienControl.SetControlsData(employee.ID, employee.HoTen, employee.GioiTinh, employee.Email, employee.SoDT.ToString(), employee.DiaChi, employee.ChucVu, (long)employee.Luong);
+            }
         }
     }
 }

@@ -1,24 +1,34 @@
 ﻿using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature;
 
 namespace Gym_management_appication.Database.QuanLyHoiVien
 {
-    public partial class DanhSachHoiVien : Form
+    public partial class MemberListForm : Form
     {
         Class.hoiVien hoiVien = new Class.hoiVien();
-        public DanhSachHoiVien()
+
+        public MemberListForm()
         {
             InitializeComponent();
-            LoadDanhSachHoiVien();
+            LoadMemberListForm();
         }
 
-        private void LoadDanhSachHoiVien()
+        private void LoadMemberListForm()
         {
-            DataTable dataTable = new DataTable();
-            dataTable = new Database.QuanLyHoiVien.DSHVModel().GetData("Select * from DanhSachHoiVien");
-            this.dataGridViewHoiVien.DataSource = dataTable;
+            //DataTable dataTable = new DataTable();
+            //dataTable = new Database.QuanLyHoiVien.DSHVModel().GetData("Select * from Member");
+            //this.dataGridViewHoiVien.DataSource = dataTable;
+            //dataGridViewHoiVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            //SetHeader();
+
+            using (MainDataClassesDataContext db = new MainDataClassesDataContext()) {
+                this.dataGridViewHoiVien.DataSource = from m in db.Members
+                                                      select m;
+            }
+
             dataGridViewHoiVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             SetHeader();
         }
@@ -36,7 +46,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            LoadDanhSachHoiVien();
+            LoadMemberListForm();
         }
 
       
@@ -60,14 +70,14 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
             }
             else
             {
-                DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("Select ma from DanhSachHoiVien where ma='" + textBoxID.Text.ToString().Trim() + "'"));
+                DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("Select ma from MemberListForm where ma='" + textBoxID.Text.ToString().Trim() + "'"));
                 if (dataTable.Rows.Count == 1) {
                     MessageBox.Show("ID đã tồn tại");
                 }
                 else
                 {
 
-                    Database.QuanLyHoiVien.DSHVModel danhSachHoiVienModel = new Database.QuanLyHoiVien.DSHVModel();
+                    Database.QuanLyHoiVien.DSHVModel MemberListFormModel = new Database.QuanLyHoiVien.DSHVModel();
                     hoiVien.ma = textBoxID.Text;
                     hoiVien.ten = textBoxTen.Text;
                     hoiVien.tuoi = Convert.ToInt32( textBoxTuoi.Text.ToString());
@@ -78,11 +88,11 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                     try
                     {
                         if (cb_endDayincluded.Checked == true)
-                            danhSachHoiVienModel.FullInsert(hoiVien);
+                            MemberListFormModel.FullInsert(hoiVien);
                         else
-                            danhSachHoiVienModel.Insert(hoiVien);
+                            MemberListFormModel.Insert(hoiVien);
                         MessageBox.Show("Thêm mới thành công.");
-                        LoadDanhSachHoiVien();
+                        LoadMemberListForm();
                     }
                     catch (Exception)
                     {
@@ -130,7 +140,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                 MessageBox.Show("Chưa đủ thông tin");
                 return;
             }
-            DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("Select ma from DanhSachHoiVien where ma='" + textBoxID.Text.ToString().Trim() + "'"));
+            DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("Select ma from MemberListForm where ma='" + textBoxID.Text.ToString().Trim() + "'"));
             if (dataTable.Rows.Count == 0)
             {
                 MessageBox.Show("ID chưa tồn tại");
@@ -144,15 +154,15 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                 hoiVien.sdt = textBoxSDT.Text;
                 hoiVien.ngayThamGia = dateTimePickerNgayThamGia.Value;
                 hoiVien.ngayTKetThuc = dateTimePickerNgayKetThuc.Value;
-                Database.QuanLyHoiVien.DSHVModel danhSachHoiVienModel = new Database.QuanLyHoiVien.DSHVModel();
+                Database.QuanLyHoiVien.DSHVModel MemberListFormModel = new Database.QuanLyHoiVien.DSHVModel();
                 try
                 {
                     if (cb_endDayincluded.Checked == true)
-                        danhSachHoiVienModel.FullUpdate(hoiVien);
+                        MemberListFormModel.FullUpdate(hoiVien);
                     else
-                        danhSachHoiVienModel.Insert(hoiVien);                  
+                        MemberListFormModel.Insert(hoiVien);                  
                     MessageBox.Show("Cập nhật thành công.");
-                    LoadDanhSachHoiVien();
+                    LoadMemberListForm();
                 }
                 catch (Exception)
                 {
@@ -175,7 +185,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                 Database.QuanLyHoiVien.DSHVModel ds = new Database.QuanLyHoiVien.DSHVModel();
                 ds.Delete(hoiVien.ma.ToString().Trim());
                 MessageBox.Show("Xóa thành công.");
-                LoadDanhSachHoiVien();
+                LoadMemberListForm();
             }
         }
         private void TextBoxSDT_KeyPress(object sender, KeyPressEventArgs e)
@@ -203,37 +213,42 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
 
         private void btnScanQR_Click(object sender, EventArgs e) {
             QRScanForm scanForm = new QRScanForm();
-            string Result = scanForm.ShowDialogWithReturnedID();
+            Member foundMember = scanForm.ShowDialogWithReturnedMember();
 
-            for (int i=0; i<dataGridViewHoiVien.Rows.Count; i++) {
-                if (dataGridViewHoiVien.Rows[i].Cells[1].Value.ToString().Trim()==Result) {
-                    textBoxID.Text = dataGridViewHoiVien.Rows[i].Cells[1].Value.ToString();
-                    textBoxTen.Text = dataGridViewHoiVien.Rows[i].Cells[2].Value.ToString();
-                    textBoxTuoi.Text = dataGridViewHoiVien.Rows[i].Cells[3].Value.ToString();
-                    if (dataGridViewHoiVien.Rows[i].Cells[4].Value.ToString().Trim() == "Nam" || dataGridViewHoiVien.Rows[i].Cells[4].Value.ToString().Trim() == "")
-                        radioButtonNam.Checked = true;
-                    else
-                        radioButtonNu.Checked = true;
-                    textBoxSDT.Text = dataGridViewHoiVien.Rows[i].Cells[5].Value.ToString();
-                    dateTimePickerNgayThamGia.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[i].Cells[6].Value.ToString());
-                    //dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[i].Cells[7].Value.ToString());
-                    try
-                    {
-                        dateTimePickerNgayKetThuc.Value = Convert.ToDateTime(dataGridViewHoiVien.Rows[i].Cells[7].Value.ToString());
-                    }
-                    catch (Exception ex)
-                    {
-                        dateTimePickerNgayKetThuc.Value = DateTime.Today.AddYears(1);
-                    }
-                    hoiVien.ma = textBoxID.Text;
-                    hoiVien.ten = textBoxTen.Text;
-                    hoiVien.tuoi = Convert.ToInt32(textBoxTuoi.Text.ToString());
-                    hoiVien.gioiTinh = (radioButtonNam.Checked ? "Nam" : "Nữ");
-                    hoiVien.sdt = textBoxSDT.Text;
-                    hoiVien.ngayThamGia = dateTimePickerNgayThamGia.Value;
-                    hoiVien.ngayTKetThuc = dateTimePickerNgayKetThuc.Value;
+            showMemberInfo(foundMember);
+        }
+
+        private void showMemberInfo(Member member) {
+            if (member != null) {
+                textBoxID.Text = member.ma;
+                textBoxTen.Text = member.ten;
+                textBoxTuoi.Text = member.tuoi.ToString();
+                if (member.gioiTinh == "Nam" || member.gioiTinh == "")
+                    radioButtonNam.Checked = true;
+                else
+                    radioButtonNu.Checked = true;
+                textBoxSDT.Text = member.soDT.ToString();
+                dateTimePickerNgayThamGia.Value = (DateTime)member.ngayThamGia;
+                if (member.ngayKetThuc != null) {
+                    dateTimePickerNgayKetThuc.Value = (DateTime)member.ngayKetThuc;
+                    cb_endDayincluded.Checked = true;
                 }
+                else {
+                    dateTimePickerNgayKetThuc.Value = DateTime.Today.AddYears(1);
+                    cb_endDayincluded.Checked = false;
+                }
+
+                // 
+
+                hoiVien.ma = member.ma;
+                hoiVien.ten = member.ten;
+                hoiVien.tuoi = (int)member.tuoi;
+                hoiVien.gioiTinh = member.gioiTinh;
+                hoiVien.sdt = textBoxSDT.Text;
+                hoiVien.ngayThamGia = dateTimePickerNgayThamGia.Value;
+                hoiVien.ngayTKetThuc = dateTimePickerNgayKetThuc.Value;
             }
+          
         }
     }
 }

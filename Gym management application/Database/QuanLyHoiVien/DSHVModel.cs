@@ -39,7 +39,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         }
         public void Insert(Class.hoiVien hoiVien)
         {
-            sqlQuery = "insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) values ('"+hoiVien.ma + "',N'" +
+            sqlQuery = "insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) values ('"+hoiVien.ma + "',N'" +
                 hoiVien.ten+"','" + hoiVien.tuoi.ToString() + "',N'" + hoiVien.gioiTinh+ "','" + hoiVien.sdt  + "','" + hoiVien.ngayThamGia.ToString("MM/dd/yyyy") + "')";
             conString.ConString constring = new conString.ConString();
             try
@@ -61,7 +61,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         }
         public void FullInsert(Class.hoiVien hoiVien)
         {
-            sqlQuery = "insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) values ('" + hoiVien.ma + "',N'" +
+            sqlQuery = "insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) values ('" + hoiVien.ma + "',N'" +
                 hoiVien.ten + "','" + hoiVien.tuoi.ToString() + "',N'" + hoiVien.gioiTinh + "','" + hoiVien.sdt + "','" + hoiVien.ngayThamGia.ToString("MM/dd/yyyy") + "','" + hoiVien.ngayTKetThuc.ToString("MM/dd/yyyy") + "')";
             conString.ConString constring = new conString.ConString();
             try
@@ -83,7 +83,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         }
         public void Update(Class.hoiVien hoiVien)
         {
-            sqlQuery = "update DanhSachHoiVien set ma = N'" + hoiVien.ma.Trim() + "', ten = N'" + hoiVien.ten + "', tuoi = '" +
+            sqlQuery = "update Member set ma = N'" + hoiVien.ma.Trim() + "', ten = N'" + hoiVien.ten + "', tuoi = '" +
                 hoiVien.tuoi + "', gioiTinh= N'" + hoiVien.gioiTinh + "', soDT =" + hoiVien.sdt + ", ngayThamGia = '" + hoiVien.ngayThamGia.ToString("MM/dd/yyyy") + "' where ma=N'"+hoiVien.ma.Trim()+"'";
             conString.ConString constring = new conString.ConString();
             try
@@ -106,7 +106,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         }
         public void FullUpdate(Class.hoiVien hoiVien)
         {
-            sqlQuery = "update DanhSachHoiVien set ma = N'" + hoiVien.ma.Trim() + "', ten = N'" + hoiVien.ten + "', tuoi = '" +
+            sqlQuery = "update Member set ma = N'" + hoiVien.ma.Trim() + "', ten = N'" + hoiVien.ten + "', tuoi = '" +
                 hoiVien.tuoi + "', gioiTinh= N'" + hoiVien.gioiTinh + "', soDT =" + hoiVien.sdt + ", ngayThamGia = '" + hoiVien.ngayThamGia.ToString("MM/dd/yyyy") + "', ngayKetThuc= '" + hoiVien.ngayTKetThuc.ToString("MM/dd/yyyy") + "' where ma=N'" + hoiVien.ma.Trim() + "'";
             conString.ConString constring = new conString.ConString();
             try
@@ -129,7 +129,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
         }
         public void Delete(string ID)
         {
-            sqlQuery = "delete from DanhSachHoiVien where ma ='" + ID + "'";
+            sqlQuery = "delete from Member where ma ='" + ID + "'";
             conString.ConString constring = new conString.ConString();    //this will hide the database info ... sort of       
             try
             {

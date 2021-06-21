@@ -11,13 +11,13 @@ using System.Windows.Forms;
 using ZXing;
 using Gym_management_appication.Class;
 
-namespace Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature {
+namespace Gym_management_appication.UI.QuanLyNhanVien.QRCodeFeature {
     public partial class QRScanForm : Form {
         public QRScanForm() {
             InitializeComponent();
         }
 
-        private Member Result = null;
+        private NHANVIEN Result = null;
 
         private MJPEGStream stream;
 
@@ -50,7 +50,7 @@ namespace Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature {
                 try {
                     string decoded = result.ToString();
 
-                    SearchMember(decoded);
+                    SearchEmployee(decoded);
 
                     img.Dispose();
                 }
@@ -61,11 +61,11 @@ namespace Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature {
             }
         }
 
-        private void SearchMember(string id) {
+        private void SearchEmployee(string id) {
             using (MainDataClassesDataContext db = new MainDataClassesDataContext()) {
-                Member foundMember = db.Members.Where(item => item.ma.Equals(id)).FirstOrDefault();
-                if (foundMember!=null) {
-                    Result = foundMember;
+                NHANVIEN foundEmployee = db.NHANVIENs.Where(item => item.ID.Equals(id)).FirstOrDefault();
+                if (foundEmployee != null) {
+                    Result = foundEmployee;
                     timer1.Stop();
                     stream.Stop();
                     this.Close();
@@ -73,7 +73,7 @@ namespace Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature {
             }
         }
 
-        public Member ShowDialogWithReturnedMember() {
+        public NHANVIEN ShowDialogWithReturnedEmployee() {
             this.ShowDialog();
             return Result;
         }

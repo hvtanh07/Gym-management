@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QRCoder;
 
-namespace Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature {
+namespace Gym_management_appication.UI.QuanLyNhanVien.QRCodeFeature {
     public partial class QRCodeForm : Form {
         public QRCodeForm() {
             InitializeComponent();
@@ -17,7 +17,7 @@ namespace Gym_management_appication.UI.QuanLyHoiVien.QRCodeFeature {
 
         public QRCodeForm(string id) {
             InitializeComponent();
-            
+
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(id, QRCodeGenerator.ECCLevel.Q);
             QRCode qrCode = new QRCode(qrCodeData);

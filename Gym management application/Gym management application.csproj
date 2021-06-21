@@ -64,6 +64,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -99,6 +100,24 @@
     <Compile Include="Database\LichTrucPT\LichTrucPTModel.cs" />
     <Compile Include="Database\LogIn.cs" />
     <Compile Include="Database\QuanLyHoiVien\DSHVModel.cs" />
+    <Compile Include="MainDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="UI\QuanLyNhanVien\QRCodeFeature\QRCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QuanLyNhanVien\QRCodeFeature\QRCodeForm.Designer.cs">
+      <DependentUpon>QRCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QuanLyNhanVien\QRCodeFeature\QRScanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QuanLyNhanVien\QRCodeFeature\QRScanForm.Designer.cs">
+      <DependentUpon>QRScanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\QuanLyNhanVien\TaoTaiKhoanDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,11 +172,11 @@
     <Compile Include="UI\QuanLyHoiVien\DangKyHoiVien.Designer.cs">
       <DependentUpon>DangKyHoiVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\QuanLyHoiVien\DanhSachHoiVien.cs">
+    <Compile Include="UI\QuanLyHoiVien\MemberListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\QuanLyHoiVien\DanhSachHoiVien.Designer.cs">
-      <DependentUpon>DanhSachHoiVien.cs</DependentUpon>
+    <Compile Include="UI\QuanLyHoiVien\MemberListForm.Designer.cs">
+      <DependentUpon>MemberListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\QuanLyNhanVien\DSNVModel.cs" />
     <Compile Include="Database\trangThietBi.cs" />
@@ -244,8 +263,8 @@
     <EmbeddedResource Include="UI\QuanLyHoiVien\DangKyHoiVien.resx">
       <DependentUpon>DangKyHoiVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\QuanLyHoiVien\DanhSachHoiVien.resx">
-      <DependentUpon>DanhSachHoiVien.cs</DependentUpon>
+    <EmbeddedResource Include="UI\QuanLyHoiVien\MemberListForm.resx">
+      <DependentUpon>MemberListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -287,6 +306,14 @@
     <EmbeddedResource Include="UI\ThongKeHoiVien\thongKeHoiVien.resx">
       <DependentUpon>thongKeHoiVien.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="MainDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MainDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MainDataClasses.dbml.layout">
+      <DependentUpon>MainDataClasses.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -318,6 +345,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\istockphoto-953455856-170667a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

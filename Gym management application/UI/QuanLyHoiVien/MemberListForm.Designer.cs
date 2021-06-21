@@ -1,6 +1,6 @@
 ﻿namespace Gym_management_appication.Database.QuanLyHoiVien
 {
-    partial class DanhSachHoiVien
+    partial class MemberListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -375,7 +375,7 @@
             this.cb_endDayincluded.Text = "bao gồm ngày kết thúc";
             this.cb_endDayincluded.UseVisualStyleBackColor = true;
             // 
-            // DanhSachHoiVien
+            // MemberListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -384,8 +384,8 @@
             this.Controls.Add(this.dataGridViewHoiVien);
             this.Controls.Add(this.panelNhanVien);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "DanhSachHoiVien";
-            this.Text = "DanhSachHoiVien";
+            this.Name = "MemberListForm";
+            this.Text = "MemberListForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHoiVien)).EndInit();
             this.panelNhanVien.ResumeLayout(false);
             this.panelNhanVien.PerformLayout();

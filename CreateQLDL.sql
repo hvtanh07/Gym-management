@@ -1,7 +1,4 @@
-﻿USE MASTER
-GO
-
--- Create a new database called 'GymManagement'
+﻿-- Create a new database called 'GymManagement'
 -- Connect to the 'master' database to run this snippet
 USE master
 GO
@@ -56,13 +53,13 @@ CREATE TABLE [dbo].[NHANVIEN]
 );
 GO
 
--- Create a new table called '[DanhSachHoiVien]' in schema '[dbo]'
+-- Create a new table called '[Member]' in schema '[dbo]'
 -- Drop the table if it already exists
-IF OBJECT_ID('[dbo].[DanhSachHoiVien]', 'U') IS NOT NULL
-DROP TABLE [dbo].[DanhSachHoiVien]
+IF OBJECT_ID('[dbo].[Member]', 'U') IS NOT NULL
+DROP TABLE [dbo].[Member]
 GO
 -- Create the table in the specified schema
-CREATE TABLE [dbo].[DanhSachHoiVien]
+CREATE TABLE [dbo].[Member]
 (
 	ma char(10) primary key,
 	ten nvarchar(50),
@@ -244,28 +241,28 @@ INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('NV001',1
 INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('NV002',1,'anh','1234')
 INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('NV003',1,'vinh','1234')
 
-truncate table DanhSachHoiVien
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+truncate table Member
+insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
 values ('KH0001',N'Trương Nguyễn Tuấn Nam',22,N'Nam',0123456789,'12/02/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
 values ('KH0002',N'Phan Duy',21,N'Nam',0123456789,'12/01/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) --
+insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) --
 values ('KH0003',N'Vinh',20,N'Nam',0123456789,'12/03/2021','12/07/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
 values ('KH0004',N'Tuan Anh',22,N'Nu',0123456789,'12/05/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
 values ('KH0005',N'Hoang Tuan Kiet',22,N'Nam',0123456789,'12/01/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
 values ('KH0006',N'Someone',21,N'Nam',0123456789,'12/05/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
 values ('KH0007',N'Someone Else',20,N'Nam',0123456789,'12/04/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) --
+insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia, ngayKetThuc) --
 values ('KH0008',N'Stranger',22,N'Nu',0123456789,'12/04/2021','12/10/2022')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
 values ('KH0009',N'ABC',21,N'Nam',0123456789,'12/03/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
 values ('KH0010',N'XYZ Else',20,N'Nam',0123456789,'12/05/2021')
-insert into DanhSachHoiVien (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
+insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 
 values ('KH0011',N'LMN',22,N'Nu',0123456789,'12/02/2021')
 
 
