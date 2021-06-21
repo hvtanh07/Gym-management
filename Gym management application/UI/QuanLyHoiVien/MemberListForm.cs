@@ -18,19 +18,19 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
 
         private void LoadMemberListForm()
         {
-            //DataTable dataTable = new DataTable();
-            //dataTable = new Database.QuanLyHoiVien.DSHVModel().GetData("Select * from Member");
-            //this.dataGridViewHoiVien.DataSource = dataTable;
-            //dataGridViewHoiVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            //SetHeader();
-
-            using (MainDataClassesDataContext db = new MainDataClassesDataContext()) {
-                this.dataGridViewHoiVien.DataSource = from m in db.Members
-                                                      select m;
-            }
-
+            DataTable dataTable = new DataTable();
+            dataTable = new Database.QuanLyHoiVien.DSHVModel().GetData("Select * from Member");
+            this.dataGridViewHoiVien.DataSource = dataTable;
             dataGridViewHoiVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             SetHeader();
+
+            //using (MainDataClassesDataContext db = new MainDataClassesDataContext()) {
+            //    this.dataGridViewHoiVien.DataSource = from m in db.Members
+            //                                          select m;
+            //}
+
+            //dataGridViewHoiVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            //SetHeader();
         }
         private void SetHeader()
         {
@@ -70,7 +70,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
             }
             else
             {
-                DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("Select ma from MemberListForm where ma='" + textBoxID.Text.ToString().Trim() + "'"));
+                DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("Select ma from Member where ma='" + textBoxID.Text.ToString().Trim() + "'"));
                 if (dataTable.Rows.Count == 1) {
                     MessageBox.Show("ID đã tồn tại");
                 }
@@ -140,7 +140,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                 MessageBox.Show("Chưa đủ thông tin");
                 return;
             }
-            DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("Select ma from MemberListForm where ma='" + textBoxID.Text.ToString().Trim() + "'"));
+            DataTable dataTable = (new Database.QuanLyHoiVien.DSHVModel().GetData("Select ma from Member where ma='" + textBoxID.Text.ToString().Trim() + "'"));
             if (dataTable.Rows.Count == 0)
             {
                 MessageBox.Show("ID chưa tồn tại");

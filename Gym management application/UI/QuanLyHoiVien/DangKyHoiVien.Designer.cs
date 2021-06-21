@@ -48,7 +48,7 @@
             // 
             this.textBoxTuoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTuoi.Location = new System.Drawing.Point(120, 112);
+            this.textBoxTuoi.Location = new System.Drawing.Point(142, 112);
             this.textBoxTuoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTuoi.Name = "textBoxTuoi";
             this.textBoxTuoi.Size = new System.Drawing.Size(260, 22);
@@ -68,7 +68,7 @@
             // 
             this.radioButtonNam.AutoSize = true;
             this.radioButtonNam.Checked = true;
-            this.radioButtonNam.Location = new System.Drawing.Point(120, 157);
+            this.radioButtonNam.Location = new System.Drawing.Point(142, 156);
             this.radioButtonNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonNam.Name = "radioButtonNam";
             this.radioButtonNam.Size = new System.Drawing.Size(58, 21);
@@ -81,7 +81,7 @@
             // radioButtonNu
             // 
             this.radioButtonNu.AutoSize = true;
-            this.radioButtonNu.Location = new System.Drawing.Point(222, 157);
+            this.radioButtonNu.Location = new System.Drawing.Point(231, 156);
             this.radioButtonNu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonNu.Name = "radioButtonNu";
             this.radioButtonNu.Size = new System.Drawing.Size(47, 21);
@@ -95,7 +95,7 @@
             // 
             this.textBoxTen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxTen.Location = new System.Drawing.Point(120, 69);
+            this.textBoxTen.Location = new System.Drawing.Point(142, 71);
             this.textBoxTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTen.Name = "textBoxTen";
             this.textBoxTen.Size = new System.Drawing.Size(260, 22);
@@ -106,7 +106,7 @@
             this.textBoxID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxID.Enabled = false;
-            this.textBoxID.Location = new System.Drawing.Point(120, 33);
+            this.textBoxID.Location = new System.Drawing.Point(142, 30);
             this.textBoxID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(260, 22);
@@ -148,7 +148,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePickerNgayThamGia.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerNgayThamGia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerNgayThamGia.Location = new System.Drawing.Point(130, 239);
+            this.dateTimePickerNgayThamGia.Location = new System.Drawing.Point(142, 234);
             this.dateTimePickerNgayThamGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerNgayThamGia.Name = "dateTimePickerNgayThamGia";
             this.dateTimePickerNgayThamGia.Size = new System.Drawing.Size(250, 22);
@@ -168,7 +168,7 @@
             // 
             this.textBoxSDT.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSDT.Location = new System.Drawing.Point(130, 198);
+            this.textBoxSDT.Location = new System.Drawing.Point(142, 195);
             this.textBoxSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxSDT.Name = "textBoxSDT";
             this.textBoxSDT.Size = new System.Drawing.Size(250, 22);

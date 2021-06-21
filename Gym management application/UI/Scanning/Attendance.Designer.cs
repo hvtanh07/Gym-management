@@ -61,7 +61,7 @@ namespace Gym_management_appication.UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(67, 22);
+            this.label1.Location = new System.Drawing.Point(9, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 1;
@@ -71,7 +71,7 @@ namespace Gym_management_appication.UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(345, 22);
+            this.label2.Location = new System.Drawing.Point(312, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(25, 20);
             this.label2.TabIndex = 2;
@@ -81,18 +81,18 @@ namespace Gym_management_appication.UI
             // 
             this.fromTime.CustomFormat = "dd/MM/yyyy - hh:mm:ss tt";
             this.fromTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fromTime.Location = new System.Drawing.Point(131, 20);
+            this.fromTime.Location = new System.Drawing.Point(73, 20);
             this.fromTime.Name = "fromTime";
-            this.fromTime.Size = new System.Drawing.Size(208, 22);
+            this.fromTime.Size = new System.Drawing.Size(221, 22);
             this.fromTime.TabIndex = 44;
             // 
             // toTime
             // 
             this.toTime.CustomFormat = "dd/MM/yyyy - hh:mm:ss tt";
             this.toTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.toTime.Location = new System.Drawing.Point(376, 20);
+            this.toTime.Location = new System.Drawing.Point(356, 20);
             this.toTime.Name = "toTime";
-            this.toTime.Size = new System.Drawing.Size(208, 22);
+            this.toTime.Size = new System.Drawing.Size(221, 22);
             this.toTime.TabIndex = 45;
             // 
             // btn_searchtimespan
@@ -113,7 +113,7 @@ namespace Gym_management_appication.UI
             this.btn_searchkeyw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
             this.btn_searchkeyw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_searchkeyw.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_searchkeyw.Location = new System.Drawing.Point(414, 59);
+            this.btn_searchkeyw.Location = new System.Drawing.Point(356, 59);
             this.btn_searchkeyw.Name = "btn_searchkeyw";
             this.btn_searchkeyw.Size = new System.Drawing.Size(162, 32);
             this.btn_searchkeyw.TabIndex = 47;
@@ -123,7 +123,7 @@ namespace Gym_management_appication.UI
             // 
             // txt_keyword
             // 
-            this.txt_keyword.Location = new System.Drawing.Point(71, 65);
+            this.txt_keyword.Location = new System.Drawing.Point(13, 65);
             this.txt_keyword.Name = "txt_keyword";
             this.txt_keyword.Size = new System.Drawing.Size(315, 22);
             this.txt_keyword.TabIndex = 48;
