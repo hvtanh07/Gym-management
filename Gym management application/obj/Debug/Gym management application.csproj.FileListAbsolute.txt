@@ -45,7 +45,6 @@ D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_app
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.LichTrucPT.XoaLichTrucPT.resources
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.Login.resources
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.MainMenu.resources
-D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.Database.QuanLyHoiVien.DanhSachHoiVien.resources
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.Properties.Resources.resources
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.ChiTietThietBi.resources
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.DanhSachNhanVien.resources
@@ -194,3 +193,6 @@ C:\Users\Jenkoz\Documents\Gym-management\Gym management application\obj\Debug\Gy
 C:\Users\Jenkoz\Documents\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyPhanHoi.XemPhanHoi.resources
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyPhanHoi.QuanLyPhanHoi.resources
 C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyPhanHoi.XemPhanHoi.resources
+D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.Database.QuanLyHoiVien.MemberListForm.resources
+D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyPhanHoi.QuanLyPhanHoi.resources
+D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyPhanHoi.XemPhanHoi.resources

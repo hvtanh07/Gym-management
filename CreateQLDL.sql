@@ -160,7 +160,7 @@ GO
 
 -- Create a new table called '[Feedback]' in schema '[dbo]'
 -- Drop the table if it already exists
-IF OBJECT_ID('[dbo].[Attendance]', 'U') IS NOT NULL
+IF OBJECT_ID('[dbo].[Feedback]', 'U') IS NOT NULL
 DROP TABLE [dbo].[Feedback]
 GO
 -- Create the table in the specified schema
