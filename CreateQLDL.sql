@@ -158,6 +158,20 @@ CREATE TABLE [dbo].[Attendance]
 );
 GO
 
+-- Create a new table called '[Feedback]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[Attendance]', 'U') IS NOT NULL
+DROP TABLE [dbo].[Feedback]
+GO
+-- Create the table in the specified schema
+CREATE TABLE [dbo].[Feedback]
+(
+	maKH nvarchar(10), 
+	thoigian date ,
+	feedback nvarchar(2500),
+);
+GO
+
 ;WITH
   Pass0 as (select 1 as C union all select 1), --2 rows
   Pass1 as (select 1 as C from Pass0 as A, Pass0 as B),--4 rows
@@ -416,13 +430,19 @@ values ('KH0011',CONVERT(datetime, '2021-06-20 19:47:36.443', 120),N'Hội viên
 insert into Attendance (ma,thoigian,alias)
 values ('KH0011',CONVERT(datetime, '2021-06-20 19:50:36.443', 120),N'Hội viên')
 
+truncate table Feedback
+insert into Feedback (maKH,thoigian,feedback) 
+values ('KH0011','13/06/2021',N'Rất tốt')
+insert into Feedback (maKH,thoigian,feedback) 
+values ('KH0005','09/05/2021',N'Dịch vụ đầy đủ')
+insert into Feedback (maKH,thoigian,feedback) 
+values ('KH0010','25/07/2021',N'Nhân viên tận tình')
+insert into Feedback (maKH,thoigian,feedback) 
+values ('KH0007','29/09/2021',N'Cần trang bị thêm máy tập')
+insert into Feedback (maKH,thoigian,feedback) 
+values ('KH0009','30/04/2021',N'Phòng rộng rãi')
 
 
-
-
-
-
-	 
 
 
 
