@@ -124,6 +124,18 @@
     <Compile Include="UI\QuanLyNhanVien\TaoTaiKhoanDangNhap.Designer.cs">
       <DependentUpon>TaoTaiKhoanDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\QuanLyPhanHoi\QuanLyPhanHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QuanLyPhanHoi\QuanLyPhanHoi.Designer.cs">
+      <DependentUpon>QuanLyPhanHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QuanLyPhanHoi\XemPhanHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QuanLyPhanHoi\XemPhanHoi.Designer.cs">
+      <DependentUpon>XemPhanHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Scanning\Attendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +293,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QuanLyNhanVien\TaoTaiKhoanDangNhap.resx">
       <DependentUpon>TaoTaiKhoanDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QuanLyPhanHoi\QuanLyPhanHoi.resx">
+      <DependentUpon>QuanLyPhanHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QuanLyPhanHoi\XemPhanHoi.resx">
+      <DependentUpon>XemPhanHoi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\QuanLyThietBi\ChiTietThietBi.resx">
       <DependentUpon>ChiTietThietBi.cs</DependentUpon>
