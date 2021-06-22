@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\AttendanceClass.cs" />
+    <Compile Include="Class\feedBack.cs" />
     <Compile Include="Class\hoiVien.cs" />
     <Compile Include="Class\LichTrucPT.cs" />
     <Compile Include="Class\QuanLyNhanVien\NhanVien.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Database\Attendance.cs" />
     <Compile Include="Database\conString\ConString.cs" />
     <Compile Include="Database\DoanhThu.cs" />
+    <Compile Include="Database\feedBackDB.cs" />
     <Compile Include="Database\GoiTap.cs" />
     <Compile Include="Database\hoiVien.cs" />
     <Compile Include="Database\LichTrucPT\LichTrucPTModel.cs" />

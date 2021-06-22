@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gym_management_appication.Class;
+using Gym_management_appication.Database;
 
 namespace Gym_management_appication.UI.QuanLyPhanHoi
 {
@@ -21,11 +23,21 @@ namespace Gym_management_appication.UI.QuanLyPhanHoi
 
         private void btn_sendReview_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Gửi phản hồi thành công");
-            txt_memberName.Text = "";
-            rTB_review.Text = "";
-            dtP_reviewDate.Format = DateTimePickerFormat.Custom;
-            dtP_reviewDate.CustomFormat = "dd/MM/yyyy";
+            feedBack feedBack = new feedBack();
+            feedBack.maHV = txt_memberName.Text;
+            feedBack.date = dtP_reviewDate.Value;
+            feedBack.feedback = txt_review.Text;
+            feedBackDB database = new feedBackDB();
+            if (database.Insert(feedBack))
+            {
+                MessageBox.Show("Gửi phản hồi thành công.");
+                txt_memberName.Text = "";
+                txt_review.Text = "";
+            }else
+            {
+                MessageBox.Show("Gửi phản hồi thất bại, vui lòng thử lại.");
+            }
+           
         }
 
         private void btn_watchReview_Click(object sender, EventArgs e)
