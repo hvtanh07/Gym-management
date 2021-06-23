@@ -1,4 +1,5 @@
 ﻿using System;
+using Gym_management_appication.Class;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +16,45 @@ namespace Gym_management_appication.UI
 {
     public partial class MainMenu : Form
     {
+        private int permissionlevel;
         public MainMenu()
         {
             InitializeComponent();
             hideSubMenu();
+            valiballecommon valiballecommon = valiballecommon.GetStorage();
+            permissionlevel = valiballecommon.Permission;
+            disableButton();
+        }
+        private void disableButton()
+        {
+           switch (permissionlevel)
+            {
+                case 1:
+                    break;
+                case 2:
+                    btn_QuanLyNhanvien.Enabled = false;
+                    btn_QuanLyHoiVien.Enabled = false;
+                    btn_attendance.Enabled = false;
+                    break;
+                case 3:
+                    btn_QuanLyNhanvien.Enabled = false;
+                    btn_QuanLyHoiVien.Enabled = false;
+                    btn_attendance.Enabled = false;
+                    btn_QuanLyThietbi.Enabled = false;
+                    btn_QuanLyDoanhThu.Enabled = false;
+                    break;
+                case 4:
+                    btn_QuanLyNhanvien.Enabled = false;
+                    btn_QuanLyHoiVien.Enabled = false;
+                    btn_attendance.Enabled = false;
+                    btn_QuanLyThietbi.Enabled = false;
+                    btn_QuanLyDoanhThu.Enabled = false;
+                    break;
+                default:
+                    MessageBox.Show("Thông tin đăng nhập lỗi", "Error");
+                    this.Close();
+                    break;
+            }    
         }
         private void hideSubMenu()
         {
@@ -170,6 +206,14 @@ namespace Gym_management_appication.UI
                     db.SubmitChanges();
                 }
             }
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        { 
+            this.Hide();
+            var form1 = new Login();
+            form1.Closed += (s, args) => this.Close();
+            form1.Show();
         }
     }
 }

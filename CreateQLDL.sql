@@ -244,16 +244,19 @@ values (N'Máy tập đùi ngoài','Ma-004',N'Trong kho','27/05/2020',10000,12,'
 
 truncate table NHANVIEN
 INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV001', N'Phan Duy Đức', N'Nam', N'ducduypm0120@gmai.com', 376771465, N'KTX khu A', N'Admin', CAST(10000000.0000 AS Money))
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV002', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
-INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV003', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'Admin', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV002', N'Hua Van Tuan Anh', N'Nam', N'tuananh123@gmail.com', 167645234, N'Thu Duc', N'Tiếp tân', CAST(10000000.0000 AS Money))
+INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV003', N'Pham Xuan Vinh', N'Nam', N'vinhpham@gmail.com', 234567891, N'Thu Duc', N'Tiếp tân', CAST(10000000.0000 AS Money))
 INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV004', N'Pham Viet Hoang', N'Nam', N'viethoangpm0120@gmai.com', 376771465, N'KTX khu A', N'PT', CAST(10000000.0000 AS Money))
 INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV005', N'Phan Viet Duc', N'Nam', N'duc09@gmail.com', 167645234, N'Thu Duc', N'PT', CAST(10000000.0000 AS Money))
 INSERT INTO NHANVIEN (ID, HoTen, GioiTinh, Email, SoDT, DiaChi, ChucVu, Luong) VALUES (N'NV006', N'Nguyen Viet My', N'Nam', N'mydep@gmail.com', 234567891, N'Thu Duc', N'PT', CAST(10000000.0000 AS Money))
 
 truncate table LogInData
 INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('NV001',1,'duc','1234')
-INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('NV002',1,'anh','1234')
-INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('NV003',1,'vinh','1234')
+INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('NV002',2,'anh','1234')
+INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('NV003',2,'vinh','1234')
+INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('NV004',3,'hoang','1234')
+INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('NV005',3,'vduc','1234')
+INSERT INTO LogInData (maNV, permissionLevel, username, passW) VALUES ('NV006',3,'my','1234')
 
 truncate table Member
 insert into Member (ma, ten,tuoi, gioiTinh,soDT, ngayThamGia) 

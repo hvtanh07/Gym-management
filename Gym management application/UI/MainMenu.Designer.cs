@@ -50,6 +50,7 @@ namespace Gym_management_appication.UI
             this.logoPanel = new System.Windows.Forms.Panel();
             this.container = new System.Windows.Forms.Panel();
             this.BW = new System.ComponentModel.BackgroundWorker();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.sidePanel.SuspendLayout();
             this.GroupQuanLyDoanhThu.SuspendLayout();
             this.GroupQuanLyNhanVien.SuspendLayout();
@@ -59,6 +60,7 @@ namespace Gym_management_appication.UI
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(185)))), ((int)(((byte)(179)))));
+            this.sidePanel.Controls.Add(this.btn_logout);
             this.sidePanel.Controls.Add(this.btn_Phanhoi);
             this.sidePanel.Controls.Add(this.btn_attendance);
             this.sidePanel.Controls.Add(this.btn_Scan);
@@ -83,6 +85,7 @@ namespace Gym_management_appication.UI
             this.btn_Phanhoi.FlatAppearance.BorderSize = 0;
             this.btn_Phanhoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Phanhoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Phanhoi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Phanhoi.Location = new System.Drawing.Point(0, 934);
             this.btn_Phanhoi.Name = "btn_Phanhoi";
             this.btn_Phanhoi.Size = new System.Drawing.Size(250, 80);
@@ -99,6 +102,7 @@ namespace Gym_management_appication.UI
             this.btn_attendance.FlatAppearance.BorderSize = 0;
             this.btn_attendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_attendance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_attendance.Location = new System.Drawing.Point(0, 854);
             this.btn_attendance.Name = "btn_attendance";
             this.btn_attendance.Size = new System.Drawing.Size(250, 80);
@@ -115,6 +119,7 @@ namespace Gym_management_appication.UI
             this.btn_Scan.FlatAppearance.BorderSize = 0;
             this.btn_Scan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Scan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Scan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Scan.Location = new System.Drawing.Point(0, 774);
             this.btn_Scan.Name = "btn_Scan";
             this.btn_Scan.Size = new System.Drawing.Size(250, 80);
@@ -175,6 +180,7 @@ namespace Gym_management_appication.UI
             this.btn_QuanLyDoanhThu.FlatAppearance.BorderSize = 0;
             this.btn_QuanLyDoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QuanLyDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuanLyDoanhThu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_QuanLyDoanhThu.Location = new System.Drawing.Point(0, 592);
             this.btn_QuanLyDoanhThu.Name = "btn_QuanLyDoanhThu";
             this.btn_QuanLyDoanhThu.Size = new System.Drawing.Size(250, 80);
@@ -191,6 +197,7 @@ namespace Gym_management_appication.UI
             this.btn_QuanLyThietbi.FlatAppearance.BorderSize = 0;
             this.btn_QuanLyThietbi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QuanLyThietbi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuanLyThietbi.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_QuanLyThietbi.Location = new System.Drawing.Point(0, 512);
             this.btn_QuanLyThietbi.Name = "btn_QuanLyThietbi";
             this.btn_QuanLyThietbi.Size = new System.Drawing.Size(250, 80);
@@ -251,6 +258,7 @@ namespace Gym_management_appication.UI
             this.btn_QuanLyNhanvien.FlatAppearance.BorderSize = 0;
             this.btn_QuanLyNhanvien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QuanLyNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuanLyNhanvien.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_QuanLyNhanvien.Location = new System.Drawing.Point(0, 330);
             this.btn_QuanLyNhanvien.Name = "btn_QuanLyNhanvien";
             this.btn_QuanLyNhanvien.Size = new System.Drawing.Size(250, 80);
@@ -329,6 +337,7 @@ namespace Gym_management_appication.UI
             this.btn_QuanLyHoiVien.FlatAppearance.BorderSize = 0;
             this.btn_QuanLyHoiVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_QuanLyHoiVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuanLyHoiVien.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_QuanLyHoiVien.Location = new System.Drawing.Point(0, 100);
             this.btn_QuanLyHoiVien.Name = "btn_QuanLyHoiVien";
             this.btn_QuanLyHoiVien.Size = new System.Drawing.Size(250, 80);
@@ -360,6 +369,23 @@ namespace Gym_management_appication.UI
             // BW
             // 
             this.BW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BW_DoWork);
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
+            this.btn_logout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_logout.FlatAppearance.BorderSize = 0;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_logout.Location = new System.Drawing.Point(0, 1014);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(250, 80);
+            this.btn_logout.TabIndex = 16;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // MainMenu
             // 
@@ -402,5 +428,6 @@ namespace Gym_management_appication.UI
         private System.Windows.Forms.Button btn_attendance;
         private System.Windows.Forms.Button btn_Phanhoi;
         private System.ComponentModel.BackgroundWorker BW;
+        private System.Windows.Forms.Button btn_logout;
     }
 }

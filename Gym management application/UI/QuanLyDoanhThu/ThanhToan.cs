@@ -57,15 +57,23 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
         {
             hoiVien data = new hoiVien();
             DataTable hoiVienList = data.getMemberpaymentinfo(txt_maHV.Text.Split('-')[0]);
-            txt_tenHV.Text = txt_maHV.Text.Split('-')[1].Trim();
-            cmb_goiTap.Text = (from DataRow dr in hoiVienList.Rows
-                              where true
-                              select (string)dr["Goi"]).LastOrDefault();
-            txt_amount.Text = (from DataRow dr in hoiVienList.Rows
-                               where true
-                               select (int)dr["price"]).LastOrDefault().ToString();
-            dtgv_PaymentHistory.DataSource = hoiVienList;
-            SetHeader();
+            try
+            {
+                txt_tenHV.Text = txt_maHV.Text.Split('-')[1].Trim();
+                cmb_goiTap.Text = (from DataRow dr in hoiVienList.Rows
+                                   where true
+                                   select (string)dr["Goi"]).LastOrDefault();
+                txt_amount.Text = (from DataRow dr in hoiVienList.Rows
+                                   where true
+                                   select (int)dr["price"]).LastOrDefault().ToString();
+                dtgv_PaymentHistory.DataSource = hoiVienList;
+                SetHeader();
+            }
+            catch (Exception ex)
+            {
+
+            }
+           
         }
 
 
