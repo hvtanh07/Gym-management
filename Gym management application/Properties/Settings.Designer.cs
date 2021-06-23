@@ -69,5 +69,16 @@ namespace Gym_management_appication.Properties {
                 return ((string)(this["GymManagementConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-KPFBBSK;Initial Catalog=GymManagement;Integrated Security=Tru" +
+            "e")]
+        public string GymManagementConnectionString1 {
+            get {
+                return ((string)(this["GymManagementConnectionString1"]));
+            }
+        }
     }
 }

@@ -152,6 +152,24 @@ namespace Gym_management_appication.UI
             childForm.Show();
         }
 
-       
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            BW.RunWorkerAsync();
+        }
+
+        private void BW_DoWork(object sender, DoWorkEventArgs e)
+        {
+            using (MainDataClassesDataContext db = new MainDataClassesDataContext())
+            {
+                DateTime FiveYearsEarlierFromNow = DateTime.Today.Subtract(new TimeSpan(1825, 0, 0, 0));
+                var foundMembers = db.Members.Where(item => item.ngayKetThuc.Value != null && FiveYearsEarlierFromNow > item.ngayKetThuc.Value);
+
+                if (foundMembers.Count() > 0)
+                {
+                    db.Members.DeleteAllOnSubmit(foundMembers);
+                    db.SubmitChanges();
+                }
+            }
+        }
     }
 }

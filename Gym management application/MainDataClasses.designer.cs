@@ -39,7 +39,7 @@ namespace Gym_management_appication
     #endregion
 		
 		public MainDataClassesDataContext() : 
-				base(global::Gym_management_appication.Properties.Settings.Default.GymManagementConnectionString, mappingSource)
+				base(global::Gym_management_appication.Properties.Settings.Default.GymManagementConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

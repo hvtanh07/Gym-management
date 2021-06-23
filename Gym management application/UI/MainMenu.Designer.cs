@@ -49,6 +49,7 @@ namespace Gym_management_appication.UI
             this.btn_QuanLyHoiVien = new System.Windows.Forms.Button();
             this.logoPanel = new System.Windows.Forms.Panel();
             this.container = new System.Windows.Forms.Panel();
+            this.BW = new System.ComponentModel.BackgroundWorker();
             this.sidePanel.SuspendLayout();
             this.GroupQuanLyDoanhThu.SuspendLayout();
             this.GroupQuanLyNhanVien.SuspendLayout();
@@ -356,6 +357,10 @@ namespace Gym_management_appication.UI
             this.container.Size = new System.Drawing.Size(1006, 748);
             this.container.TabIndex = 6;
             // 
+            // BW
+            // 
+            this.BW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BW_DoWork);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -366,6 +371,7 @@ namespace Gym_management_appication.UI
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.sidePanel.ResumeLayout(false);
             this.GroupQuanLyDoanhThu.ResumeLayout(false);
             this.GroupQuanLyNhanVien.ResumeLayout(false);
@@ -395,5 +401,6 @@ namespace Gym_management_appication.UI
         private System.Windows.Forms.Button btn_Scan;
         private System.Windows.Forms.Button btn_attendance;
         private System.Windows.Forms.Button btn_Phanhoi;
+        private System.ComponentModel.BackgroundWorker BW;
     }
 }
