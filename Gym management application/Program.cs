@@ -8,6 +8,7 @@ using Gym_management_appication.UI;
 using Gym_management_appication.UI.ThongKeHoiVien;
 using Gym_management_appication.UI.LichTrucPT;
 using Gym_management_appication.UI.QuanLyHoiVien;
+using Gym_management_appication.UI.QuanLyPhanHoi;
 
 namespace Gym_management_appication
 {

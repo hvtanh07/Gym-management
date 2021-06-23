@@ -127,6 +127,12 @@ namespace Gym_management_appication.UI
 
             hideSubMenu();
         }
+        private void btn_Phanhoi_Click(object sender, EventArgs e)
+        {
+            openChildForm(new QuanLyPhanHoi.QuanLyPhanHoi());
+
+            hideSubMenu();
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -146,6 +152,6 @@ namespace Gym_management_appication.UI
             childForm.Show();
         }
 
-        
+       
     }
 }

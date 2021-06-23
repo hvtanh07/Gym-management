@@ -30,6 +30,7 @@ namespace Gym_management_appication.UI
         private void InitializeComponent()
         {
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.btn_Phanhoi = new System.Windows.Forms.Button();
             this.btn_attendance = new System.Windows.Forms.Button();
             this.btn_Scan = new System.Windows.Forms.Button();
             this.GroupQuanLyDoanhThu = new System.Windows.Forms.Panel();
@@ -57,6 +58,7 @@ namespace Gym_management_appication.UI
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(185)))), ((int)(((byte)(179)))));
+            this.sidePanel.Controls.Add(this.btn_Phanhoi);
             this.sidePanel.Controls.Add(this.btn_attendance);
             this.sidePanel.Controls.Add(this.btn_Scan);
             this.sidePanel.Controls.Add(this.GroupQuanLyDoanhThu);
@@ -70,8 +72,24 @@ namespace Gym_management_appication.UI
             this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
             this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(250, 763);
+            this.sidePanel.Size = new System.Drawing.Size(250, 748);
             this.sidePanel.TabIndex = 5;
+            // 
+            // btn_Phanhoi
+            // 
+            this.btn_Phanhoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
+            this.btn_Phanhoi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Phanhoi.FlatAppearance.BorderSize = 0;
+            this.btn_Phanhoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Phanhoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Phanhoi.Location = new System.Drawing.Point(0, 934);
+            this.btn_Phanhoi.Name = "btn_Phanhoi";
+            this.btn_Phanhoi.Size = new System.Drawing.Size(250, 80);
+            this.btn_Phanhoi.TabIndex = 15;
+            this.btn_Phanhoi.Text = "Phản hồi khách hàng";
+            this.btn_Phanhoi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Phanhoi.UseVisualStyleBackColor = false;
+            this.btn_Phanhoi.Click += new System.EventHandler(this.btn_Phanhoi_Click);
             // 
             // btn_attendance
             // 
@@ -335,14 +353,14 @@ namespace Gym_management_appication.UI
             this.container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container.Location = new System.Drawing.Point(250, 0);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(1006, 763);
+            this.container.Size = new System.Drawing.Size(1006, 748);
             this.container.TabIndex = 6;
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 763);
+            this.ClientSize = new System.Drawing.Size(1256, 748);
             this.Controls.Add(this.container);
             this.Controls.Add(this.sidePanel);
             this.Name = "MainMenu";
@@ -376,5 +394,6 @@ namespace Gym_management_appication.UI
         private System.Windows.Forms.Button btn_Dangky;
         private System.Windows.Forms.Button btn_Scan;
         private System.Windows.Forms.Button btn_attendance;
+        private System.Windows.Forms.Button btn_Phanhoi;
     }
 }
