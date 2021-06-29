@@ -172,6 +172,20 @@ CREATE TABLE [dbo].[Feedback]
 );
 GO
 
+-- Create a new table called '[Feedback]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[Log]', 'U') IS NOT NULL
+DROP TABLE [dbo].[Log]
+GO
+-- Create the table in the specified schema
+CREATE TABLE [dbo].[Log]
+(
+	username nvarchar(10),
+	thoigian datetime ,
+	task nvarchar(2500),
+);
+GO
+
 ;WITH
   Pass0 as (select 1 as C union all select 1), --2 rows
   Pass1 as (select 1 as C from Pass0 as A, Pass0 as B),--4 rows
