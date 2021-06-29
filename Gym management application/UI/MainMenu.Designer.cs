@@ -30,6 +30,7 @@ namespace Gym_management_appication.UI
         private void InitializeComponent()
         {
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.btn_Phanhoi = new System.Windows.Forms.Button();
             this.btn_attendance = new System.Windows.Forms.Button();
             this.btn_Scan = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@ namespace Gym_management_appication.UI
             this.logoPanel = new System.Windows.Forms.Panel();
             this.container = new System.Windows.Forms.Panel();
             this.BW = new System.ComponentModel.BackgroundWorker();
-            this.btn_logout = new System.Windows.Forms.Button();
             this.sidePanel.SuspendLayout();
             this.GroupQuanLyDoanhThu.SuspendLayout();
             this.GroupQuanLyNhanVien.SuspendLayout();
@@ -77,6 +77,23 @@ namespace Gym_management_appication.UI
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(250, 748);
             this.sidePanel.TabIndex = 5;
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
+            this.btn_logout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_logout.FlatAppearance.BorderSize = 0;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_logout.Location = new System.Drawing.Point(0, 1014);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(250, 80);
+            this.btn_logout.TabIndex = 16;
+            this.btn_logout.Text = "Logout";
+            this.btn_logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // btn_Phanhoi
             // 
@@ -356,6 +373,7 @@ namespace Gym_management_appication.UI
             this.logoPanel.Name = "logoPanel";
             this.logoPanel.Size = new System.Drawing.Size(250, 100);
             this.logoPanel.TabIndex = 0;
+            this.logoPanel.Click += new System.EventHandler(this.logoPanel_Click);
             // 
             // container
             // 
@@ -369,23 +387,6 @@ namespace Gym_management_appication.UI
             // BW
             // 
             this.BW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BW_DoWork);
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(39)))), ((int)(((byte)(18)))));
-            this.btn_logout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_logout.FlatAppearance.BorderSize = 0;
-            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_logout.Location = new System.Drawing.Point(0, 1014);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(250, 80);
-            this.btn_logout.TabIndex = 16;
-            this.btn_logout.Text = "Logout";
-            this.btn_logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_logout.UseVisualStyleBackColor = false;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // MainMenu
             // 

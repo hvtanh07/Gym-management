@@ -14,6 +14,7 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
 {
     public partial class thongKeHoiVien : Form
     {
+        Log Log = new Log();
         public thongKeHoiVien()
         {
             InitializeComponent();
@@ -68,6 +69,7 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
             c_ThongKe.Series["Số lượng"].XValueMember = "thang";
             c_ThongKe.Series["Số lượng"].YValueMembers = "total";
             c_ThongKe.Series["Số lượng"].Color = Color.Blue;
+            Log.Insert("Xem thông tin hội viên từng tháng");
         }
         private void numOfNewMemeachMonth()
         {
@@ -82,6 +84,7 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
             c_ThongKe.Series["Số lượng"].XValueMember = "thang";
             c_ThongKe.Series["Số lượng"].YValueMembers = "total";
             c_ThongKe.Series["Số lượng"].Color = Color.Green;
+            Log.Insert("Xem thông tin hội viên mới từng tháng");
         }
         private void numOfResignMemeachMonth()
         {
@@ -96,6 +99,7 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
             c_ThongKe.Series["Số lượng"].XValueMember = "thang";
             c_ThongKe.Series["Số lượng"].YValueMembers = "total";
             c_ThongKe.Series["Số lượng"].Color = Color.Red;
+            Log.Insert("Xem thông tin hội viên nghỉ từng tháng");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

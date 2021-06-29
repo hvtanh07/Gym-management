@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gym_management_appication.UI.QuanLyNhanVien.QRCodeFeature;
+using Gym_management_appication.Database;
 
 namespace Gym_management_appication.UI
 {
@@ -17,6 +18,7 @@ namespace Gym_management_appication.UI
     {
         NhanVienControl nhanVienControl;
         NhanVien nhanVien = new NhanVien();
+        Log log = new Log();
         public DanhSachNhanVien()
         {
             InitializeComponent();
@@ -75,6 +77,7 @@ namespace Gym_management_appication.UI
                 {
                     danhSachNhanVienModel.Insert(nhanVienControl.GetID().ToString(), nhanVienControl.GetTen(), nhanVienControl.GetGioiTinh(), nhanVienControl.GetEmail(), nhanVienControl.GetSDT(), nhanVienControl.GetDiaChi(), nhanVienControl.GetChucVu(), nhanVienControl.GetLuong());
                     MessageBox.Show("Thêm mới thành công.");
+                    log.Insert("Thêm nhân viên mới " + nhanVienControl.GetID().ToString());
                     TaoTaiKhoanDangNhap taoTaiKhoanDangNhap = new TaoTaiKhoanDangNhap(nhanVienControl.GetID().ToString());
                     taoTaiKhoanDangNhap.ShowDialog();
                     LoadDanhSachNhanVien();
@@ -110,6 +113,7 @@ namespace Gym_management_appication.UI
                     {
                         danhSachNhanVienModel.Update(nhanVienControl.GetID().ToString(), nhanVienControl.GetTen(), nhanVienControl.GetGioiTinh(), nhanVienControl.GetEmail(), nhanVienControl.GetSDT(), nhanVienControl.GetDiaChi(), nhanVienControl.GetChucVu(), nhanVienControl.GetLuong());
                         MessageBox.Show("Cập nhật thành công.");
+                        log.Insert("Cập nhật thông tin nhân viên " + nhanVienControl.GetID().ToString());
                         LoadDanhSachNhanVien();
                     }
                     catch (Exception)
@@ -133,6 +137,7 @@ namespace Gym_management_appication.UI
                 Database.QuanLyNhanVien.DSNVModel ds = new Database.QuanLyNhanVien.DSNVModel();
                 ds.Delete(nhanVien.ID.ToString());
                 MessageBox.Show("Xóa thành công.");
+                log.Insert("Xóa nhân viên " + nhanVienControl.GetID().ToString());
                 LoadDanhSachNhanVien();
             }
         }

@@ -9,7 +9,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
     public partial class MemberListForm : Form
     {
         Class.hoiVien hoiVien = new Class.hoiVien();
-
+        Log Log = new Log();
         public MemberListForm()
         {
             InitializeComponent();
@@ -92,6 +92,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                         else
                             MemberListFormModel.Insert(hoiVien);
                         MessageBox.Show("Thêm mới thành công.");
+                        Log.Insert("Thêm hội viên " + hoiVien.ma);
                         LoadMemberListForm();
                     }
                     catch (Exception)
@@ -162,6 +163,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                     else
                         MemberListFormModel.Insert(hoiVien);                  
                     MessageBox.Show("Cập nhật thành công.");
+                    Log.Insert("Cập nhật thông tin hội viên " + hoiVien.ma);
                     LoadMemberListForm();
                 }
                 catch (Exception)
@@ -185,6 +187,7 @@ namespace Gym_management_appication.Database.QuanLyHoiVien
                 Database.QuanLyHoiVien.DSHVModel ds = new Database.QuanLyHoiVien.DSHVModel();
                 ds.Delete(hoiVien.ma.ToString().Trim());
                 MessageBox.Show("Xóa thành công.");
+                Log.Insert("Xóa hội viên " + hoiVien.ma);
                 LoadMemberListForm();
             }
         }

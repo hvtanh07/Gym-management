@@ -11,11 +11,13 @@ using Gym_management_appication.Database.LichTrucPT;
 using Gym_management_appication.UI.LichTrucPT;
 using Gym_management_appication.Database.QuanLyNhanVien;
 using Gym_management_appication.Class;
+using Gym_management_appication.Database;
 
 namespace Gym_management_appication.UI.LichTrucPT
 {
     public partial class XoaLichTrucPT : Form
     {
+        Log Log = new Log();
         public XoaLichTrucPT()
         {
             InitializeComponent();
@@ -97,6 +99,7 @@ namespace Gym_management_appication.UI.LichTrucPT
                 {
                     lichTrucPTModel.Delete(lichTrucPT);
                     MessageBox.Show("Xóa thành công");
+                    Log.Insert("Xóa lịch trực của " + comboBoxHoTen.Text);
                     this.Close();
                    // LichTrucPT.LoadLichTrucPT();
                 }

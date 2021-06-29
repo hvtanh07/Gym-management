@@ -14,6 +14,7 @@ namespace Gym_management_appication.UI
 {
     public partial class Login : Form
     {
+        Log Log = new Log();
         public Login()
         {
             InitializeComponent();
@@ -38,8 +39,6 @@ namespace Gym_management_appication.UI
         private void button1_Click(object sender, EventArgs e)
         {
             tryLogin();
-
-
         }
 
         private void tryLogin()
@@ -65,6 +64,7 @@ namespace Gym_management_appication.UI
                 else
                     setting.UserName = "";
                 setting.Save();
+                Log.Insert("Login");
                 this.Hide();
                 var form2 = new MainMenu();
                 form2.Closed += (s, args) => this.Close();

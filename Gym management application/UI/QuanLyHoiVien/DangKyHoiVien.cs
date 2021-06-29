@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gym_management_appication.Database;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -7,6 +8,7 @@ namespace Gym_management_appication.UI.QuanLyHoiVien
     public partial class DangKyHoiVien : Form
     {
         Class.hoiVien hoiVien = new Class.hoiVien();
+        Log log = new Log();
         public DangKyHoiVien()
         {
             InitializeComponent();
@@ -65,6 +67,7 @@ namespace Gym_management_appication.UI.QuanLyHoiVien
                     {
                         MemberModel.Insert(hoiVien);
                         MessageBox.Show("Đăng ký thành công.");
+                        log.Insert("Thêm hội viên " + hoiVien.ma);
                     }
                     catch (Exception)
                     {

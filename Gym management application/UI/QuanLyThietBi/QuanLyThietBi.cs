@@ -13,6 +13,7 @@ namespace Gym_management_appication.UI
 {
     public partial class QuanLyThietBi : Form
     {
+        Log Log = new Log();
         public QuanLyThietBi()
         {
             InitializeComponent();
@@ -86,6 +87,7 @@ namespace Gym_management_appication.UI
                 }
                 trangThietBi trangThietBi = new trangThietBi();
                 trangThietBi.deleteData(thietBi);
+                Log.Insert("Xóa thông tin thiết bị " + thietBi.ten);
                 LoadData();
             }
             else if (dialogResult == DialogResult.No)

@@ -14,6 +14,7 @@ namespace Gym_management_appication.UI.QuanLyDoanhThu
 {
     public partial class ThongKeDoangThu : Form
     {
+        Log Log = new Log();
         public ThongKeDoangThu()
         {
             InitializeComponent();
@@ -81,6 +82,7 @@ namespace Gym_management_appication.UI.QuanLyDoanhThu
             c_ThongKeDoanhThu.Series["Doanh thu"].XValueMember = "SalesMonth";
             c_ThongKeDoanhThu.Series["Doanh thu"].YValueMembers = "TotalSales";
             c_ThongKeDoanhThu.Series["Doanh thu"].Color = Color.Blue;
+            Log.Insert("Xem doanh thu theo tháng");
         }
         private void incomEeacYear()
         {
@@ -94,6 +96,7 @@ namespace Gym_management_appication.UI.QuanLyDoanhThu
             c_ThongKeDoanhThu.Series["Doanh thu"].XValueMember = "SalesYear";
             c_ThongKeDoanhThu.Series["Doanh thu"].YValueMembers = "TotalSales";
             c_ThongKeDoanhThu.Series["Doanh thu"].Color = Color.Blue;
+            Log.Insert("Xem doanh thu theo năm");
         }
        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

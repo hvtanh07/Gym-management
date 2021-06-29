@@ -15,6 +15,7 @@ namespace Gym_management_appication.UI
 {
     public partial class ChiTietThietBi : Form
     {
+        Database.Log log = new Database.Log();
         public ChiTietThietBi(trangThietBi trangThietBi)
         {          
             InitializeComponent();
@@ -63,11 +64,13 @@ namespace Gym_management_appication.UI
             {
                 data.insertData(trangThietBi);
                 MessageBox.Show("Thiết bị đã đươc thêm!", "Success");
+                log.Insert("Thêm thiết bị " + trangThietBi.ten);
             }
             else if ("Sửa" == btn_Sua.Text)
             {
                 data.updateData(trangThietBi);
                 MessageBox.Show("Thiết bị đã đươc chỉnh sửa!", "Success");
+                log.Insert("Chỉnh sửa thông tin thiết bị " + trangThietBi.ten);
             }
             this.Close();
         }

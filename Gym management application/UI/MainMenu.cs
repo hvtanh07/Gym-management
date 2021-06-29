@@ -11,12 +11,14 @@ using System.Windows.Forms;
 using Gym_management_appication.Database.QuanLyHoiVien;
 using Gym_management_appication.UI;
 using Gym_management_appication.UI.ThongKeHoiVien;
+using Gym_management_appication.Database;
 
 namespace Gym_management_appication.UI
 {
     public partial class MainMenu : Form
     {
         private int permissionlevel;
+        Log log = new Log();
         public MainMenu()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace Gym_management_appication.UI
                     break;
                 case 2:
                     btn_QuanLyNhanvien.Enabled = false;
-                    btn_QuanLyHoiVien.Enabled = false;
+                    btn_Danhsach.Enabled = false;
                     btn_attendance.Enabled = false;
                     break;
                 case 3:
@@ -212,8 +214,19 @@ namespace Gym_management_appication.UI
         { 
             this.Hide();
             var form1 = new Login();
+            log.Insert("Logout");
             form1.Closed += (s, args) => this.Close();
             form1.Show();
+        }
+
+        private void logoPanel_Click(object sender, EventArgs e)
+        {
+            if (permissionlevel == 1)
+            {
+                openChildForm(new Loghistory());
+
+                hideSubMenu();
+            }
         }
     }
 }

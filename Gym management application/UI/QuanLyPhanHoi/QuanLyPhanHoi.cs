@@ -14,6 +14,7 @@ namespace Gym_management_appication.UI.QuanLyPhanHoi
 {
     public partial class QuanLyPhanHoi : Form
     {
+        Log Log = new Log();
         public QuanLyPhanHoi()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Gym_management_appication.UI.QuanLyPhanHoi
             if (database.Insert(feedBack))
             {
                 MessageBox.Show("Gửi phản hồi thành công.");
+                Log.Insert("Gửi phản hồi từ khách hàng " + txt_memberName);
                 txt_memberName.Text = "";
                 txt_review.Text = "";
             }else
@@ -43,6 +45,7 @@ namespace Gym_management_appication.UI.QuanLyPhanHoi
         private void btn_watchReview_Click(object sender, EventArgs e)
         {
             XemPhanHoi frmXemPhanHoi = new XemPhanHoi();
+            Log.Insert("Xem phản hồi từ khách hàng");
             frmXemPhanHoi.Show();
         }
     }

@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZXing;
 using Gym_management_appication.Class;
+using Gym_management_appication.Database;
+
 namespace Gym_management_appication.UI
 {
     public partial class Scanning : Form
@@ -22,6 +24,7 @@ namespace Gym_management_appication.UI
         private Database.QuanLyNhanVien.DSNVModel NhanVien = new Database.QuanLyNhanVien.DSNVModel();
         private Database.Attendance attendance = new Database.Attendance();
         private AttendanceClass AttendanceClass = new AttendanceClass();
+        Log Log = new Log();
 
         public Scanning()
         {
@@ -70,12 +73,14 @@ namespace Gym_management_appication.UI
                 timer1.Enabled = true;
                 timer1.Start();
                 btnConnect.Text = "Disconnect";
+                Log.Insert("Connect camera");
             }
             else
             {
                 btnConnect.Text = "Connect";
                 timer1.Stop();
                 stream.Stop();
+                Log.Insert("Disconnect camera");
             }
         }
 
@@ -106,6 +111,7 @@ namespace Gym_management_appication.UI
                 AttendanceClass.attendanceTime = currentTime.Value;
                 AttendanceClass.ma = txt_ID.Text;
                 attendance.Insert(AttendanceClass);
+                Log.Insert("Điểm danh của khách hàng mã "+ txt_ID.Text);
                 return true;
             }
             else if (id.Contains("NV"))
@@ -125,6 +131,7 @@ namespace Gym_management_appication.UI
                 AttendanceClass.attendanceTime = currentTime.Value;
                 AttendanceClass.ma = txt_ID.Text;
                 attendance.Insert(AttendanceClass);
+                Log.Insert("Điểm danh");
                 return true;
             }
             else return false;

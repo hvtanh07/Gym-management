@@ -13,6 +13,7 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
 {
     public partial class ThanhToan : Form
     {
+        Log log = new Log();
         public ThanhToan()
         {
             InitializeComponent();
@@ -101,6 +102,7 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
             GoiTap data2 = new GoiTap();
             int Duration = data2.getDuration(cmb_goiTap.Text.Split('-')[0]);
             data.AddPayment(txt_maHV.Text.Split('-')[0], cmb_goiTap.Text.Split('-')[0], dtP_payDate.Value, Duration, int.Parse(txt_amount.Text));
+            log.Insert("Thực hiện thanh toán cho hội viên " + txt_maHV.Text);
             retrieveInfo();
         }
 
@@ -116,6 +118,7 @@ namespace Gym_management_appication.UI.ThongKeHoiVien
                     string mahv = data.GetIDfromName(dtgv_PaymentHistory.Rows[currentRowIndex].Cells["HoiVien"].Value.ToString());
                     DateTime payDate = Convert.ToDateTime(dtgv_PaymentHistory.Rows[currentRowIndex].Cells["dateOfPay"].Value.ToString());
                     data.DeletePayment(mahv, payDate);
+                    log.Insert("Thực hiện xóa lịch sử thanh toán của hội viên " + mahv);
                     retrieveInfo();
                 }
             }

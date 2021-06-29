@@ -11,11 +11,13 @@ using Gym_management_appication.Database.LichTrucPT;
 using Gym_management_appication.UI.LichTrucPT;
 using Gym_management_appication.Database.QuanLyNhanVien;
 using Gym_management_appication.Class;
+using Gym_management_appication.Database;
 
 namespace Gym_management_appication.UI.LichTrucPT
 {
     public partial class ThemLichTrucPT : Form
     {
+        Log Log = new Log();
         public ThemLichTrucPT()
         {
             InitializeComponent();
@@ -97,6 +99,7 @@ namespace Gym_management_appication.UI.LichTrucPT
             {
                 lichTrucPTModel.Insert(lichTrucPT);
                 MessageBox.Show("Thêm mới thành công");
+                Log.Insert("Thêm lịch trực mới cho " + comboBoxHoTen.Text);
                 this.Close();
                 //LichTrucPT.LoadLichTrucPT();
             }

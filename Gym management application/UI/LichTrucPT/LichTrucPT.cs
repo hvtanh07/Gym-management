@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Gym_management_appication.Database;
 using Gym_management_appication.Database.LichTrucPT;
 using Gym_management_appication.UI.LichTrucPT;
 
@@ -15,6 +16,7 @@ namespace Gym_management_appication.UI.LichTrucPT
 {
     public partial class LichTrucPT : Form
     {
+
         public static DataTable dataTable = new DataTable();
         public LichTrucPT()
         {

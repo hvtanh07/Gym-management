@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gym_management_appication.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Gym_management_appication.UI.QuanLyNhanVien
 {
     public partial class TaoTaiKhoanDangNhap : Form
     {
+        Log log = new Log();
         public TaoTaiKhoanDangNhap(string maNV)
         {
             InitializeComponent();
@@ -57,6 +59,7 @@ namespace Gym_management_appication.UI.QuanLyNhanVien
                 Database.LogIn login = new Database.LogIn();
                 string userName = txt_username.Text.ToLower();
                 login.Insert(txt_manv.Text, (int)txt_level.Value, userName, txt_password.Text);
+                log.Insert("Tạo tài khoản đăng nhập cho nhân viên "+ txt_manv.Text);
                 this.Close();
             }
             else if (dialogResult == DialogResult.No)

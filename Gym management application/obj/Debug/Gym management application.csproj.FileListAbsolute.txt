@@ -196,3 +196,4 @@ C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_app
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.Database.QuanLyHoiVien.MemberListForm.resources
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyPhanHoi.QuanLyPhanHoi.resources
 D:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.QuanLyPhanHoi.XemPhanHoi.resources
+C:\Github\Gym-management\Gym management application\obj\Debug\Gym_management_appication.UI.Loghistory.resources
