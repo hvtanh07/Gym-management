@@ -12,6 +12,7 @@ using Gym_management_appication.Database.QuanLyHoiVien;
 using Gym_management_appication.UI;
 using Gym_management_appication.UI.ThongKeHoiVien;
 using Gym_management_appication.Database;
+using System.Data.SqlClient;
 
 namespace Gym_management_appication.UI
 {
@@ -197,17 +198,24 @@ namespace Gym_management_appication.UI
 
         private void BW_DoWork(object sender, DoWorkEventArgs e)
         {
-            using (MainDataClassesDataContext db = new MainDataClassesDataContext())
+            //Check the database connection 
+            valiballecommon valiballecommon = valiballecommon.GetStorage();
+            Properties.Settings setting = Properties.Settings.Default;
+            string concheck = "Data Source = " + valiballecommon.DatabaseName + "; Initial Catalog= GymManagement;  Integrated Security=True";
+            
+            SqlConnection con = new SqlConnection(concheck);
+            try
             {
-                DateTime FiveYearsEarlierFromNow = DateTime.Today.Subtract(new TimeSpan(1825, 0, 0, 0));
-                var foundMembers = db.Members.Where(item => item.ngayKetThuc.Value != null && FiveYearsEarlierFromNow > item.ngayKetThuc.Value);
-
-                if (foundMembers.Count() > 0)
-                {
-                    db.Members.DeleteAllOnSubmit(foundMembers);
-                    db.SubmitChanges();
-                }
+                con.Open();
+                con.Close();
+            }catch (Exception ex)
+            {
+                throw ex;
             }
+            //Delete old member
+            BackgroundProcess backgroundProcess = new BackgroundProcess();
+            backgroundProcess.MakememberInactive();
+            backgroundProcess.Deleteinactive();
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
@@ -224,9 +232,39 @@ namespace Gym_management_appication.UI
             if (permissionlevel == 1)
             {
                 openChildForm(new Loghistory());
-
                 hideSubMenu();
             }
+        }
+
+
+        private void BW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                //throw e.Error;
+                notifyIcon1.Text = e.Error.ToString();
+            }
+            else
+            {
+                notifyIcon1.Text = "Dữ liệu đã được cập nhật";
+            }
+            notifyIcon1.ShowBalloonTip(5);
+        }
+
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                this.Visible = false;
+                this.notifyIcon1.Visible = true;
+            }
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
         }
     }
 }

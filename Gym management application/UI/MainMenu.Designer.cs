@@ -29,6 +29,8 @@ namespace Gym_management_appication.UI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.sidePanel = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_Phanhoi = new System.Windows.Forms.Button();
@@ -51,6 +53,7 @@ namespace Gym_management_appication.UI
             this.logoPanel = new System.Windows.Forms.Panel();
             this.container = new System.Windows.Forms.Panel();
             this.BW = new System.ComponentModel.BackgroundWorker();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.sidePanel.SuspendLayout();
             this.GroupQuanLyDoanhThu.SuspendLayout();
             this.GroupQuanLyNhanVien.SuspendLayout();
@@ -387,6 +390,16 @@ namespace Gym_management_appication.UI
             // BW
             // 
             this.BW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BW_DoWork);
+            this.BW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BW_RunWorkerCompleted);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipText = "Dữ liệu đã được cập nhật";
+            this.notifyIcon1.BalloonTipTitle = "Khởi chạy hoàn tất";
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // MainMenu
             // 
@@ -398,6 +411,7 @@ namespace Gym_management_appication.UI
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainMenu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.sidePanel.ResumeLayout(false);
             this.GroupQuanLyDoanhThu.ResumeLayout(false);
@@ -430,5 +444,6 @@ namespace Gym_management_appication.UI
         private System.Windows.Forms.Button btn_Phanhoi;
         private System.ComponentModel.BackgroundWorker BW;
         private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

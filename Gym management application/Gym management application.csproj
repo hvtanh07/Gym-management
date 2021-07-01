@@ -94,6 +94,7 @@
     <Compile Include="Class\trangThietBi.cs" />
     <Compile Include="Class\valiballecommon.cs" />
     <Compile Include="Database\Attendance.cs" />
+    <Compile Include="Database\BackgroundProcess.cs" />
     <Compile Include="Database\conString\ConString.cs" />
     <Compile Include="Database\DoanhThu.cs" />
     <Compile Include="Database\feedBackDB.cs" />

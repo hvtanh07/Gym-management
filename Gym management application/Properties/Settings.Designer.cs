@@ -62,8 +62,8 @@ namespace Gym_management_appication.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-2SM595H\\SQLEXPRESS;Initial Catalog=GymManagement;Integrated S" +
-            "ecurity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-KPFBBSK;Initial Catalog=GymManagement;Integrated Security=Tru" +
+            "e")]
         public string GymManagementConnectionString {
             get {
                 return ((string)(this["GymManagementConnectionString"]));

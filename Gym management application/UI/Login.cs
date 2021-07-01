@@ -138,5 +138,10 @@ namespace Gym_management_appication.UI
                 tryLogin();
             }
         }
+
+        private void btn_Quit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

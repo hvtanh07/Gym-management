@@ -34,6 +34,7 @@ namespace Gym_management_appication.UI
             this.btn_Login = new System.Windows.Forms.Button();
             this.txt_DB = new System.Windows.Forms.TextBox();
             this.chB_saveUser = new System.Windows.Forms.CheckBox();
+            this.btn_Quit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_userName
@@ -92,12 +93,28 @@ namespace Gym_management_appication.UI
             this.chB_saveUser.UseVisualStyleBackColor = true;
             this.chB_saveUser.CheckedChanged += new System.EventHandler(this.chB_saveUser_CheckedChanged);
             // 
+            // btn_Quit
+            // 
+            this.btn_Quit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_Quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Quit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Quit.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_Quit.Location = new System.Drawing.Point(325, 232);
+            this.btn_Quit.Name = "btn_Quit";
+            this.btn_Quit.Size = new System.Drawing.Size(65, 36);
+            this.btn_Quit.TabIndex = 5;
+            this.btn_Quit.Text = "Quit";
+            this.btn_Quit.UseVisualStyleBackColor = false;
+            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(185)))), ((int)(((byte)(179)))));
             this.ClientSize = new System.Drawing.Size(402, 280);
+            this.Controls.Add(this.btn_Quit);
             this.Controls.Add(this.chB_saveUser);
             this.Controls.Add(this.txt_DB);
             this.Controls.Add(this.btn_Login);
@@ -119,5 +136,6 @@ namespace Gym_management_appication.UI
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.TextBox txt_DB;
         private System.Windows.Forms.CheckBox chB_saveUser;
+        private System.Windows.Forms.Button btn_Quit;
     }
 }
